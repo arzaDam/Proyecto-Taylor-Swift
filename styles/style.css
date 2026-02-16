@@ -11,7 +11,10 @@ body {
     background-color: #1ecad3;
     color: #fff;
 }
-
+h1{
+    font-family: "shadows Into Lights", cursive;
+    color: red;
+}
 /* ----------- HEADER ----------- */
 .hero {
     height: 400px;
@@ -72,7 +75,7 @@ header::after {
 
 .nav a:hover {
     background: white;
-    color: black;
+    color: white;
 }
 
 /* ----------- HERO ----------- */
@@ -112,6 +115,12 @@ header::after {
 .hero p {
     font-size: 1.2rem;
     max-width: 600px;
+}
+.hero img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
 }
 
 /* ----------- SECCIÓN TOURS ----------- */
