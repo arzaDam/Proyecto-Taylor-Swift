@@ -1,98 +1,112 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taylor Swift | Tours</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Conexión con CSS -->
+    <title>Taylor Swift - The Eras Collection</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS propio -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body>
+<body class="bg-black text-white">
 
-<header class="hero">
-    <h1> Taylor Swift</h1>
-    <nav>
-        <ul>
-            <li>
-                <a href="#">Iinicio</a>
-            </li>
-            <li>
-                <a href="pages/producto.html">Producto</a>
-            </li>
-            <li>
-                <a href="pages/quienessomos.html">QuienesSomos</a>
-            </li>
-            <li>
-                <a href="pages/tours.html">Tours</a>
-            </li>
-            <li>
-                <a href="pages/contacto.html">Contacto</a>
-            </li>
-        </ul>
+    <!-- HEADER -->
+    <header class="text-center p-4">
+        <h1 class="text-danger">Taylor Swift</h1>
+        <p class="text-info">The Eras Collection</p>
+    </header>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Inicio</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="pages/quienessomos.html">Quiénes Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/producto.html">Producto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
+    <!-- MAIN -->
+    <main class="container mt-4">/*---CAMBIO---*/
+        <section class="hero">
+            <div class="hero-content">
+                <h2>La Era Musical de Taylor Swift</h2>
+                <p>Descubrí su evolución artística</p>
+                <a href="#" class="btn-principal">Explorar Álbumes</a>
+            </div>
+        </section>/*---CAMBIO----*/
 
-    <div class="hero-content">
-        <h1>Taylor Swift Tours</h1>
-        <p>Viví la experiencia única de cada era, cada canción y cada escenario.</p>
-    </div>
-</header>
-<main>
-    <div>
-        <img src="asset/taylorfondo1.jpg" alt="hero-img">
-    </div>
-    <section>
-        <h2>The Life of a Showgirl</h2>
-    </section>
-</main>
-<section class="discos">
-    <h2>Último Lanzamiento</h2>
-    <section class="store-header">
-    <div class="sparkles"></div>
+        <!-- STORE -->
+        <section>
+            <h2 class="text-center text-info mb-4">Último Lanzamiento</h2>
 
-    <h2 class="store-title">STORE</h2>
+            <div class="row g-4">
 
-    <div class="line"></div>
+                <article class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <img src="asset/vinilotaylor1.png" class="card-img-top" alt="Vinilo">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Vinilo</h5>
+                            <button class="btn btn-danger">Comprar</button>
+                        </div>
+                    </div>
+                </article>
 
-    <a href="#" class="shop-btn">SHOP NOW</a>
-</section>
+                <article class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <img src="asset/cdtaylor1.png" class="card-img-top" alt="CD">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">CD</h5>
+                            <button class="btn btn-danger">Comprar</button>
+                        </div>
+                    </div>
+                </article>
 
+                <article class="col-md-4">
+                    <div class="card bg-dark text-white h-100">
+                        <img src="asset/casettetaylor1.png" class="card-img-top" alt="Cassette">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cassette</h5>
+                            <button class="btn btn-danger">Comprar</button>
+                        </div>
+                    </div>
+                </article>
 
-    <div class="grid-discos">
+            </div>
+        </section>
 
-        <div class="card">
-            <img src="asset/vinilotaylor1.png" alt="VINILO">
-            <h3>Vinilo</h3>
-            <button>Comprar</button>
-        </div>
+    </main>
 
-        <div class="card">
-            <img src="asset/cdtaylor1.png" alt="CD">
-            <h3>CD</h3>
-            <button>Comprar</button>
-        </div>
+    <!-- FOOTER -->
+    <footer class="bg-dark text-center p-4 mt-5">
+        <form class="mb-3">
+            <label class="form-label">Suscribite al Newsletter</label>
+            <input type="email" class="form-control w-50 mx-auto mb-2" placeholder="Tu email">
+            <button class="btn btn-info">Suscribirse</button>
+        </form>
+        <p>© 2026 Fan Page - Taylor Swift</p>
+    </footer>
 
-        <div class="card">
-            <img src="asset/casettetaylor1.png" alt="Casette">
-            <h3>Casette</h3>
-            <button>Comprar</button>
-        </div>
-
-    </div>
-</section>
-
-
-<footer>
-    <form action="">
-        <label for="">Suscribite al Newsletter</label>
-        <input type="email" name="newsletter" id="newsletter">
-        <input type="submit" class="boton">
-    </form>
-    <p>© 2026 Fan Page - Taylor Swift</p>
-</footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

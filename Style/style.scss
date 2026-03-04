@@ -1,0 +1,24 @@
+@import 'hero';
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('../img/taylor.jpg') center/cover no-repeat;
+
+  @include flex-center;
+  text-align: center;
+  color: white;
+
+  .hero-content {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+}
+
+.btn-principal {
+  @include boton($color-principal, white);
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

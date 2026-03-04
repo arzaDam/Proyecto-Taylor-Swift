@@ -1,337 +1,180 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Shadows+Into+Light&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+/* ============================= */
+/* RESET */
+/* ============================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
-/* ----------- BODY ----------- */
+/* ============================= */
+/* BODY */
+/* ============================= */
 body {
-    background-color: #1ecad3;
-    color: #fff;
-}
-h1{
-    font-family: "shadows Into Lights", cursive;
-    color: red;
-}
-/* ----------- HEADER ----------- */
-.hero {
-    height: 400px;
-
-    background: linear-gradient(
-        rgba(20, 60, 50, 0.7),   /* verde musgo oscuro */
-        rgba(20, 60, 50, 0.7)
-    ),
-    url("../asset/taylorfondo1.jpg");
-
+    min-height: 100vh;
+    background-image: url("../asset/taylorfondo1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    background-color: black;
+    color: #7fffd4;
+}
+h1{
+    letter-spacing: 3px;
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+footer {
+    border-top: 1px solid #00ffff;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-}
-
-header::after {
+/* OSCURECER FONDO */
+body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
-    background: rgba(0, 128, 128, 0.55);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
-/* ----------- NAV ----------- */
-.nav {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    z-index: 3;
-
+/* ============================= */
+/* HEADER */
+/* ============================= */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 60px;
     display: flex;
-    gap: 20px;
+    justify-content: space-between; /* izquierda y derecha */
+    align-items: center;
+    z-index: 100;
+}
+
+/* LOGO */
+.logo {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: red;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    gap: 30px;
 }
 
 .nav a {
+    color: #7fffd4;
     text-decoration: none;
-    color: #fff;
-    padding: 8px 18px;
-    border: 1px solid white;
-    border-radius: 20px;
-    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
     transition: 0.3s;
 }
 
 .nav a:hover {
-    background: white;
     color: white;
+    opacity: 0.6;
 }
 
-/* ----------- HERO ----------- */
+/* ============================= */
+/* HERO */
+/* ============================= */
 .hero {
-    position: relative;
-    z-index: 2;
-    height: 450px;
-    background-color: red;
-    background-image: url("../asset/thecult.jpg") center/cover no-repeat;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding-top: 120px;
     text-align: center;
-    padding: 20px;
-}
-.hero::before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 5);
-    z-index: 1;
-}
-.hero-content{
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
+    margin-bottom: 60px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    color: red;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-}
-.hero img{
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
-}
-
-/* ----------- SECCIÓN TOURS ----------- */
-section {
-    padding: 60px 8%;
-    background: #1ecad3;
-}
-
-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.1rem;
+    opacity: 0.8;
     margin-bottom: 40px;
-    color: #004d4d;
+    color: aquamarine;
 }
 
-/* ----------- GRID ----------- */
-.tours {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
-
-/* ----------- CARDS ----------- */
-.card {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
+/* ============================= */
+/* STORE SECTION */
+/* ============================= */
+.store {
     text-align: center;
+    padding: 80px 40px;
 }
 
-.card-content h3 {
+.store h2 {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
     margin-bottom: 10px;
-    color: #eaffff;
 }
 
-.card-content p {
-    margin-bottom: 15px;
+/* Línea decorativa */
+.linea {
+    width: 80px;
+    height: 2px;
+    background-color: white;
+    margin: 20px auto 40px;
 }
 
-.card-content button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    background: #7fffd4;
-    color: #004d4d;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.card-content button:hover {
-    background: #a8fff1;
-}
-
-/* ----------- FOOTER ----------- */
-footer {
-    background: #004d4d;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-.grid-discos {
+/* PRODUCTOS */
+.productos {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
-.discos{
-    padding: 80px 0;
+
+.producto {
+    text-align: center;
 }
 
-.card {
-    width: 250px;
-    height: 250px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 20px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.producto img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border: 2px solid #7fffd4;
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 
-.card img {
-    width: 120px;
-    height: auto;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #7fffd4;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-body {
-    background: black;
-    font-family: Arial, sans-serif;
-}
-
-/* CONTENEDOR */
-.store-header {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 50px 80px;
-}
-
-/* TITULO */
-.store-title {
-    color: white;
-    font-size: 45px;
-    margin: 0;
-    letter-spacing: 3px;
-}
-
-/* LINEA */
-.line {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(to right, gold, white);
-    opacity: 0.7;
+.producto img:hover {
+    transform: scale(1.05);
 }
 
 /* BOTON */
-.shop-btn {
-    background: #7fd1c1;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-    box-shadow: 0 0 10px #7fd1c1;
-}
-
-.shop-btn:hover {
-    background: #5fb7a6;
-    box-shadow: 0 0 20px #7fd1c1, 0 0 40px #7fd1c1;
-    transform: scale(1.05);
-}
-
-/* ✨ PARTÍCULAS DORADAS */
-.sparkles {
-    position: absolute;
-    left: 0;
-    top: 20px;
-    width: 150px;
-    height: 100px;
-    pointer-events: none;
-    background: radial-gradient(circle, gold 2px, transparent 2px);
-    background-size: 20px 20px;
-    animation: sparkleMove 4s linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes sparkleMove {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-}
-
-/* 📱 RESPONSIVE */
-@media (max-width: 768px) {
-    .store-header {
-        padding: 30px 20px;
-    }
-
-    .store-title {
-        font-size: 28px;
-    }
-
-    .shop-btn {
-        padding: 8px 18px;
-        font-size: 12px;
-    }
-}
-.buy-btn {
-    background: #00a650;
-    color: white;
-    border: none;
+.producto button {
+    margin-top: 15px;
     padding: 10px 20px;
-    border-radius: 25px;
+    background: white;
+    color: black;
+    border: none;
     cursor: pointer;
-    font-weight: bold;
+    letter-spacing: 1px;
     transition: 0.3s;
+    font-weight: bold;
 }
 
-.buy-btn:hover {
-    background: #008f45;
-    transform: scale(1.05);
+.producto button:hover {
+    background: #ddd;
 }
-
-
-
-
