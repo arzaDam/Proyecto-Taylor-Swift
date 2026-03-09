@@ -1,0 +1,11 @@
+// ==========================
+// BOTONES DE REDES AUTOMÁTICOS
+// ==========================
+
+@each $nombre, $color in $redes {
+
+  .btn-#{$nombre} {
+    @include boton($color, white);
+    margin: 5px;
+  }
+}

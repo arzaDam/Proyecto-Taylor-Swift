@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+/* ============================= */
+/* BASE */
+/* ============================= */
+
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/extends';
+@import 'base/reset';
+@import 'base/base';
+
+/* ============================= */
+/* LAYOUT */
+/* ============================= */
+
+@import 'layout/header';
+@import 'layout/footer';
+
+/* ============================= */
+/* COMPONENTS */
+/* ============================= */
+
+@import 'components/card';
+@import 'components/buttons';
+
+/* ============================= */
+/* PAGES */
+/* ============================= */
+
+@import 'pages/home';
+@import 'pages/contacto';
+@import 'pages/tours';
+
+
+/* ============================= */
+/* BODY */
+/* ============================= */
+
+body {
+    animation: aparecer 1s ease-in;
+    min-height: 100vh;
+    background-image: url("../asset/taylorfondo1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Shadows Into Light', cursive;
+    background-color: black;
+    color: #7fffd4;
+}
+@keyframes aparecer{
+    from{
+        opacity: 0;
+    }
+    to{
+    opacity: 1;
+    }
+}
+/* oscurecer fondo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+h1{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
+h1,h2{
+transition:0.3s;
+}
+
+h1:hover,h2:hover{
+letter-spacing:6px;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* logo */
+
+.logo {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: red;
+}
+
+/* navegación */
+
+.navbar{
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #7fffd4;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: white;
+    opacity: 0.6;
+}
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 120px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    color: red;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    color: aquamarine;
+}
+
+/* ============================= */
+/* STORE */
+/* ============================= */
+
+.store {
+    text-align: center;
+    padding: 80px 40px;
+}
+
+.store h2 {
+    color: red;
+    text-shadow: 0 0 10px red;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* línea decorativa */
+
+.linea {
+    width: 80px;
+    height: 2px;
+    background-color: white;
+    margin: 20px auto 40px;
+}
+
+/* ============================= */
+/* PRODUCTOS */
+/* ============================= */
+
+.titulo-productos{
+font-size: 2.5rem;
+margin-bottom: 30px;
+color: white;
+}
+
+.producto-card{
+border: none;
+transition: transform 0.3s, box-shadow 0.3s;
+background: #111;
+color: white;
+}
+
+.producto-card:hover{
+transform: scale(1.05);
+box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.precio{
+font-size: 1.3rem;
+font-weight: bold;
+color: #ff4d6d;
+}
+
+.productos{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.producto{
+    padding:20px;
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:12px;
+    width:220px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
+    transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.7);
+}
+
+/* imagen producto */
+
+.producto img{
+    width:150px;
+    margin-bottom:10px;
+    transition: transform 0.3s;
+}
+
+.producto:hover img{
+    transform: scale(1.1);
+}
+
+/* precio */
+
+.precio{
+    font-size:20px;
+    font-weight:bold;
+    color:#ff4d4d;
+}
+
+/* botón comprar */
+
+.btn-comprar{
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    font-weight: bold;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn-danger:hover{
+    background: #ff4d6d;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.btn-comprar:hover{
+    background:aqua;
+    color:black;
+}
+
+/* ============================= */
+/* CARDS */
+/* ============================= */
+
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+    box-shadow: 0 10 30px rgba(0,0,0,0.5);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+    border-top: 1px solid #00ffff;
+}
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+button{
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+

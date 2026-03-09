@@ -1,3 +1,10 @@
+@import "variables";
+@import "reset";
+@import "base";
+@import "buttons";
+@import "card";
+@import "tours";
+@import "contacto";
 @import 'hero';
 body {
   background: linear-gradient(180deg, #000000, #111111);

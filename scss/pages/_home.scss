@@ -1,0 +1,6 @@
+
+.hero {
+    height: 90vh;
+    @include flex-center;
+    text-align: center;
+}

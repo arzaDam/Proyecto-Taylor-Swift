@@ -1,0 +1,46 @@
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+  }
+}
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.producto {
+  background: $color-card;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 220px;
+  transition: transform 0.3s;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+}
+
+.producto img {
+  width: 150px;
+  transition: transform 0.8s;
+}
+
+.producto img:hover {
+  transform: rotate(360deg);
+}
+.titulo-principal{
+  color: #ff4d4d;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.subtitulo{
+  color: aqua;
+  font-size: 18px;
+}
