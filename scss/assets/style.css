@@ -309,5 +309,12 @@ transition:0.3s;
 button:hover{
 transform:scale(1.05);
 }
+/*================================*/
+/* IMAGENES */
+/*================================*/
+.album-img{
+height:200px;
+object-fit:cover;
+}
 
 
