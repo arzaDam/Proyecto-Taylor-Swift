@@ -45,16 +45,30 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Shadows Into Light', cursive;
     background-color: black;
     color: #7fffd4;
 }
+/* CAPA OSCURA PARA QUE EL TEXTO SE LEA MEJOR*/
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
 @keyframes aparecer{
     from{
         opacity: 0;
+        transform: translateY(20px);
     }
     to{
     opacity: 1;
+    transform: translateY(0);
     }
 }
 /* oscurecer fondo */
@@ -290,6 +304,14 @@ color: #ff4d6d;
 .btn:hover{
     transform: scale(1.05s);
 }
+.col-md-3 img{
+transition: transform 0.4s ease;
+cursor: pointer;
+}
+
+.col-md-3 img:hover{
+transform: scale(1.1) rotate(2deg);
+}
 
 
 /* ============================= */
@@ -298,13 +320,15 @@ color: #ff4d6d;
 
 .card {
     border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s;
+    box-shadow: 0 10 25px rgba(0,0,0,0.7);
+    border-radius: 15px;
+    background: rgba(0,0,0,0.65);
 }
 
 .card:hover {
     transform: translateY(-10px);
-    transition: 0.3s;
-    box-shadow: 0 10 25px rgba(0,0,0,0.7);
+
 }
 
 /* ============================= */
