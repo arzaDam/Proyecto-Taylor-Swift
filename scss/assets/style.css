@@ -335,4 +335,12 @@ transition: transform 0.3s;
 .albun-img:hover{
     transform: scale(1.08);
 }
-
+/*=========================*/
+/*   FONDO DE PANTALLA    */
+/*=======================*/
+.fondo{
+background-image: url("../asset/taylorfondo1.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
