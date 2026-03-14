@@ -84,6 +84,8 @@ letter-spacing:6px;
 /* ============================= */
 
 .header {
+    background: linear-gradient(90deg,#000,#1a1a1a,#000);
+    border-bottom: 2px solid #ff003c;
     position: fixed;
     top: 0;
     width: 100%;
@@ -92,6 +94,9 @@ letter-spacing:6px;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+header p{
+    font-family: 'Shadows Intp light', cursive;
 }
 
 /* logo */
@@ -276,6 +281,16 @@ color: #ff4d6d;
     background:aqua;
     color:black;
 }
+/*===========================*/
+/* BOTONES SE VEAN MEJOR     */
+/*===========================*/
+.btn{
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    transform: scale(1.05s);
+}
+
 
 /* ============================= */
 /* CARDS */
@@ -287,9 +302,9 @@ color: #ff4d6d;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
     transition: 0.3s;
-    box-shadow: 0 10 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10 25px rgba(0,0,0,0.7);
 }
 
 /* ============================= */
@@ -315,6 +330,9 @@ transform:scale(1.05);
 .album-img{
 height:200px;
 object-fit:cover;
+transition: transform 0.3s;
 }
-
+.albun-img:hover{
+    transform: scale(1.08);
+}
 
