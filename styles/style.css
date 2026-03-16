@@ -95,17 +95,30 @@ nav{
     background: rgba(0,0,0,0.85);
     backdrop-filter: blur(6px);
 }
+/* NAVBAR ESTILO OFICIAL  */
 .nav a{
-color:#7fffd4;
+color:white !important;
 text-decoration:none;
-margin:10px;
+margin:0 15px;
+font-weight: 500;
+letter-spacing: 1px;
 transition:0.3s;
 }
 
 .nav a:hover{
 color:white;
 }
+/*  HOVER (MEMOMORIES SELECCIONADO)  */
+.navbar a:hover{
+    color:#ff4d6d !important;
+}
+/* LINK ACTIVO (memories seleccionado)  */
 
+.navbar a.active{
+    color: #ff4d6d !important;
+    border-bottom: 2px solid #ff4d6d;
+    padding-bottom: 5px;
+}
 /* ============================= */
 /* HERO */
 /* ============================= */
