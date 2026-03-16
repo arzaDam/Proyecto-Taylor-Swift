@@ -241,24 +241,29 @@ color: #ff4d6d;
 .producto{
     padding:20px;
     border:1px solid rgba(255,255,255,0.1);
-    border-radius:12px;
-    width:220px;
+    border-radius:15px;
+    width:240px;
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.5);
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
     transition:transform 0.3s, box-shadow 0.3s;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
 }
 
 .producto:hover{
-    transform:translateY(-10px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.7);
+    transform:translateY(-12px)scale(1.03);
+    box-shadow:0 15px 40px rgba(0,0,0,0.9);
 }
 
 /* imagen producto */
 
 .producto img{
-    width:150px;
+    width:160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom:10px;
-    transition: transform 0.3s;
+    transition: transform 0.4s;
 }
 
 .producto:hover img{

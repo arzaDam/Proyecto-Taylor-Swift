@@ -1,11 +1,11 @@
 {
     "version": "0.2.0",
     "configurations": [
-    {
-        "type": "msedge",
-        "request": "launch",
-        "name": "Abrir Taylor Site",
-        "file": "${workspaceFolder}/index.html"
-    }
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Abrir Taylor Site",
+            "file": "${workspaceFolder}/index.html"
+        }
     ]
 }
