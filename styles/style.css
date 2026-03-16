@@ -1,0 +1,190 @@
+/* ============================= */
+/* FUENTES */
+/* ============================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+/* ============================= */
+/* BODY */
+/* ============================= */
+
+body{
+animation: aparecer 1s ease-in;
+min-height:100vh;
+background-image:url("../asset/taylorfondo1.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+font-family:'Shadows Into Light', cursive;
+color:white;
+}
+
+/* capa oscura */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.6);
+z-index:-1;
+}
+
+/* animacion */
+
+@keyframes aparecer{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ============================= */
+/* TITULOS */
+/* ============================= */
+
+h1{
+font-size:3rem;
+letter-spacing:3px;
+color:red;
+}
+
+h2{
+font-size:2rem;
+letter-spacing:2px;
+color:#7fffd4;
+text-shadow:0 0 10px aqua;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header{
+background:linear-gradient(90deg,#000,#1a1a1a,#000);
+border-bottom:2px solid red;
+padding:15px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav a{
+color:#7fffd4;
+text-decoration:none;
+margin:10px;
+transition:0.3s;
+}
+
+.nav a:hover{
+color:white;
+}
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+text-align:center;
+}
+
+/* ============================= */
+/* PRODUCTOS */
+/* ============================= */
+
+.productos{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.producto{
+padding:20px;
+border-radius:15px;
+width:220px;
+text-align:center;
+background:rgba(0,0,0,0.7);
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+transition: transform 0.3s;
+}
+
+.producto:hover{
+transform:translateY(-10px);
+}
+
+.producto img{
+width:150px;
+transition:0.3s;
+}
+
+.producto:hover img{
+transform:scale(1.1);
+}
+
+.precio{
+font-size:20px;
+color:#ff4d4d;
+font-weight:bold;
+}
+
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+
+.btn{
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* ============================= */
+/* CARDS */
+/* ============================= */
+
+.card{
+border:none;
+border-radius:15px;
+background:rgba(0,0,0,0.65);
+box-shadow:0 10px 25px rgba(0,0,0,0.7);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* ============================= */
+/* GALERIA */
+/* ============================= */
+
+.galeria img{
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.7);
+border-radius:10px;
+}
+
+.galeria img:hover{
+transform:scale(1.08);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer{
+border-top:1px solid #00ffff;
+padding:20px;
+text-align:center;
+}
