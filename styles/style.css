@@ -105,9 +105,6 @@ letter-spacing: 1px;
 transition:0.3s;
 }
 
-.nav a:hover{
-color:white;
-}
 /*  HOVER (MEMOMORIES SELECCIONADO)  */
 .navbar a:hover{
     color:#ff4d6d !important;
