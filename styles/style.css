@@ -188,6 +188,19 @@ transition:0.3s;
 .btn:hover{
 transform:scale(1.05);
 }
+.btn-oficial{
+    background: transparent;
+    border: 2px solid var(--verde-agua);
+    color: var(--verde-agua);
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.btn-oficial:hover{
+    background: var(--verde-agua);
+    color: #000;
+}
 
 /* ============================= */
 /* CARDS */
