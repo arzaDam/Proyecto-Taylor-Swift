@@ -8,6 +8,13 @@
 /* BODY */
 /* ============================= */
 
+:root{
+    --verde-agua:#00f5d4;
+    --negro:#0a0a0a;
+    --naranja:#ff7b00
+}
+
+
 body{
 animation: aparecer 1s ease-in;
 min-height:100vh;
@@ -97,7 +104,8 @@ nav{
 }
 /* NAVBAR ESTILO OFICIAL  */
 .nav a{
-color:white !important;
+color:(--verde-agua) !important;
+font-weight: 500;
 text-decoration:none;
 margin:0 15px;
 font-weight: 500;
@@ -107,7 +115,7 @@ transition:0.3s;
 
 /*  HOVER (MEMOMORIES SELECCIONADO)  */
 .navbar a:hover{
-    color:#ff4d6d !important;
+    color:(--naranja) !important;
 }
 /* LINK ACTIVO (memories seleccionado)  */
 
@@ -186,15 +194,31 @@ transform:scale(1.05);
 /* ============================= */
 
 .card{
-border:none;
-border-radius:15px;
-background:rgba(0,0,0,0.65);
-box-shadow:0 10px 25px rgba(0,0,0,0.7);
-transition:0.3s;
+    background: rgba(0,0,0,0.8);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    text-align:center;
 }
 
 .card:hover{
 transform:translateY(-10px);
+}
+.card img{
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.card-title{
+    color:var(--verde-agua)
+}
+.btn-danger{
+    background: var(--naranja);
+    border: none;
+}
+
+.btn-danger:hover{
+    background: #ff5500;
 }
 
 /* ============================= */
