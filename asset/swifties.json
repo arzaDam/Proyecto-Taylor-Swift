@@ -1,0 +1,10 @@
+[
+    { "name": "Valentina M.", "era": "Folklore Era", "country": "Argentina 🇦🇷", "emoji": "🌲" },
+    { "name": "Sofia R.",     "era": "1989 Era",     "country": "Brasil 🇧🇷",    "emoji": "🌊" },
+    { "name": "Camila T.",   "era": "Midnights Era", "country": "Chile 🇨🇱",    "emoji": "🌙" },
+    { "name": "Lucía P.",    "era": "Red Era",        "country": "México 🇲🇽",   "emoji": "🔴" },
+    { "name": "Emma W.",     "era": "Reputation Era", "country": "USA 🇺🇸",     "emoji": "🐍" },
+    { "name": "Isabella F.", "era": "Lover Era",      "country": "Colombia 🇨🇴", "emoji": "🌈" },
+    { "name": "Martina G.",  "era": "Fearless Era",   "country": "Uruguay 🇺🇾",  "emoji": "✨" },
+    { "name": "Ana K.",      "era": "TTPD Era",       "country": "Perú 🇵🇪",    "emoji": "📖" }
+]
