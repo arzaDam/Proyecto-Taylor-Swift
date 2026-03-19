@@ -1,9 +1,0 @@
-.tours-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-
-  @include responsive(mobile) {
-    grid-template-columns: 1fr;
-  }
-}
