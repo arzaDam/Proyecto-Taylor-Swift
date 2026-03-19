@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Taylor Swift</title>
-
+    <title>Official Store - Taylor Swift</title>
     <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -23,18 +23,17 @@
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">Inicio</a>
-
+            <a class="navbar-brand" href="../index.html">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="quienessomos.html">Quiénes Somos</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="producto.html">Producto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="swifties.html">swifties</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="officialstore.html">store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="toursmemories.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="jointhefanclub.html">fanclub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="memories.html">memories</a></li>
                 </ul>
             </div>
         </div>
@@ -44,13 +43,25 @@
     <main class="container mt-5">
 <section class="text-center mb-5">
     <h2 class="text-info">Colección Oficial</h2>
-    <p>
-        Productos exclusivos inspirados en cada era de Taylor Swift.
-    </p>
+    <p>Productos exclusivos inspirados en cada era de Taylor Swift.</p>
 </section>
 
-<section class="row g-4">
+<section class="conteiner mt-5">
+    <!-- filtros -->
+    <div class="store-filter mb-4">
+        <button class="filter-btn active">Todos</button>
+        <button class="filter-btn">Vinilo</button>
+        <button class="filter-btn">Cd</button>
+        <button class="filter-btn">Cassette</button>
+        <button class="filter-btn">Merch</button>
+    </div>
 
+    <!-- PRODUCTOS CARGADOS DESDE JSON -->
+    <div id="producto-conteiner" class="row g-4">
+        <div class="col-12 text-center py-4 text-teal">
+            <i class="fas fa-spin me-2"></i>Cargando productos...
+        </div>
+    </div>
     <!-- VINILO -->
     <article class="col-md-4">
         <div class="card bg-dark text-white h-100">
@@ -138,12 +149,90 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-center p-4 mt-5">
-        <p>© 2026 Fan Page - Taylor Swift</p>
-    </footer>
+<footer class="site-footer">
+    <div class="container">
+    <div class="footer-brand">Taylor Swift</div>
+    <div class="footer-tagline">Fan Page Educativa · The Eras Collection</div>
+    <a href="https://www.taylorswift.com" target="_blank" class="footer-official-btn">
+        <span class="btn-icon">✨</span> Visitar Sitio Oficial
+    </a>
+    <div class="footer-social mb-4">
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+    <hr class="footer-divider">
+    <p class="footer-copy">© 2026 Fan Page Educativa — Taylor Swift</p>
+    </div>
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Filtros
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+    });
+
+    // Productos desde JSON
+    fetch('../asset/products.json')
+    .then(r => r.json())
+    .then(data => {
+        const container = document.getElementById('products-container');
+        container.innerHTML = data.map(p => `
+        <article class="col-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+            <img src="../asset/${p.image}" class="card-img-top" alt="${p.name}">
+            <div class="card-body text-center">
+                <h5 class="card-title">${p.name}</h5>
+                <p class="card-text">${p.era || ''}</p>
+                <p class="card-price">$${p.price} USD</p>
+                <button class="btn-ts-orange mt-2">Comprar</button>
+            </div>
+            </div>
+        </article>
+        `).join('');
+    })
+    .catch(() => {
+        // Fallback con cards estáticas
+        document.getElementById('products-container').innerHTML = `
+        <article class="col-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+            <img src="../asset/vinilotaylor1.png" class="card-img-top" alt="Vinilo">
+            <div class="card-body text-center">
+                <h5 class="card-title">Vinilo — The Eras</h5>
+                <p class="card-price">$45 USD</p>
+                <button class="btn-ts-orange mt-2">Comprar</button>
+            </div>
+            </div>
+        </article>
+        <article class="col-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+            <img src="../asset/cdtaylor1.png" class="card-img-top" alt="CD">
+            <div class="card-body text-center">
+                <h5 class="card-title">CD — Midnights</h5>
+                <p class="card-price">$15 USD</p>
+                <button class="btn-ts-orange mt-2">Comprar</button>
+            </div>
+            </div>
+        </article>
+        <article class="col-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+            <img src="../asset/casettetaylor1.png" class="card-img-top" alt="Cassette">
+            <div class="card-body text-center">
+                <h5 class="card-title">Cassette — Folklore</h5>
+                <p class="card-price">$5 USD</p>
+                <button class="btn-ts-orange mt-2">Comprar</button>
+            </div>
+            </div>
+        </article>
+        `;
+    });
+</script>
 
 </body>
 </html>
