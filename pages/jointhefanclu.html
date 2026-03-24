@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join The Fan Club - Taylor Swift</title>
+
+    <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/style.css">
+
+
+
+
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- HEADER -->
+    <header class="text-center p-4 bg-black">
+        <h1 class="text-danger">Taylor Swift</h1>
+        <p class="text-info">The Eras Collection</p>
+    </header>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Inicio</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="jointhefanclub.html">Join The Fan Club</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oficialstore.html">Official Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="toursmemories.html">Tours & Memories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="swifties.html">Swifties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="memories.html">Memories</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="container mt-5">
+
+        <section class="text-center mb-5">
+            <h2 class="text-info">Sobre la artista</h2>
+        </section>
+
+        <section class="row align-items-center">
+
+            <!-- Imagen -->
+            <article class="col-md-6">
+                <img src="../asset/taylorfondo1.jpg" class="img-fluid rounded" alt="Taylor Swift">
+            </article>
+
+            <!-- Texto -->
+            <article class="col-md-6">
+                <p>
+                    Esta fan page está dedicada a 
+                    :contentReference[oaicite:0]{index=0},
+                    una de las artistas más influyentes de su generación.
+                </p>
+
+                <p>
+                    Su carrera comenzó en el country y evolucionó hacia el pop y el indie,
+                    consolidándose como una referente mundial de la música contemporánea.
+                </p>
+
+                <p>
+                    Cada “era” representa una etapa artística distinta,
+                    tanto en lo musical como en lo visual y conceptual.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- Sección misión -->
+        <section class="mt-5 text-center">
+            <h3 class="text-danger">Nuestra Misión</h3>
+            <p>
+                Crear un espacio digital donde los fans puedan explorar
+                su música, giras y productos oficiales en una experiencia
+                visual moderna y organizada.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-center p-4 mt-5">
+        <p>© 2026 Fan Page - Taylor Swift</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<!-- ══ FONDO ROTATIVO ══ -->
+<div id="bgSlider">
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag1.jpg')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag2.jpg')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag3.jpg')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag4.jpg')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag5.jpg')"></div>
+</div>
+<div class="bg-dots" id="bgDots">
+  <div class="bg-dot active" onclick="setBg(0)"></div>
+  <div class="bg-dot" onclick="setBg(1)"></div>
+  <div class="bg-dot" onclick="setBg(2)"></div>
+  <div class="bg-dot" onclick="setBg(3)"></div>
+  <div class="bg-dot" onclick="setBg(4)"></div>
+</div>
+
+<!-- ══ REPRODUCTOR ══ -->
+<div id="tsPlayer">
+  <div class="player-song" id="pSong">Cargando...</div>
+  <div class="player-artist">Taylor Swift · The Eras Collection</div>
+  <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
+    <div class="player-bar-fill" id="pBar"></div>
+  </div>
+  <div class="player-controls">
+    <button class="player-btn" onclick="prevSong()" title="Anterior">&#9664;&#9664;</button>
+    <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
+    <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
+    <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7"
+           oninput="setVol(this.value)" title="Volumen">
+  </div>
+</div>
+
+<script>
+/* ══ CANCIONES — CAMBIÁ LAS RUTAS AQUÍ ══
+   Agregá tus archivos .mp3 en la carpeta asset/
+   y actualizá esta lista con los nombres correctos.
+   Ejemplo: si tenés "cruel_summer.mp3" en asset/,
+   poné src: "../asset/cruel_summer.mp3"
+   ════════════════════════════════════════════ */
+var songs = [
+  { title: "Song 1 — agregá tu mp3",   src: "../asset/song1.mp3"   },
+  { title: "Song 2 — agregá tu mp3",   src: "../asset/song2.mp3"   },
+  { title: "Song 3 — agregá tu mp3",   src: "../asset/song3.mp3"   },
+];
+/* Si solo tenés un archivo, usá:
+   { title: "The Eras Collection", src: "../asset/tayloralbum.mp3" }
+*/
+
+var si = 0, audio = new Audio(), playing = false;
+
+function loadSong(i) {
+  si = (i + songs.length) % songs.length;
+  audio.src = songs[si].src;
+  document.getElementById('pSong').textContent = songs[si].title;
+  document.getElementById('pBar').style.width = '0%';
+  if (playing) { audio.play().catch(function(){}); }
+}
+function togglePlay() {
+  if (playing) {
+    audio.pause();
+    document.getElementById('pPlayBtn').innerHTML = '&#9654;';
+    document.getElementById('pPlayBtn').classList.remove('playing');
+  } else {
+    audio.play().catch(function(){});
+    document.getElementById('pPlayBtn').innerHTML = '&#9646;&#9646;';
+    document.getElementById('pPlayBtn').classList.add('playing');
+  }
+  playing = !playing;
+}
+function prevSong() { loadSong(si - 1); }
+function nextSong() { loadSong(si + 1); }
+function setVol(v) { audio.volume = v; }
+function seekAudio(e) {
+  var w = document.getElementById('pBarWrap').offsetWidth;
+  audio.currentTime = (e.offsetX / w) * audio.duration;
+}
+audio.addEventListener('timeupdate', function() {
+  if (audio.duration) {
+    document.getElementById('pBar').style.width = ((audio.currentTime / audio.duration) * 100) + '%';
+  }
+});
+audio.addEventListener('ended', function() { nextSong(); });
+audio.volume = 0.7;
+loadSong(0);
+
+/* ══ FONDO ROTATIVO ══ */
+var bgIdx = 0, bgSlides, bgDots;
+window.addEventListener('DOMContentLoaded', function() {
+  bgSlides = document.querySelectorAll('.bg-slide');
+  bgDots   = document.querySelectorAll('.bg-dot');
+  bgSlides[0].classList.add('active');
+  setInterval(function() {
+    setBg((bgIdx + 1) % bgSlides.length);
+  }, 6000);
+});
+function setBg(i) {
+  if (bgSlides) {
+    bgSlides[bgIdx].classList.remove('active');
+    bgDots[bgIdx].classList.remove('active');
+    bgIdx = i;
+    bgSlides[bgIdx].classList.add('active');
+    bgDots[bgIdx].classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>

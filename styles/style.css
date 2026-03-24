@@ -1,578 +1,498 @@
-/* ============================================
-    TAYLOR SWIFT - THE ERAS COLLECTION
-    Paleta: Verde Agua (#2ECEC7) | Negro (#0A0A0A) | Naranja (#FF6B2B)
-    UN SOLO CSS para todo el proyecto
-   ============================================ */
+/* ================================================================
+   TAYLOR SWIFT — OPCIÓN 2
+   Imagen visible · Overlay crema suave · Glass blanco
+   ================================================================ */
 
-/* ---- VARIABLES ---- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Shadows+Into+Light&family=Lato:wght@300;400;700&display=swap');
+
 :root {
-    --teal:       #2ECEC7;
-    --teal-dark:  #1A9B95;
-    --teal-light: #7EEAE6;
-    --orange:     #FF6B2B;
-    --orange-dark:#D94E12;
-    --black:      #0A0A0A;
-    --black-2:    #111111;
-    --black-3:    #1A1A1A;
-    --black-4:    #222222;
-    --white:      #F5F5F5;
-    --grey:       #888888;
-    --card-bg:    #141414;
-    --border:     rgba(46,206,199,0.25);
-    --shadow:     0 4px 24px rgba(46,206,199,0.15);
-    --font-title: 'Shadows Into Light', cursive;
-    --font-body:  'Segoe UI', system-ui, sans-serif;
+  --teal:      #2ECEC7;
+  --teal-d:    #1A9B95;
+  --teal-l:    #7EEAE6;
+  --orange:    #FF6B35;
+  --orange-d:  #d94e12;
+  --border:    rgba(46,206,199,0.35);
+  /* Glass blanco — la imagen de Taylor se ve detrás */
+  --glass-nav:  rgba(255,255,255,0.22);
+  --glass-card: rgba(255,255,255,0.18);
+  --glass-foot: rgba(255,255,255,0.25);
 }
 
-/* ---- RESET / BASE ---- */
+/* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
 body {
-    background-color: var(--black);
-    color: var(--white);
-    font-family: var(--font-body);
-    line-height: 1.6;
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  background: #0a3836;   /* fallback si no cargan las imgs */
+  color: #fff;
 }
-
 a { text-decoration: none; color: inherit; }
-
-img { max-width: 100%; height: auto; display: block; }
-
-/* ---- SCROLLBAR ---- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--black-2); }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); }
 ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
 
-/* ---- HEADER ---- */
-.site-header {
-    background: var(--black-2);
-    border-bottom: 2px solid var(--teal);
-    padding: 1.5rem 0 0;
-    text-align: center;
+/* ================================================================
+   FONDO ROTATIVO
+   Imagen de Taylor SE VE COMPLETA — overlay crema mínimo
+================================================================ */
+#bgSlider {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+#bgSlider .bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+#bgSlider .bg-slide.active { opacity: 1; }
+
+/* Overlay crema suave — solo 20%, Taylor se ve clara */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 245, 230, 0.20);
+  pointer-events: none;
 }
 
-.site-header h1 {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    color: var(--teal);
-    letter-spacing: 2px;
-    text-shadow: 0 0 20px rgba(46,206,199,0.5);
+body > *:not(#bgSlider) { position: relative; z-index: 1; }
+
+@media (max-width: 768px) {
+  #bgSlider .bg-slide { background-attachment: scroll; }
 }
 
-.site-header .subtitle {
-    color: var(--orange);
-    font-size: 1rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+/* ================================================================
+   TIPOGRAFÍA
+================================================================ */
+h1 {
+  font-family: 'Shadows Into Light', cursive !important;
+  font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+  letter-spacing: 3px !important;
+}
+h2, h3 { font-family: 'Playfair Display', serif !important; letter-spacing: 2px !important; }
+h4, h5, h6 { font-family: 'Playfair Display', serif !important; }
+p, label, input, textarea, select { font-family: 'Lato', sans-serif !important; }
+
+/* ================================================================
+   HEADER — glass blanco
+================================================================ */
+header {
+  background: var(--glass-nav) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.45) !important;
+  padding: 1.2rem 1rem !important;
+}
+header h1 {
+  font-family: 'Shadows Into Light', cursive !important;
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55) !important;
+}
+header p {
+  color: var(--orange) !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4) !important;
 }
 
-/* ---- NAVBAR ---- */
-.navbar {
-    background: var(--black-3) !important;
-    border-top: 1px solid var(--border);
+/* ================================================================
+   NAVBAR — glass blanco translúcido
+================================================================ */
+.navbar,
+.navbar.bg-dark,
+nav.navbar {
+  background: var(--glass-nav) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.40) !important;
 }
-
 .navbar-brand {
-    color: var(--teal) !important;
-    font-family: var(--font-title);
-    font-size: 1.3rem;
-    letter-spacing: 1px;
+  font-family: 'Shadows Into Light', cursive !important;
+  font-size: 1.5rem !important;
+  color: #fff !important;
+  letter-spacing: 2px !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45) !important;
 }
-
-.navbar-brand:hover { color: var(--orange) !important; }
-
+.navbar-brand:hover { color: var(--teal-l) !important; }
 .nav-link {
-    color: var(--white) !important;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem !important;
-    transition: color 0.2s, border-bottom 0.2s;
-    border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.90) !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.40) !important;
+  border-bottom: 2px solid transparent !important;
+  padding-bottom: 3px !important;
+  transition: all 0.2s !important;
 }
-
 .nav-link:hover,
 .nav-link.active {
-    color: var(--teal) !important;
-    border-bottom: 2px solid var(--teal);
+  color: #fff !important;
+  border-bottom-color: var(--teal) !important;
 }
+.navbar-toggler { border-color: rgba(255,255,255,0.55) !important; }
+.navbar-toggler-icon { filter: brightness(0) invert(1) !important; }
 
-.navbar-toggler { border-color: var(--teal); }
-.navbar-toggler-icon { filter: invert(70%) sepia(50%) saturate(400%) hue-rotate(140deg); }
+/* ================================================================
+   TÍTULOS
+================================================================ */
+.text-danger { color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.5) !important; }
+.text-info   { color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.5) !important; }
 
-/* ---- HERO SECTION ---- */
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 3rem 1rem;
+/* ================================================================
+   CARDS — glass blanco translúcido
+================================================================ */
+.card,
+.card.bg-dark,
+div.card {
+  background: var(--glass-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,0.45) !important;
+  border-radius: 14px !important;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s !important;
+  color: #fff !important;
+  overflow: hidden !important;
 }
-
-.hero-section img {
-    width: 100%;
-    max-height: 480px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid var(--border);
-    box-shadow: var(--shadow);
-    margin: 0 auto;
-}
-
-.hero-section h2 {
-    font-family: var(--font-title);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    color: var(--teal);
-    margin-top: 1.5rem;
-}
-
-/* ---- SECTION TITLES ---- */
-.section-title {
-    font-family: var(--font-title);
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    color: var(--teal);
-    text-align: center;
-    margin-bottom: 2rem;
-    letter-spacing: 2px;
-    position: relative;
-    padding-bottom: 0.75rem;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--orange);
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
-}
-
-/* ---- CARDS ---- */
-.card {
-    background: var(--card-bg) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 12px !important;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(46,206,199,0.2);
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25) !important;
+  border-color: rgba(255,255,255,0.70) !important;
 }
-
 .card-img-top {
-    height: 220px;
-    object-fit: cover;
-    background: var(--black-3);
+  height: 220px !important;
+  object-fit: cover !important;
+  transition: transform 0.4s !important;
 }
-
-.card-body { padding: 1.25rem; }
-
+.card:hover .card-img-top { transform: scale(1.04) !important; }
 .card-title {
-    color: var(--white) !important;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif !important;
+  color: #fff !important;
+  font-size: 1.05rem !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35) !important;
+}
+.card-body { padding: 1.2rem !important; }
+.card-body p { color: rgba(255,255,255,0.82) !important; font-size: 0.87rem !important; }
+.fw-bold { color: var(--orange) !important; font-size: 1.05rem !important; text-shadow: 0 1px 4px rgba(0,0,0,0.3) !important; }
+
+/* ================================================================
+   BOTONES
+================================================================ */
+.btn-danger {
+  background: var(--teal) !important;
+  border-color: var(--teal) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+  letter-spacing: 1px !important;
+  font-family: 'Lato', sans-serif !important;
+  transition: all 0.25s !important;
+}
+.btn-danger:hover {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: var(--teal-d) !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25) !important;
+}
+.btn-info {
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+  letter-spacing: 1px !important;
+  font-family: 'Lato', sans-serif !important;
+  transition: all 0.25s !important;
+}
+.btn-info:hover {
+  background: #fff !important;
+  color: var(--orange-d) !important;
+  transform: scale(1.05) !important;
+}
+.btn-outline-light {
+  border-color: rgba(255,255,255,0.80) !important;
+  color: #fff !important;
+  border-radius: 30px !important;
+  font-weight: 700 !important;
+  transition: all 0.25s !important;
+}
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.25) !important;
+  color: #fff !important;
+  transform: scale(1.05) !important;
+}
+.btn-primary {
+  background: var(--teal) !important;
+  border-color: var(--teal) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+}
+.btn-primary:hover {
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
 }
 
-.card-text {
-    color: var(--grey) !important;
-    font-size: 0.875rem;
+/* ================================================================
+   FORMULARIOS — glass blanco
+================================================================ */
+.form-control,
+.form-select {
+  background: rgba(255,255,255,0.20) !important;
+  border: 1px solid rgba(255,255,255,0.50) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+.form-control:focus,
+.form-select:focus {
+  background: rgba(255,255,255,0.30) !important;
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 3px rgba(46,206,199,0.25) !important;
+}
+.form-control::placeholder { color: rgba(255,255,255,0.55) !important; }
+.form-label {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35) !important;
+}
+form.bg-dark {
+  background: var(--glass-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,0.40) !important;
+  border-radius: 14px !important;
 }
 
-.card-price {
-    color: var(--orange) !important;
-    font-size: 1.1rem;
-    font-weight: 700;
+/* ================================================================
+   FOOTER — glass blanco
+================================================================ */
+footer,
+footer.bg-dark {
+  background: var(--glass-foot) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-top: 1px solid rgba(255,255,255,0.40) !important;
+}
+footer p {
+  color: rgba(255,255,255,0.75) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3) !important;
 }
 
-/* ---- DISCOGRAFIA GRID ---- */
-.discography-grid img {
-    border-radius: 10px;
-    border: 2px solid transparent;
-    transition: border-color 0.3s, transform 0.3s;
-    cursor: pointer;
+/* ================================================================
+   IMAGEN HERO
+================================================================ */
+.img-fluid.rounded {
+  border: 2px solid rgba(255,255,255,0.50) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.30) !important;
 }
 
-.discography-grid img:hover {
-    border-color: var(--teal);
-    transform: scale(1.04);
+/* ================================================================
+   REPRODUCTOR FLOTANTE — glass blanco
+================================================================ */
+#tsPlayer {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 255px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+  animation: playerFloat 4s ease-in-out infinite;
+}
+@keyframes playerFloat {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+#tsPlayer:hover { animation-play-state: paused; }
+
+.player-song {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 0.82rem;
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.player-artist {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.70);
+  margin-bottom: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.player-bar-wrap {
+  width: 100%; height: 3px;
+  background: rgba(255,255,255,0.30);
+  border-radius: 3px; margin-bottom: 0.65rem;
+  cursor: pointer;
+}
+.player-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--teal), var(--orange));
+  border-radius: 3px; width: 0%;
+  transition: width 0.5s linear;
+  pointer-events: none;
+}
+.player-controls {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 0.35rem;
+}
+.player-btn {
+  background: none; border: none;
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem; cursor: pointer;
+  padding: 0.2rem 0.35rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+.player-btn:hover { color: #fff; background: rgba(255,255,255,0.20); }
+.player-btn.play-main {
+  background: var(--teal);
+  color: #000; border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(46,206,199,0.50);
+}
+.player-btn.play-main:hover { background: var(--orange); color: #fff; }
+.player-btn.play-main.playing { background: var(--orange); color: #fff; }
+.player-vol {
+  -webkit-appearance: none; appearance: none;
+  width: 52px; height: 3px;
+  background: rgba(255,255,255,0.30);
+  border-radius: 3px; cursor: pointer; outline: none;
+}
+.player-vol::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 10px; height: 10px;
+  border-radius: 50%; background: #fff; cursor: pointer;
 }
 
-/* ---- BUTTONS ---- */
-.btn-ts-primary {
-    background: var(--teal);
-    color: var(--black);
-    border: none;
-    border-radius: 6px;
-    padding: 0.5rem 1.25rem;
-    font-weight: 700;
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: background 0.2s, transform 0.2s;
-    cursor: pointer;
+/* ── DOTS del fondo ── */
+.bg-dots {
+  position: fixed; bottom: 1.5rem; left: 50%;
+  transform: translateX(-50%); z-index: 9998;
+  display: flex; gap: 6px;
+}
+.bg-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(255,255,255,0.60);
+  cursor: pointer; transition: all 0.3s;
+}
+.bg-dot.active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.3);
 }
 
-.btn-ts-primary:hover {
-    background: var(--teal-dark);
-    transform: scale(1.04);
-    color: var(--black);
-}
-
-.btn-ts-orange {
-    background: var(--orange);
-    color: var(--white);
-    border: none;
-    border-radius: 6px;
-    padding: 0.5rem 1.25rem;
-    font-weight: 700;
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: background 0.2s, transform 0.2s;
-    cursor: pointer;
-}
-
-.btn-ts-orange:hover {
-    background: var(--orange-dark);
-    transform: scale(1.04);
-    color: var(--white);
-}
-
-.btn-ts-outline {
-    background: transparent;
-    color: var(--teal);
-    border: 2px solid var(--teal);
-    border-radius: 6px;
-    padding: 0.5rem 1.25rem;
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: all 0.2s;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.btn-ts-outline:hover {
-    background: var(--teal);
-    color: var(--black);
-}
-
-/* ---- FOOTER ---- */
-.site-footer {
-    background: var(--black-2);
-    border-top: 2px solid var(--teal);
-    padding: 3rem 0 1.5rem;
-    margin-top: 4rem;
-    text-align: center;
-}
-
-.footer-brand {
-    font-family: var(--font-title);
-    font-size: 1.8rem;
-    color: var(--teal);
-    margin-bottom: 0.25rem;
-}
-
-.footer-tagline {
-    color: var(--grey);
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-}
-
-.footer-official-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-    color: var(--black);
-    font-weight: 800;
-    font-size: 0.95rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 0.85rem 2rem;
-    border-radius: 50px;
-    border: 2px solid var(--teal-light);
-    margin-bottom: 2rem;
-    transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(46,206,199,0.35);
-}
-
-.footer-official-btn:hover {
-    background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-    border-color: var(--orange);
-    color: var(--white);
-    box-shadow: 0 6px 28px rgba(255,107,43,0.45);
-    transform: translateY(-2px);
-}
-
-.footer-official-btn .btn-icon { margin-right: 0.4rem; }
-
-.footer-social a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    color: var(--white);
-    font-size: 1.1rem;
-    margin: 0.25rem;
-    transition: all 0.2s;
-}
-
-.footer-social a:hover { border-color: var(--orange); color: var(--orange); }
-
-.footer-newsletter label {
-    color: var(--teal);
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.75rem;
-}
-
-.footer-newsletter .input-group {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.footer-newsletter input {
-    background: var(--black-3) !important;
-    border: 1px solid var(--border) !important;
-    color: var(--white) !important;
-    border-radius: 6px 0 0 6px !important;
-}
-
-.footer-newsletter input::placeholder { color: var(--grey); }
-.footer-newsletter input:focus { box-shadow: 0 0 0 2px rgba(46,206,199,0.3); outline: none; }
-
-.footer-divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 1.5rem 0 1rem;
-}
-
-.footer-copy {
-    color: var(--grey);
-    font-size: 0.78rem;
-    letter-spacing: 1px;
-}
-
-/* ---- PAGE BANNERS ---- */
-.page-banner {
-    background: linear-gradient(135deg, var(--black-3) 0%, var(--black-2) 100%);
-    border-bottom: 2px solid var(--border);
-    text-align: center;
-    padding: 3rem 1rem;
-}
-
-.page-banner h1 {
-    font-family: var(--font-title);
-    color: var(--teal);
-    font-size: clamp(2rem, 5vw, 3rem);
-}
-
-.page-banner p {
-    color: var(--grey);
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-}
-
-/* ---- SWIFTIES COMMUNITY ---- */
-.community-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.community-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow);
-}
-
-.community-card .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid var(--teal);
-    object-fit: cover;
-    margin: 0 auto 1rem;
-}
-
-.community-card h5 { color: var(--teal); margin-bottom: 0.25rem; }
-.community-card .era-badge {
-    display: inline-block;
-    background: var(--orange);
-    color: var(--white);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    text-transform: uppercase;
-}
-
-/* ---- STORE ---- */
-.store-filter {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--grey);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--teal);
-    color: var(--black);
-    border-color: var(--teal);
-}
-
-/* ---- TOUR PAGE ---- */
-.tour-item {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-    transition: border-color 0.2s;
-}
-
-.tour-item:hover { border-color: var(--teal); }
-
-.tour-date {
-    background: var(--orange);
-    color: var(--white);
-    border-radius: 8px;
-    padding: 0.5rem 0.8rem;
-    text-align: center;
-    min-width: 60px;
-    font-weight: 700;
-}
-
-.tour-date .day { font-size: 1.5rem; line-height: 1; }
-.tour-date .month { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
-
-.tour-info h5 { color: var(--white); margin-bottom: 0.2rem; }
-.tour-info p { color: var(--grey); font-size: 0.85rem; margin: 0; }
-
-/* ---- FAN CLUB ---- */
-.plan-card {
-    background: var(--card-bg);
-    border: 2px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-.plan-card:hover,
-.plan-card.featured {
-    border-color: var(--teal);
-    box-shadow: var(--shadow);
-}
-
-.plan-card.featured::before {
-    content: '★ MÁS POPULAR';
-    position: absolute;
-    top: 12px; right: -28px;
-    background: var(--orange);
-    color: var(--white);
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    padding: 0.3rem 2.5rem;
-    transform: rotate(35deg);
-}
-
-.plan-price {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--teal);
-    line-height: 1;
-}
-
-.plan-price span { font-size: 1rem; color: var(--grey); }
-
-.plan-features { list-style: none; text-align: left; margin: 1.5rem 0; }
-.plan-features li { padding: 0.4rem 0; border-bottom: 1px solid var(--border); color: var(--grey); font-size: 0.875rem; }
-.plan-features li::before { content: '✦ '; color: var(--teal); }
-
-/* ---- MEMORIES / GALLERY ---- */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1rem;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    aspect-ratio: 4/3;
-}
-
-.gallery-item img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s;
-}
-
-.gallery-item:hover img { transform: scale(1.08); }
-
-.gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.85), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem;
-}
-
-.gallery-item:hover .gallery-overlay { opacity: 1; }
-.gallery-overlay p { color: var(--white); font-size: 0.85rem; margin: 0; }
-
-/* ---- UTILITIES ---- */
-.text-teal  { color: var(--teal) !important; }
-.text-orange { color: var(--orange) !important; }
-.bg-ts      { background: var(--black-2) !important; }
-
-/* ---- RESPONSIVE ---- */
+/* ================================================================
+   RESPONSIVE MÓVIL
+================================================================ */
 @media (max-width: 768px) {
-    .tour-item { flex-direction: column; align-items: flex-start; }
-    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .navbar-brand { font-size: 1.2rem !important; }
+  .nav-link { font-size: 0.72rem !important; padding: 0.4rem 0.5rem !important; }
+  header h1 { font-size: 1.9rem !important; }
+  header p  { font-size: 0.72rem !important; }
+  #tsPlayer { width: 200px !important; right: 0.7rem !important; bottom: 0.7rem !important; }
+  .player-song { font-size: 0.70rem !important; }
+  .bg-dots { bottom: 5.5rem !important; }
+  .w-50 { width: 100% !important; }
+  form.w-50 { width: 100% !important; }
+  .col-md-4, .col-md-6, .col-md-3 { margin-bottom: 1rem; }
 }
+@media (max-width: 480px) {
+  #tsPlayer { width: 175px !important; }
+  .player-vol { display: none !important; }
+}
+
+/* ================================================================
+   ACCESIBILIDAD + CONTRASTE + FOCO
+================================================================ */
+
+/* Skip to content — accesibilidad teclado */
+#skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--teal);
+  color: #000;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 99999;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+#skip-link:focus { top: 0; }
+
+/* Foco visible para navegación por teclado */
+.keyboard-nav *:focus {
+  outline: 3px solid var(--teal) !important;
+  outline-offset: 3px !important;
+}
+.keyboard-nav .player-btn:focus,
+.keyboard-nav .like-btn:focus,
+.keyboard-nav .btn-danger:focus,
+.keyboard-nav .btn-info:focus {
+  outline: 3px solid #fff !important;
+  outline-offset: 2px !important;
+}
+
+/* Formularios — errores de validación */
+.form-error {
+  background: rgba(230,57,70,0.18);
+  border: 1px solid rgba(230,57,70,0.55);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  color: #fff;
+  font-size: 0.82rem;
+  margin-bottom: 0.85rem;
+  display: none;
+}
+.form-field-error {
+  border-color: rgba(230,57,70,0.70) !important;
+}
+.form-field-ok {
+  border-color: rgba(46,206,199,0.60) !important;
+}
+
+/* Contraste mínimo WCAG AA — texto sobre glass blanco */
+.card-body p,
+.card-body small { color: rgba(255,255,255,0.88) !important; }
+footer p          { color: rgba(255,255,255,0.80) !important; }
+.nav-link         { text-shadow: 0 1px 6px rgba(0,0,0,0.55) !important; }
+
+/* ARIA live regions */
+#sr-announcer { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+/* Botones — tamaño mínimo accesible 44x44px */
+.btn-danger, .btn-info, .btn-primary {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+.like-btn   { min-height: 36px !important; }
+.player-btn { min-height: 36px !important; min-width: 36px !important; }
