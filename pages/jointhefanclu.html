@@ -1,117 +1,488 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join The Fan Club - Taylor Swift</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join The Fan Club — Comunidad Swiftie | Taylor Swift Fan Page</title>
 
-    <!-- Bootstrap -->
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- SEO -->
+  <meta name="description" content="Sumate a la comunidad Swiftie. Conocé más sobre Taylor Swift, su carrera y nuestra misión como fans en Argentina y Latinoamérica.">
+  <meta name="keywords"    content="Taylor Swift fan club, Swifties Argentina, comunidad Taylor Swift, fan page Taylor Swift">
+  <meta name="author"      content="Taylor Swift Fan Page">
+  <meta name="robots"      content="index, follow">
+  <link rel="canonical"    href="https://tusitio.com/pages/jointhefanclub.html">
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Join The Fan Club — Taylor Swift">
+  <meta property="og:description" content="Sumate a la comunidad Swiftie más grande de Latinoamérica.">
+  <meta property="og:image"       content="https://tusitio.com/asset/taylorpag3.jpg">
+  <meta property="og:locale"      content="es_AR">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="Join The Fan Club — Taylor Swift">
+  <meta name="twitter:image"      content="https://tusitio.com/asset/taylorpag3.jpg">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../styles/style.css">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Shadows+Into+Light&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/style.css">
+  <script src="../security.js"></script>
 
+  <style>
+    /* ── ERAS GRID ── */
+    .eras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
 
+    .era-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.35s, box-shadow 0.35s;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: flex-end;
+    }
+    .era-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 20px 48px rgba(0,0,0,0.55); }
 
+    .era-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+    }
 
+    /* Cada era tiene su color propio */
+    .era-taylor   { background: linear-gradient(135deg, #c8a45a, #8b6914); }
+    .era-fearless { background: linear-gradient(135deg, #d4a843, #7a5c10); }
+    .era-speaknow { background: linear-gradient(135deg, #8b5cf6, #4c1d95); }
+    .era-red      { background: linear-gradient(135deg, #dc2626, #7f1d1d); }
+    .era-1989     { background: linear-gradient(135deg, #60a5fa, #1e3a8a); }
+    .era-rep      { background: linear-gradient(135deg, #374151, #111827); }
+    .era-lover    { background: linear-gradient(135deg, #f472b6, #be185d); }
+    .era-folklore { background: linear-gradient(135deg, #9ca3af, #374151); }
+    .era-evermore { background: linear-gradient(135deg, #92400e, #451a03); }
+    .era-midnights{ background: linear-gradient(135deg, #1e1b4b, #312e81); }
+    .era-ttpd     { background: linear-gradient(135deg, #d1d5db, #4b5563); }
+
+    /* Pattern overlay para darle textura */
+    .era-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 4px,
+        rgba(255,255,255,0.03) 4px, rgba(255,255,255,0.03) 5px
+      );
+      z-index: 1;
+    }
+
+    /* Overlay degradado abajo */
+    .era-overlay {
+      position: absolute; inset: 0; z-index: 2;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.10) 55%, transparent 100%);
+    }
+
+    /* Emoji grande centrado */
+    .era-emoji {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -60%);
+      font-size: 3rem;
+      z-index: 3;
+      transition: transform 0.35s;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    }
+    .era-card:hover .era-emoji { transform: translate(-50%, -65%) scale(1.15); }
+
+    /* Info abajo */
+    .era-info {
+      position: relative; z-index: 4;
+      padding: 0.85rem 0.9rem 0.8rem;
+      width: 100%;
+    }
+    .era-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: #fff; line-height: 1.1;
+      margin-bottom: 0.15rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .era-year {
+      font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .era-song {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.15rem;
+      font-style: italic;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* ── SOBRE TAYLOR ── */
+    .about-block {
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.30);
+      border-radius: 16px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2rem;
+    }
+    .about-block p {
+      color: rgba(255,255,255,0.82) !important;
+      font-size: 0.95rem !important;
+      line-height: 1.85 !important;
+      margin-bottom: 1rem;
+    }
+    .about-block p:last-child { margin-bottom: 0; }
+
+    /* ── STATS ── */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.85rem;
+      margin-bottom: 3rem;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 12px;
+      padding: 1.1rem 0.75rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .stat-box:hover { transform: translateY(-4px); border-color: rgba(46,206,199,0.55); }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      color: #2ECEC7; line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .stat-num.orange { color: #FF6B35; }
+    .stat-lbl {
+      font-size: 0.60rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── MISIÓN ── */
+    .mision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .mision-card {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 14px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .mision-card:hover { transform: translateY(-5px); border-color: rgba(46,206,199,0.50); }
+    .mision-icon { font-size: 2.2rem; margin-bottom: 0.85rem; display: block; }
+    .mision-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      color: #fff; margin-bottom: 0.5rem;
+    }
+    .mision-text { font-size: 0.82rem; color: rgba(255,255,255,0.62); line-height: 1.6; }
+
+    /* Titles */
+    .sec-eyebrow {
+      font-size: 0.60rem; font-weight: 700;
+      letter-spacing: 5px; text-transform: uppercase;
+      color: #2ECEC7; margin-bottom: 0.4rem; display: block;
+    }
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem,3.5vw,2.4rem);
+      color: #fff; font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      margin-bottom: 0.3rem;
+    }
+    .sec-line {
+      width: 44px; height: 3px; border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white">
 
-    <!-- HEADER -->
-    <header class="text-center p-4 bg-black">
-        <h1 class="text-danger">Taylor Swift</h1>
-        <p class="text-info">The Eras Collection</p>
-    </header>
+<!-- Skip link accesibilidad — oculto visualmente hasta Tab -->
+<a id="skip-link" href="#main-content">Saltar al contenido</a>
 
-    <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">home</a>
+<!-- HEADER -->
+<header class="text-center p-4 bg-black">
+  <h1 class="text-danger">Taylor Swift</h1>
+  <p class="text-info">The Eras Collection</p>
+</header>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Navegación principal">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active"  href="pages/jointhefanclub.html">jointhefanclub</a></li>
+        <li class="nav-item"><a class="nav-link"         href="pages/oficialstore.html">store</a></li>
+        <li class="nav-item"><a class="nav-link"         href="pages/toursmemories.html">Tours & Memories</a></li>
+        <li class="nav-item"><a class="nav-link"         href="pages/swifties.html">swifties</a></li>
+        <li class="nav-item"><a class="nav-link"         href="pages/memories.html">memories</a></li>
+        <li class="nav-item"><a class="nav-link"         href="pages/fans.html">fans</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="jointhefanclub.html">jointhefanclub</a></li>
-                    <li class="nav-item"><a class="nav-link" href="oficialstore.html">store</a></li>
-                    <li class="nav-item"><a class="nav-link" href="toursmemories.html">toursmemories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="swifties.html">swifties</a></li>
-                    <li class="nav-item"><a class="nav-link" href="memories.html">memories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="fan.html">fan</a></li>
-                </ul>
-            </div>
+<!-- MAIN -->
+<main id="main-content" role="main" class="container mt-5 pb-5">
+
+  <!-- SOBRE TAYLOR -->
+  <section class="mb-5">
+    <span class="sec-eyebrow">✦ La Artista · Su Historia</span>
+    <h2 class="sec-title">Sobre <em style="color:#7EEAE6">Taylor Swift</em></h2>
+    <div class="sec-line" style="background:#2ECEC7"></div>
+
+    <div class="about-block">
+      <p>
+        Esta fan page está dedicada a <strong>Taylor Swift</strong>, una de las artistas más influyentes de su generación. Nacida el 13 de diciembre de 1989 en Pennsylvania, Estados Unidos, comenzó su carrera en el country a los 16 años y evolucionó hacia el pop, el indie y el folk, consolidándose como la artista más grande de su época.
+      </p>
+      <p>
+        Ganadora de 14 Grammy Awards, incluyendo Álbum del Año en cuatro ocasiones distintas — un récord sin precedentes. The Eras Tour (2023-2024) fue el tour más taquillero de la historia con más de <strong style="color:#2ECEC7">$2 billones recaudados</strong> y 149 shows en 5 continentes.
+      </p>
+      <p>
+        Cada "era" representa una etapa artística única — tanto en lo musical como en lo visual, conceptual y emocional. Desde el country dorado de Fearless hasta la poesía oscura de TTPD, cada álbum es un universo completo.
+      </p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-num">11</div><div class="stat-lbl">Álbumes</div></div>
+    <div class="stat-box"><div class="stat-num orange">14</div><div class="stat-lbl">Grammys</div></div>
+    <div class="stat-box"><div class="stat-num">149</div><div class="stat-lbl">Shows</div></div>
+    <div class="stat-box"><div class="stat-num orange">$2B</div><div class="stat-lbl">Eras Tour</div></div>
+    <div class="stat-box"><div class="stat-num">120M</div><div class="stat-lbl">Fans</div></div>
+    <div class="stat-box"><div class="stat-num orange">20+</div><div class="stat-lbl">Años</div></div>
+  </div>
+
+  <!-- LAS 11 ERAS -->
+  <section class="mb-4">
+    <span class="sec-eyebrow">✦ Discografía · 2006 — 2024</span>
+    <h2 class="sec-title">Las 11 <em style="color:#FF9A6C">Eras</em></h2>
+    <div class="sec-line" style="background:#FF6B35"></div>
+
+    <div class="eras-grid">
+
+      <div class="era-card era-taylor">
+        <div class="era-bg era-taylor"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🤠</div>
+        <div class="era-info">
+          <div class="era-name">Taylor Swift</div>
+          <div class="era-year">2006</div>
+          <div class="era-song">Tim McGraw</div>
         </div>
-    </nav>
+      </div>
 
-    <!-- MAIN -->
-    <main class="container mt-5">
+      <div class="era-card era-fearless">
+        <div class="era-bg era-fearless"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">✨</div>
+        <div class="era-info">
+          <div class="era-name">Fearless</div>
+          <div class="era-year">2008</div>
+          <div class="era-song">Love Story</div>
+        </div>
+      </div>
 
-        <section class="text-center mb-5">
-            <h2 class="text-info">Sobre la artista</h2>
-        </section>
+      <div class="era-card era-speaknow">
+        <div class="era-bg era-speaknow"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🟣</div>
+        <div class="era-info">
+          <div class="era-name">Speak Now</div>
+          <div class="era-year">2010</div>
+          <div class="era-song">Back to December</div>
+        </div>
+      </div>
 
-        <section class="row align-items-center">
+      <div class="era-card era-red">
+        <div class="era-bg era-red"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🔴</div>
+        <div class="era-info">
+          <div class="era-name">Red</div>
+          <div class="era-year">2012</div>
+          <div class="era-song">All Too Well</div>
+        </div>
+      </div>
 
-            <!-- Imagen -->
-            <article class="col-md-6">
-                <img src="../asset/taylorfondo1.jpg" class="img-fluid rounded" alt="Taylor Swift">
-            </article>
+      <div class="era-card era-1989">
+        <div class="era-bg era-1989"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🌊</div>
+        <div class="era-info">
+          <div class="era-name">1989</div>
+          <div class="era-year">2014</div>
+          <div class="era-song">Shake It Off</div>
+        </div>
+      </div>
 
-            <!-- Texto -->
-            <article class="col-md-6">
-                <p>
-                    Esta fan page está dedicada a 
-                    :contentReference[oaicite:0]{index=0},
-                    una de las artistas más influyentes de su generación.
-                </p>
+      <div class="era-card era-rep">
+        <div class="era-bg era-rep"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🐍</div>
+        <div class="era-info">
+          <div class="era-name">Reputation</div>
+          <div class="era-year">2017</div>
+          <div class="era-song">Look What You Made Me Do</div>
+        </div>
+      </div>
 
-                <p>
-                    Su carrera comenzó en el country y evolucionó hacia el pop y el indie,
-                    consolidándose como una referente mundial de la música contemporánea.
-                </p>
+      <div class="era-card era-lover">
+        <div class="era-bg era-lover"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🌈</div>
+        <div class="era-info">
+          <div class="era-name">Lover</div>
+          <div class="era-year">2019</div>
+          <div class="era-song">Cruel Summer</div>
+        </div>
+      </div>
 
-                <p>
-                    Cada “era” representa una etapa artística distinta,
-                    tanto en lo musical como en lo visual y conceptual.
-                </p>
-            </article>
+      <div class="era-card era-folklore">
+        <div class="era-bg era-folklore"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🌲</div>
+        <div class="era-info">
+          <div class="era-name">Folklore</div>
+          <div class="era-year">2020</div>
+          <div class="era-song">cardigan</div>
+        </div>
+      </div>
 
-        </section>
+      <div class="era-card era-evermore">
+        <div class="era-bg era-evermore"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🍂</div>
+        <div class="era-info">
+          <div class="era-name">Evermore</div>
+          <div class="era-year">2020</div>
+          <div class="era-song">champagne problems</div>
+        </div>
+      </div>
 
-        <!-- Sección misión -->
-        <section class="mt-5 text-center">
-            <h3 class="text-danger">Nuestra Misión</h3>
-            <p>
-                Crear un espacio digital donde los fans puedan explorar
-                su música, giras y productos oficiales en una experiencia
-                visual moderna y organizada.
-            </p>
-        </section>
+      <div class="era-card era-midnights">
+        <div class="era-bg era-midnights"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">🌙</div>
+        <div class="era-info">
+          <div class="era-name">Midnights</div>
+          <div class="era-year">2022</div>
+          <div class="era-song">Anti-Hero</div>
+        </div>
+      </div>
 
-    </main>
+      <div class="era-card era-ttpd">
+        <div class="era-bg era-ttpd"></div>
+        <div class="era-overlay"></div>
+        <div class="era-emoji">📖</div>
+        <div class="era-info">
+          <div class="era-name">TTPD</div>
+          <div class="era-year">2024</div>
+          <div class="era-song">Fortnight</div>
+        </div>
+      </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-dark text-center p-4 mt-5">
-        <p>© 2026 Fan Page - Taylor Swift</p>
-    </footer>
+    </div>
+  </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- NUESTRA MISIÓN -->
+  <section>
+    <span class="sec-eyebrow">✦ Comunidad · Propósito</span>
+    <h2 class="sec-title">Nuestra <em style="color:#7EEAE6">Misión</em></h2>
+    <div class="sec-line" style="background:#2ECEC7"></div>
 
+    <div class="mision-grid">
+      <div class="mision-card">
+        <span class="mision-icon">🎵</span>
+        <div class="mision-title">Explorar la música</div>
+        <div class="mision-text">Un espacio donde los fans puedan descubrir todas las eras, letras y la evolución artística de Taylor.</div>
+      </div>
+      <div class="mision-card">
+        <span class="mision-icon">🌎</span>
+        <div class="mision-title">Comunidad global</div>
+        <div class="mision-text">Conectar Swifties de Argentina y Latinoamérica con fans de todo el mundo que comparten la misma pasión.</div>
+      </div>
+      <div class="mision-card">
+        <span class="mision-icon">📸</span>
+        <div class="mision-title">Compartir memorias</div>
+        <div class="mision-text">Un lugar para subir fotos de shows, contar historias del Eras Tour y guardar los momentos únicos para siempre.</div>
+      </div>
+      <div class="mision-card">
+        <span class="mision-icon">💡</span>
+        <div class="mision-title">Crecer juntos</div>
+        <div class="mision-text">La comunidad propone, vota y da forma a este sitio. Cada idea de fan puede convertirse en una nueva sección.</div>
+      </div>
+    </div>
+  </section>
 
+</main>
 
+<!-- FOOTER -->
+<footer class="bg-dark text-center p-4 mt-5">
+  <p>© 2026 Fan Page - Taylor Swift</p>
 
-<!-- ══ FONDO ROTATIVO ══ -->
+  <!-- README TÉCNICO -->
+  <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(46,206,199,0.20);padding:1.8rem 0 1.2rem;text-align:center;margin-top:1rem">
+    <div class="container">
+      <p style="font-family:'Shadows Into Light',cursive;font-size:1rem;color:rgba(255,255,255,0.55);letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem">✦ Proyecto de Estudio · Desarrollo Web ✦</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;margin-bottom:1rem">
+        <span style="background:rgba(46,206,199,0.18);border:1px solid rgba(46,206,199,0.40);color:#7EEAE6;font-size:0.68rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:1px">HTML5</span>
+        <span style="background:rgba(46,206,199,0.18);border:1px solid rgba(46,206,199,0.40);color:#7EEAE6;font-size:0.68rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:1px">CSS3</span>
+        <span style="background:rgba(46,206,199,0.18);border:1px solid rgba(46,206,199,0.40);color:#7EEAE6;font-size:0.68rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:1px">JavaScript ES6</span>
+        <span style="background:rgba(46,206,199,0.18);border:1px solid rgba(46,206,199,0.40);color:#7EEAE6;font-size:0.68rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:1px">Bootstrap 5</span>
+        <span style="background:rgba(255,107,53,0.18);border:1px solid rgba(255,107,53,0.40);color:#FF9A6C;font-size:0.68rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:1px">SEO On-Page</span>
+        <span style="background:rgba(255,107,53,0.18);border:1px solid rgba(255,107,53,0.40);color:#FF9A6C;font-size:0.68rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:1px">Glassmorphism</span>
+        <span style="background:rgba(255,107,53,0.18);border:1px solid rgba(255,107,53,0.40);color:#FF9A6C;font-size:0.68rem;font-weight:700;padding:0.3rem 0.8rem;border-radius:20px;letter-spacing:1px">Responsive Design</span>
+      </div>
+      <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);letter-spacing:1px;margin-bottom:0.5rem;font-family:'Lato',sans-serif">
+        Desarrollado por <strong style="color:rgba(255,255,255,0.60)">Damián</strong> · Estudiante de Desarrollo Web · Buenos Aires, Argentina · 2026
+      </p>
+      <a href="https://github.com/arzaDam/Proyecto-Taylor-Swift" target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;border:1px solid rgba(255,255,255,0.20);border-radius:20px;padding:0.35rem 1rem;font-family:'Lato',sans-serif;transition:all 0.2s"
+        onmouseover="this.style.color='#7EEAE6';this.style.borderColor='rgba(46,206,199,0.50)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.45)';this.style.borderColor='rgba(255,255,255,0.20)'">
+        &#128279; Ver código en GitHub
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- FONDO ROTATIVO -->
 <div id="bgSlider">
-    <div class="bg-slide" style="background-image:url('../asset/taylorpag1.jfif')"></div>
-    <div class="bg-slide" style="background-image:url('../asset/taylorpag2.jfif')"></div>
-    <div class="bg-slide" style="background-image:url('../asset/taylorpag3.jfif')"></div>
-    <div class="bg-slide" style="background-image:url('../asset/taylorpag4.jfif')"></div>
-    <div class="bg-slide" style="background-image:url('../asset/taylorpag5.jfif')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag1.jfif')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag2.jfif')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag3.jfif')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag4.jfif')"></div>
+  <div class="bg-slide" style="background-image:url('../asset/taylorpag5.jfif')"></div>
 </div>
 <div class="bg-dots" id="bgDots">
   <div class="bg-dot active" onclick="setBg(0)"></div>
@@ -121,93 +492,90 @@
   <div class="bg-dot" onclick="setBg(4)"></div>
 </div>
 
-<!-- ══ REPRODUCTOR ══ -->
+<!-- REPRODUCTOR -->
 <div id="tsPlayer">
-      <div class="player-song" id="pSong">Cargando...</div>
-      <div class="player-artist">Taylor Swift · The Eras Collection</div>
-      <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
-      <div class="player-bar-fill" id="pBar"></div>
-      </div>
-      <div class="player-controls">
-      <button class="player-btn" onclick="prevSong()" title="Anterior">&#9664;&#9664;</button>
-      <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
-      <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
-      <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7"
-      oninput="setVol(this.value)" title="Volumen">
+  <div class="player-song" id="pSong">Cargando...</div>
+  <div class="player-artist">Taylor Swift · The Eras Collection</div>
+  <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
+    <div class="player-bar-fill" id="pBar"></div>
+  </div>
+  <div class="player-controls">
+    <button class="player-btn" onclick="prevSong()" title="Anterior">&#9664;&#9664;</button>
+    <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
+    <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
+    <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7" oninput="setVol(this.value)" title="Volumen">
   </div>
 </div>
 
 <script>
-/* ══ CANCIONES — CAMBIÁ LAS RUTAS AQUÍ ══
-  Agregá tus archivos .mp3 en la carpeta asset/
-  y actualizá esta lista con los nombres correctos.
-  Ejemplo: si tenés "cruel_summer.mp3" en asset/,
-  poné src: "../asset/cruel_summer.mp3"
-   ════════════════════════════════════════════ */
 var songs = [
-  { title: "Song 1 — agregá tu mp3",   src: "../asset/tayloralbum.mp3"},
-  { title: "Song 2 — agregá tu mp3",   src: "../asset/thefateofophelia.mp3.mp3"},
-  { title: "Song 3 — agregá tu mp3",   src: "../asset/nowthat.mp3"},
+  { title: "Song 1 — poné tu mp3", src: "../asset/tayloralbum.mp3.mp3" },
+  { title: "Song 2 — poné tu mp3", src: "../asset/albun2taylor.mp3.mp3.mp3" }
+  { title: "Song 3 — poné tu mp3", src: "../asset/thefateofophelia.mp3.mp3" },
+  { title: "Song 4 — poné tu mp3", src: "../asset/nowthat.mp3.mp3" }
 ];
-/* Si solo tenés un archivo, usá:
-  { title: "The Eras Collection", src: "../asset/tayloralbum.mp3" }
-*/
-
-var si = 0, audio = new Audio(), playing = false;
+var si = 0, tsAudio = new Audio(), tsPlaying = false;
 
 function loadSong(i) {
   si = (i + songs.length) % songs.length;
-  audio.src = songs[si].src;
-  document.getElementById('pSong').textContent = songs[si].title;
-  document.getElementById('pBar').style.width = '0%';
-  if (playing) { audio.play().catch(function(){}); }
+  var pSong = document.getElementById('pSong');
+  var pBar  = document.getElementById('pBar');
+  if (pSong) pSong.textContent = songs[si].title;
+  if (pBar)  pBar.style.width  = '0%';
+  tsAudio.src = songs[si].src;
+  if (tsPlaying) tsAudio.play().catch(function() {});
 }
 function togglePlay() {
-  if (playing) {
-    audio.pause();
-    document.getElementById('pPlayBtn').innerHTML = '&#9654;';
-    document.getElementById('pPlayBtn').classList.remove('playing');
+  var btn = document.getElementById('pPlayBtn');
+  if (tsPlaying) {
+    tsAudio.pause();
+    if (btn) { btn.innerHTML = '&#9654;'; btn.classList.remove('playing'); }
   } else {
-    audio.play().catch(function(){});
-    document.getElementById('pPlayBtn').innerHTML = '&#9646;&#9646;';
-    document.getElementById('pPlayBtn').classList.add('playing');
+    tsAudio.play().catch(function() {
+      if (btn) { btn.innerHTML = '&#9654;'; btn.classList.remove('playing'); }
+      tsPlaying = false;
+    });
+    if (btn) { btn.innerHTML = '&#9646;&#9646;'; btn.classList.add('playing'); }
   }
-  playing = !playing;
+  tsPlaying = !tsPlaying;
 }
 function prevSong() { loadSong(si - 1); }
 function nextSong() { loadSong(si + 1); }
-function setVol(v) { audio.volume = v; }
+function setVol(v)  { tsAudio.volume = parseFloat(v); }
 function seekAudio(e) {
-  var w = document.getElementById('pBarWrap').offsetWidth;
-  audio.currentTime = (e.offsetX / w) * audio.duration;
+  var wrap = document.getElementById('pBarWrap');
+  if (wrap && tsAudio.duration) {
+    tsAudio.currentTime = (e.offsetX / wrap.offsetWidth) * tsAudio.duration;
+  }
 }
-audio.addEventListener('timeupdate', function() {
-  if (audio.duration) {
-    document.getElementById('pBar').style.width = ((audio.currentTime / audio.duration) * 100) + '%';
+tsAudio.addEventListener('timeupdate', function() {
+  var pBar = document.getElementById('pBar');
+  if (pBar && tsAudio.duration) {
+    pBar.style.width = ((tsAudio.currentTime / tsAudio.duration) * 100) + '%';
   }
 });
-audio.addEventListener('ended', function() { nextSong(); });
-audio.volume = 0.7;
-loadSong(0);
+tsAudio.addEventListener('ended', function() { nextSong(); });
+tsAudio.volume = 0.7;
+window.addEventListener('DOMContentLoaded', function() { loadSong(0); });
 
-/* ══ FONDO ROTATIVO ══ */
-var bgIdx = 0, bgSlides, bgDots;
+var bgIdx = 0;
 window.addEventListener('DOMContentLoaded', function() {
-  bgSlides = document.querySelectorAll('.bg-slide');
-  bgDots   = document.querySelectorAll('.bg-dot');
-  bgSlides[0].classList.add('active');
-  setInterval(function() {
-    setBg((bgIdx + 1) % bgSlides.length);
-  }, 6000);
+  var slides = document.querySelectorAll('.bg-slide');
+  var dots   = document.querySelectorAll('.bg-dot');
+  if (!slides.length) return;
+  slides[0].classList.add('active');
+  if (dots.length) dots[0].classList.add('active');
+  setInterval(function() { setBg((bgIdx + 1) % slides.length); }, 6000);
 });
 function setBg(i) {
-  if (bgSlides) {
-    bgSlides[bgIdx].classList.remove('active');
-    bgDots[bgIdx].classList.remove('active');
-    bgIdx = i;
-    bgSlides[bgIdx].classList.add('active');
-    bgDots[bgIdx].classList.add('active');
-  }
+  var slides = document.querySelectorAll('.bg-slide');
+  var dots   = document.querySelectorAll('.bg-dot');
+  if (!slides.length) return;
+  slides[bgIdx].classList.remove('active');
+  if (dots.length) dots[bgIdx].classList.remove('active');
+  bgIdx = i;
+  slides[bgIdx].classList.add('active');
+  if (dots.length) dots[bgIdx].classList.add('active');
 }
 </script>
 
