@@ -28,7 +28,7 @@
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">Inicio</a>
+            <a class="navbar-brand" href="../index.html">home</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -36,11 +36,12 @@
 
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="jointhefanclub.html">Join The Fan Club</a></li>
-                    <li class="nav-item"><a class="nav-link" href="oficialstore.html">Official Store</a></li>
-                    <li class="nav-item"><a class="nav-link" href="toursmemories.html">Tours & Memories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="swifties.html">Swifties</a></li>
-                    <li class="nav-item"><a class="nav-link" href="memories.html">Memories</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="jointhefanclub.html">jointhefanclub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oficialstore.html">store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="toursmemories.html">toursmemories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="swifties.html">swifties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="memories.html">memories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fan.html">fan</a></li>
                 </ul>
             </div>
         </div>
@@ -106,11 +107,11 @@
 
 <!-- ══ FONDO ROTATIVO ══ -->
 <div id="bgSlider">
-    <div class="bg-slide" style="background-image:url('../asset/taylorpag1.jpg')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag2.jpg')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag3.jpg')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag4.jpg')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag5.jpg')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag1.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag2.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag3.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag4.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag5.jfif')"></div>
 </div>
 <div class="bg-dots" id="bgDots">
   <div class="bg-dot active" onclick="setBg(0)"></div>
@@ -122,34 +123,34 @@
 
 <!-- ══ REPRODUCTOR ══ -->
 <div id="tsPlayer">
-  <div class="player-song" id="pSong">Cargando...</div>
-  <div class="player-artist">Taylor Swift · The Eras Collection</div>
-  <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
-    <div class="player-bar-fill" id="pBar"></div>
-  </div>
-  <div class="player-controls">
-    <button class="player-btn" onclick="prevSong()" title="Anterior">&#9664;&#9664;</button>
-    <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
-    <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
-    <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7"
-           oninput="setVol(this.value)" title="Volumen">
+      <div class="player-song" id="pSong">Cargando...</div>
+      <div class="player-artist">Taylor Swift · The Eras Collection</div>
+      <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
+      <div class="player-bar-fill" id="pBar"></div>
+      </div>
+      <div class="player-controls">
+      <button class="player-btn" onclick="prevSong()" title="Anterior">&#9664;&#9664;</button>
+      <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
+      <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
+      <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7"
+      oninput="setVol(this.value)" title="Volumen">
   </div>
 </div>
 
 <script>
 /* ══ CANCIONES — CAMBIÁ LAS RUTAS AQUÍ ══
-   Agregá tus archivos .mp3 en la carpeta asset/
-   y actualizá esta lista con los nombres correctos.
-   Ejemplo: si tenés "cruel_summer.mp3" en asset/,
-   poné src: "../asset/cruel_summer.mp3"
+  Agregá tus archivos .mp3 en la carpeta asset/
+  y actualizá esta lista con los nombres correctos.
+  Ejemplo: si tenés "cruel_summer.mp3" en asset/,
+  poné src: "../asset/cruel_summer.mp3"
    ════════════════════════════════════════════ */
 var songs = [
-  { title: "Song 1 — agregá tu mp3",   src: "../asset/song1.mp3"   },
-  { title: "Song 2 — agregá tu mp3",   src: "../asset/song2.mp3"   },
-  { title: "Song 3 — agregá tu mp3",   src: "../asset/song3.mp3"   },
+  { title: "Song 1 — agregá tu mp3",   src: "../asset/tayloralbum.mp3"},
+  { title: "Song 2 — agregá tu mp3",   src: "../asset/thefateofophelia.mp3.mp3"},
+  { title: "Song 3 — agregá tu mp3",   src: "../asset/nowthat.mp3"},
 ];
 /* Si solo tenés un archivo, usá:
-   { title: "The Eras Collection", src: "../asset/tayloralbum.mp3" }
+  { title: "The Eras Collection", src: "../asset/tayloralbum.mp3" }
 */
 
 var si = 0, audio = new Audio(), playing = false;
