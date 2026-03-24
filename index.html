@@ -257,9 +257,9 @@
 
 <!-- ══ REPRODUCTOR ══ -->
 <div id="tsPlayer">
-  <div class="player-song" id="pSong">Cargando...</div>
-  <div class="player-artist">Taylor Swift · The Eras Collection</div>
-  <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
+    <div class="player-song" id="pSong">Cargando...</div>
+    <div class="player-artist">Taylor Swift · The Eras Collection</div>
+    div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
     <div class="player-bar-fill" id="pBar"></div>
   </div>
   <div class="player-controls">
@@ -267,7 +267,7 @@
     <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
     <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
     <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7"
-          oninput="setVol(this.value)" title="Volumen">
+    oninput="setVol(this.value)" title="Volumen">
   </div>
 </div>
 
@@ -277,9 +277,9 @@
 
 <script>
 var songs = [
-  { title: "Song 1 — poné tu mp3", src: "asset/tayloralbum.mp3" },
-  { title: "Song 2 — poné tu mp3", src: "asset/thefateofophelia.mp3" },
-  { title: "Song 3 — poné tu mp3", src: "asset/nowthat.mp3" }
+  { title: "Song 1 — poné tu mp3", src: "asset/tayloralbum.mp3"},
+  { title: "Song 2 — poné tu mp3", src: "asset/thefateofophelia.mp3"},
+  { title: "Song 3 — poné tu mp3", src: "asset/nowthat.mp3"}
 ];
 var si = 0;
 var tsAudio = new Audio();
