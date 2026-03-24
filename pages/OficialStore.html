@@ -198,33 +198,33 @@
 <!-- ══ FONDO ROTATIVO ══ -->
 <div id="bgSlider">
     <div class="bg-slide" style="background-image:url('../asset/taylorpag1.jfif')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag2.jfif')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag3.jfif')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag4.jfif')"></div>
-  <div class="bg-slide" style="background-image:url('../asset/taylorpag5.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag2.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag3.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag4.jfif')"></div>
+    <div class="bg-slide" style="background-image:url('../asset/taylorpag5.jfif')"></div>
 </div>
 <div class="bg-dots" id="bgDots">
-  <div class="bg-dot active" onclick="setBg(0)"></div>
-  <div class="bg-dot" onclick="setBg(1)"></div>
-  <div class="bg-dot" onclick="setBg(2)"></div>
-  <div class="bg-dot" onclick="setBg(3)"></div>
-  <div class="bg-dot" onclick="setBg(4)"></div>
+    <div class="bg-dot active" onclick="setBg(0)"></div>
+    <div class="bg-dot" onclick="setBg(1)"></div>
+    <div class="bg-dot" onclick="setBg(2)"></div>
+    <div class="bg-dot" onclick="setBg(3)"></div>
+    <div class="bg-dot" onclick="setBg(4)"></div>
 </div>
 
 <!-- ══ REPRODUCTOR ══ -->
 <div id="tsPlayer">
-  <div class="player-song" id="pSong">Cargando...</div>
-  <div class="player-artist">Taylor Swift · The Eras Collection</div>
-  <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
+    <div class="player-song" id="pSong">Cargando...</div>
+    <div class="player-artist">Taylor Swift · The Eras Collection</div>
+    <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
     <div class="player-bar-fill" id="pBar"></div>
-  </div>
-  <div class="player-controls">
+</div>
+<div class="player-controls">
     <button class="player-btn" onclick="prevSong()" title="Anterior">&#9664;&#9664;</button>
     <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
     <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
     <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7"
-           oninput="setVol(this.value)" title="Volumen">
-  </div>
+    oninput="setVol(this.value)" title="Volumen">
+</div>
 </div>
 
 <script>
@@ -233,9 +233,10 @@
 
 <script>
 var songs = [
-    { title: "Song 1 — poné tu mp3", src: "../asset/tayloralbum.mp3" },
-    { title: "Song 2 — poné tu mp3", src: "../asset/thefateofophelia.mp3" },
-    { title: "Song 3 — poné tu mp3", src: "../asset/nowthat.mp3" }
+    { title: "Song 1 — poné tu mp3", src: "../asset/tayloralbum.mp3.mp3" },
+    { title: "Song 2 — poné tu mp3", src: "../asset/albun2taylor.mp3.mp3.mp3" }
+    { title: "Song 3 — poné tu mp3", src: "../asset/thefateofophelia.mp3.mp3" },
+    { title: "Song 4 — poné tu mp3", src: "../asset/nowthat.mp3.mp3" }
 ];
 var si = 0;
 var tsAudio = new Audio();
