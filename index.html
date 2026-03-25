@@ -68,7 +68,7 @@
     </header>
 
     <!-- NAV -->
-    <nav class="navbar" aria-label="Navegación principal" navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar" aria-label="navbar-expand-lg navbar-dark bg-dark" aria-label="Navegacion principal">
         <div class="container">
             <a class="navbar-brand" href="#">home</a>
 
@@ -281,10 +281,10 @@
 
 <script>
 var songs = [
-  { title: "Song 1 — poné tu mp3", src: "../asset/tayloralbum.mp3" },
-  { title: "Song 2 — poné tu mp3", src: "../asset/albun2taylor.mp3" },
-  { title: "Song 3 — poné tu mp3", src: "../asset/thefateofophelia.mp3" },
-  { title: "Song 4 — poné tu mp3", src: "../asset/nowthat.mp3" },
+  { title: "Song 1 — poné tu mp3", src: "asset/tayloralbum.mp3"},
+  { title: "Song 2 — poné tu mp3", src: "asset/albun2taylor.mp3"},
+  { title: "Song 3 — poné tu mp3", src: "asset/thefateofophelia.mp3"},
+  { title: "Song 4 — poné tu mp3", src: "asset/nowthat.mp3"}
 ];
 var si = 0;
 var tsAudio = new Audio();
@@ -337,7 +337,6 @@ window.addEventListener('DOMContentLoaded', function() { loadSong(0); });
 <script>
 var bgIdx = 0;
 window.addEventListener('DOMContentLoaded', function() {
-  loadSong(0);
   var slides = document.querySelectorAll('.bg-slide');
   var dots   = document.querySelectorAll('.bg-dot');
   if (!slides.length) return;
