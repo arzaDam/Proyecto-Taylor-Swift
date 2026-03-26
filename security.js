@@ -1,17 +1,17 @@
 /* ================================================================
-  TAYLOR SWIFT FAN PAGE — SEGURIDAD + ACCESIBILIDAD
-  Incluir en todas las páginas:
-  <script src="security.js"></script>          (index)
-  <script src="../security.js"></script>        (pages/)
+   TAYLOR SWIFT FAN PAGE — SEGURIDAD + ACCESIBILIDAD
+   Incluir en todas las páginas:
+   <script src="security.js"></script>          (index)
+   <script src="../security.js"></script>        (pages/)
 ================================================================ */
 
 'use strict';
 
 /* ────────────────────────────────────────────────────────────────
-  1. SANITIZACIÓN — previene XSS
-  Escapa todos los caracteres peligrosos antes de insertar
-  texto en el DOM. Usá sanitize() siempre que muestres
-  contenido ingresado por el usuario.
+   1. SANITIZACIÓN — previene XSS
+   Escapa todos los caracteres peligrosos antes de insertar
+   texto en el DOM. Usá sanitize() siempre que muestres
+   contenido ingresado por el usuario.
 ──────────────────────────────────────────────────────────────── */
 window.sanitize = function(str) {
   if (typeof str !== 'string') return '';
@@ -27,10 +27,10 @@ window.sanitize = function(str) {
 };
 
 /* ────────────────────────────────────────────────────────────────
-  2. VALIDACIÓN DE FORMULARIOS
-  validateForm(fields) recibe un array de { id, label, rules }
-  Reglas disponibles: required, minLen, maxLen, email, noScript
-  Devuelve { valid: bool, errors: [] }
+   2. VALIDACIÓN DE FORMULARIOS
+   validateForm(fields) recibe un array de { id, label, rules }
+   Reglas disponibles: required, minLen, maxLen, email, noScript
+   Devuelve { valid: bool, errors: [] }
 ──────────────────────────────────────────────────────────────── */
 window.validateForm = function(fields) {
   var errors = [];
@@ -60,8 +60,8 @@ window.validateForm = function(fields) {
 };
 
 /* ────────────────────────────────────────────────────────────────
-  3. MOSTRAR ERRORES DE VALIDACIÓN
-  showErrors(errors, containerId)
+   3. MOSTRAR ERRORES DE VALIDACIÓN
+   showErrors(errors, containerId)
 ──────────────────────────────────────────────────────────────── */
 window.showErrors = function(errors, containerId) {
   var el = document.getElementById(containerId);
@@ -76,9 +76,9 @@ window.showErrors = function(errors, containerId) {
 };
 
 /* ────────────────────────────────────────────────────────────────
-  4. CSRF TOKEN SIMULADO (client-side)
-  Para cuando conectes un backend real, este token
-  se incluiría en cada form como campo oculto.
+   4. CSRF TOKEN SIMULADO (client-side)
+   Para cuando conectes un backend real, este token
+   se incluiría en cada form como campo oculto.
 ──────────────────────────────────────────────────────────────── */
 window.getCSRFToken = function() {
   var token = sessionStorage.getItem('csrf_token');
@@ -90,8 +90,8 @@ window.getCSRFToken = function() {
 };
 
 /* ────────────────────────────────────────────────────────────────
-  5. RATE LIMIT SIMPLE (previene spam de formularios)
-  checkRateLimit(key, limitMs) → true si puede enviar
+   5. RATE LIMIT SIMPLE (previene spam de formularios)
+   checkRateLimit(key, limitMs) → true si puede enviar
 ──────────────────────────────────────────────────────────────── */
 window.checkRateLimit = function(key, limitMs) {
   var last = parseInt(sessionStorage.getItem('rl_' + key) || '0');
@@ -102,9 +102,9 @@ window.checkRateLimit = function(key, limitMs) {
 };
 
 /* ────────────────────────────────────────────────────────────────
-  6. ACCESIBILIDAD — teclado y foco
-  Permite cerrar modales/lightboxes con Escape
-  y navegar con Tab de forma correcta.
+   6. ACCESIBILIDAD — teclado y foco
+   Permite cerrar modales/lightboxes con Escape
+   y navegar con Tab de forma correcta.
 ──────────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function() {
 

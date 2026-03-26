@@ -102,9 +102,18 @@ Luego: clic derecho en `index.html` → **Open with Live Server** en VS Code.
 ```javascript
 // En cada HTML, editá este array:
 var songs = [
-  { title: "Cruel Summer",  src: "../asset/cruel_summer.mp3"  },
-  { title: "Anti-Hero",     src: "../asset/anti_hero.mp3"     },
-  { title: "Shake It Off",  src: "../asset/shake_it_off.mp3"  }
+  { title: "Song 1 — poné tu mp3", src: "asset/tayloralbum.mp3"},
+  { title: "Song 2 — poné tu mp3", src: "asset/albun2taylor.mp3"},
+  { title: "Song 3 — poné tu mp3", src: "asset/thefateofophelia.mp3"},
+  { title: "Song 4 — poné tu mp3", src: "asset/nowthat.mp3"},
+  { title: "Song 5 — poné tu mp3", src: "asset/Taylor Swift - 22.mp3"},
+  { title: "Song 6 — poné tu mp3", src: "asset/Taylor Swift - Blank Space.mp3"},
+  { title: "Song 7 — poné tu mp3", src: "asset/Taylor Swift - Wildest Dreams.mp3"},
+  { title: "Song 8 — poné tu mp3", src: "asset/Taylor Swift - I Knew You Were Trouble (1).mp3"},
+  { title: "Song 9 — poné tu mp3", src: "asset/Taylor Swift - Out Of The Woods.mp3"},
+  { title: "Song 10 — poné tu mp3", src: "asset/Taylor Swift - Style.mp3"},
+  { title: "Song 11 — poné tu mp3", src: "asset/Taylor Swift - Wildest Dreams.mp3"},
+  { title: "Song 12 — poné tu mp3", src: "asset/ZAYN, Taylor Swift - I Dont Wanna Live Forever (Fifty Shades Darker).mp3"}
 ];
 ```
 
