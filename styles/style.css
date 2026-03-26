@@ -1,5 +1,5 @@
 /* ================================================================
-  TAYLOR SWIFT — OPCIÓN 2
+  TAYLOR SWIFT — 
   Imagen visible · Overlay crema suave · Glass blanco
    ================================================================ */
 
@@ -305,10 +305,10 @@ footer p {
 ================================================================ */
 #tsPlayer {
   position: fixed;
-  bottom: 2rem;
+  bottom: 2.5rem;
   right: 2.5rem;
   z-index: 9999;
-  width: 245px;
+  width: 255px;
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
@@ -317,7 +317,8 @@ footer p {
   padding: 0.9rem 1rem;
   box-shadow: 0 8px 32px rgba(0,0,0,0.20);
   animation: playerFloat 4s ease-in-out infinite;
-  left:1%;
+  left: 1%;
+
 }
 @keyframes playerFloat {
   0%,100% { transform: translateY(0); }
@@ -424,15 +425,8 @@ footer p {
   form.w-50 { width: 100% !important; }
   .col-md-4, .col-md-6, .col-md-3 { margin-bottom: 1rem; }
 }
-@media (max-width: 768px) {
-  #tsPlayer { 
-              width: 190px !important;
-              right: 0.8rem !important;bottom: 2rem; }
-  .player-vol { display: none !important; }
-}
 @media (max-width: 480px) {
-  #tsPlayer { width: 175px !important;
-              right: 0.5rem !important; }
+  #tsPlayer { width: 175px !important; }
   .player-vol { display: none !important; }
 }
 
@@ -506,7 +500,7 @@ footer p          { color: rgba(255,255,255,0.80) !important; }
 .player-btn { min-height: 36px !important; min-width: 36px !important; }
 
 /* ================================================================
-   FIXES — Fondo visible + Skip link oculto + Navbar sin franja negra
+  FIXES — Fondo visible + Skip link oculto + Navbar sin franja negra
 ================================================================ */
 
 /* 1. SKIP LINK — completamente invisible hasta Tab */
@@ -641,4 +635,76 @@ footer.bg-dark {
 }
 @media (max-width: 768px) {
   #tsPlayer { right: 0.5rem !important; width: 190px !important; }
+}
+
+/* ── ERA CARDS CON FOTO DE ÁLBUM ── */
+.era-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s, box-shadow 0.35s;
+  aspect-ratio: 1;
+  background: rgba(10,10,10,0.60);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.era-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.60);
+  border-color: rgba(46,206,199,0.60);
+}
+.era-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.4s;
+}
+.era-card:hover .era-img { transform: scale(1.06); }
+.era-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.10) 55%, transparent 100%);
+  z-index: 2;
+}
+.era-info {
+  position: relative;
+  z-index: 3;
+  padding: 0.85rem 0.9rem 0.8rem;
+  width: 100%;
+  margin-top: auto;
+  align-self: flex-end;
+}
+.era-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 0.15rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+.era-year {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.era-song {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.15rem;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.eras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
