@@ -1,6 +1,6 @@
 /* ================================================================
-   TAYLOR SWIFT — OPCIÓN 2
-   Imagen visible · Overlay crema suave · Glass blanco
+  TAYLOR SWIFT — OPCIÓN 2
+  Imagen visible · Overlay crema suave · Glass blanco
    ================================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Shadows+Into+Light&family=Lato:wght@300;400;700&display=swap');
@@ -32,8 +32,8 @@ a { text-decoration: none; color: inherit; }
 ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
 
 /* ================================================================
-   FONDO ROTATIVO
-   Imagen de Taylor SE VE COMPLETA — overlay crema mínimo
+  FONDO ROTATIVO
+  Imagen de Taylor SE VE COMPLETA — overlay crema mínimo
 ================================================================ */
 #bgSlider {
   position: fixed;
@@ -68,7 +68,7 @@ body > *:not(#bgSlider) { position: relative; z-index: 1; }
 }
 
 /* ================================================================
-   TIPOGRAFÍA
+  TIPOGRAFÍA
 ================================================================ */
 h1 {
   font-family: 'Shadows Into Light', cursive !important;
@@ -80,7 +80,7 @@ h4, h5, h6 { font-family: 'Playfair Display', serif !important; }
 p, label, input, textarea, select { font-family: 'Lato', sans-serif !important; }
 
 /* ================================================================
-   HEADER — glass blanco
+  HEADER — glass blanco
 ================================================================ */
 header {
   background: var(--glass-nav) !important;
@@ -104,7 +104,7 @@ header p {
 }
 
 /* ================================================================
-   NAVBAR — glass blanco translúcido
+  NAVBAR — glass blanco translúcido
 ================================================================ */
 .navbar,
 .navbar.bg-dark,
@@ -143,13 +143,13 @@ nav.navbar {
 .navbar-toggler-icon { filter: brightness(0) invert(1) !important; }
 
 /* ================================================================
-   TÍTULOS
+  TÍTULOS
 ================================================================ */
 .text-danger { color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.5) !important; }
 .text-info   { color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.5) !important; }
 
 /* ================================================================
-   CARDS — glass blanco translúcido
+  CARDS — glass blanco translúcido
 ================================================================ */
 .card,
 .card.bg-dark,
@@ -185,7 +185,7 @@ div.card {
 .fw-bold { color: var(--orange) !important; font-size: 1.05rem !important; text-shadow: 0 1px 4px rgba(0,0,0,0.3) !important; }
 
 /* ================================================================
-   BOTONES
+  BOTONES
 ================================================================ */
 .btn-danger {
   background: var(--teal) !important;
@@ -245,7 +245,7 @@ div.card {
 }
 
 /* ================================================================
-   FORMULARIOS — glass blanco
+  FORMULARIOS — glass blanco
 ================================================================ */
 .form-control,
 .form-select {
@@ -278,7 +278,7 @@ form.bg-dark {
 }
 
 /* ================================================================
-   FOOTER — glass blanco
+  FOOTER — glass blanco
 ================================================================ */
 footer,
 footer.bg-dark {
@@ -293,7 +293,7 @@ footer p {
 }
 
 /* ================================================================
-   IMAGEN HERO
+  IMAGEN HERO
 ================================================================ */
 .img-fluid.rounded {
   border: 2px solid rgba(255,255,255,0.50) !important;
@@ -301,14 +301,14 @@ footer p {
 }
 
 /* ================================================================
-   REPRODUCTOR FLOTANTE — glass blanco
+  REPRODUCTOR FLOTANTE — glass blanco
 ================================================================ */
 #tsPlayer {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 2rem;
+  right: 2.5rem;
   z-index: 9999;
-  width: 255px;
+  width: 245px;
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
@@ -317,6 +317,7 @@ footer p {
   padding: 0.9rem 1rem;
   box-shadow: 0 8px 32px rgba(0,0,0,0.20);
   animation: playerFloat 4s ease-in-out infinite;
+  left:1%;
 }
 @keyframes playerFloat {
   0%,100% { transform: translateY(0); }
@@ -409,7 +410,7 @@ footer p {
 }
 
 /* ================================================================
-   RESPONSIVE MÓVIL
+  RESPONSIVE MÓVIL
 ================================================================ */
 @media (max-width: 768px) {
   .navbar-brand { font-size: 1.2rem !important; }
@@ -423,13 +424,20 @@ footer p {
   form.w-50 { width: 100% !important; }
   .col-md-4, .col-md-6, .col-md-3 { margin-bottom: 1rem; }
 }
+@media (max-width: 768px) {
+  #tsPlayer { 
+              width: 190px !important;
+              right: 0.8rem !important;bottom: 2rem; }
+  .player-vol { display: none !important; }
+}
 @media (max-width: 480px) {
-  #tsPlayer { width: 175px !important; }
+  #tsPlayer { width: 175px !important;
+              right: 0.5rem !important; }
   .player-vol { display: none !important; }
 }
 
 /* ================================================================
-   ACCESIBILIDAD + CONTRASTE + FOCO
+  ACCESIBILIDAD + CONTRASTE + FOCO
 ================================================================ */
 
 /* Skip to content — accesibilidad teclado */
