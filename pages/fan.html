@@ -248,7 +248,7 @@
   </style>
 
 
-    <script src="../security.js"></script>
+    <script src="../security.js" defer></script>
 </head>
 
 <body>
@@ -733,7 +733,7 @@
       }
 
       window.addEventListener('DOMContentLoaded', renderIdeas);
-    </script>
+    </>
 
   </main>
 
@@ -776,11 +776,17 @@
 
           <div id="donateErrors" class="form-error" role="alert"></div>
 
-          <button class="btn btn-danger w-100" onclick="processDonate()"
-                  aria-label="Realizar donación">
-            Donar ahora ✦
-          </button>
-
+          <!-- Botón Tecito -->
+          <a href="https://tecito.app/taylorswiftfanpage" target="_blank" rel="noopener"
+          style="display:inline-block;background:linear-gradient(135deg,#2ECEC7,#1A9B95);
+          color:#000;font-weight:800;font-size:0.88rem;padding:0.75rem 2rem;
+          border-radius:30px;text-decoration:none;letter-spacing:1px;
+          transition:all 0.3s"
+          onmouseover="this.style.background='linear-gradient(135deg,#FF6B35,#d94e12)';this.style.color='#fff'"
+          onmouseout="this.style.background='linear-gradient(135deg,#2ECEC7,#1A9B95)';this.style.color='#000'">
+          ☕ Invitame un tecito
+        </a>
+Donar ahora ✦
           <p style="font-size:0.68rem;color:rgba(255,255,255,0.40);text-align:center;margin-top:0.75rem">
             🔒 Pago seguro · Los fondos van directamente al mantenimiento del sitio
           </p>
