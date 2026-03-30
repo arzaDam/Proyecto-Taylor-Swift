@@ -3,1126 +3,406 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ══ SEO ON-PAGE ══ -->
-    <html lang="es">
-    <meta name="description"        content="Subí tu foto del Eras Tour, escribí tu historia del show, dale me gusta a las fotos de otros Swifties y compartí tu experiencia en la comunidad.">
-    <meta name="keywords"           content="fotos fans Taylor Swift, Eras Tour fotos, Swifties historias, subir foto Taylor Swift, comunidad fans">
-    <meta name="author"             content="Taylor Swift Fan Page">
-    <meta name="robots"             content="index, follow">
-    <link rel="canonical"           href="https://github.com/arzaDam/Proyecto-Taylor-Swift/pages/fans.html">
+  <meta name="description" content="Subí tu foto del Eras Tour, escribí tu historia del show, dale me gusta a las fotos de otros Swifties y compartí tu experiencia en la comunidad.">
+  <meta name="keywords" content="fotos fans Taylor Swift, Eras Tour fotos, Swifties historias, subir foto Taylor Swift, comunidad fans">
+  <meta name="author" content="Taylor Swift Fan Page">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://github.com/arzaDam/Proyecto-Taylor-Swift/pages/fans.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zona de Fans — Taylor Swift Fan Page">
+  <meta property="og:description" content="Subí tu foto del show, escribí tu historia y conectate con otros Swifties.">
+  <meta property="og:url" content="https://github.com/arzaDam/Proyecto-Taylor-Swift/pages/fans.html">
+  <meta property="og:image" content="https://github.com/arzaDam/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Taylor Swift Fan Page">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zona de Fans — Taylor Swift Fan Page">
+  <meta name="twitter:description" content="Subí tu foto del show, escribí tu historia y conectate con otros Swifties.">
+  <meta name="twitter:image" content="https://github.com/arzaDam/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
 
-    <!-- Open Graph (Facebook / WhatsApp) -->
-    <meta property="og:type"        content="website">
-    <meta property="og:title"       content="Zona de Fans — Taylor Swift Fan Page">
-    <meta property="og:description" content="Subí tu foto del show, escribí tu historia y conectate con otros Swifties.">
-    <meta property="og:url"         content="https://tusitio.com/pages/fans.html">
-    <meta property="og:image"       content="https://github.com/arzaDam/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
-
-    <meta property="og:locale"      content="es_AR">
-    <meta property="og:site_name"   content="Taylor Swift Fan Page">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card"        content="summary_large_image">
-    <meta name="twitter:title"       content="Zona de Fans — Taylor Swift Fan Page">
-    <meta name="twitter:description" content="Subí tu foto del show, escribí tu historia y conectate con otros Swifties.">
-    <meta name="twitter:image"       content="https://github.com/arzaDam/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
-
-
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SocialMediaPosting",
-      "name": "Zona de Fans — Taylor Swift Fan Page",
-      "description": "Subí tu foto del show, escribí tu historia y conectate con otros Swifties.",
-      "url": "https://tusitio.com/pages/fans.html",
-      "image": "https://tusitio.com/asset/taylorpag3.jpg",
-      "author": { "@type": "Organization", "name": "Taylor Swift Fan Page" },
-      "inLanguage": "es-AR"
-    }
-    </script>
-    <!-- ══ FIN SEO ══ -->
   <title>Zona de Fans — Subí tu Foto del Show | Taylor Swift Fan Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Shadows+Into+Light&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../styles/style.css">
+  <script src="../security.js" defer></script>
+
   <style>
-    /* ── GRILLA DE POSTS ── */
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-
-    /* ── POST CARD ── */
-    .post-card {
-      background: rgba(0,0,0,0.52);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(46,206,199,0.22);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    }
-    .post-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 36px rgba(46,206,199,0.20);
-      border-color: #2ECEC7;
-    }
-
-    /* Cabecera del post */
-    .post-header {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      padding: 0.85rem 1rem 0.6rem;
-    }
-    .post-avatar {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #2ECEC7, #1A9B95);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-      border: 2px solid rgba(46,206,199,0.40);
-    }
-    .post-user { font-weight: 700; font-size: 0.88rem; color: #fff; line-height: 1.2; }
-    .post-era  { font-size: 0.68rem; color: #2ECEC7; letter-spacing: 1px; }
-
-    /* Foto del post */
-    .post-img {
-      width: 100%; aspect-ratio: 1;
-      object-fit: cover; display: block;
-      cursor: zoom-in;
-      transition: transform 0.4s;
-    }
-    .post-card:hover .post-img { transform: scale(1.03); }
-
-    /* Historia / caption */
-    .post-story {
-      padding: 0.7rem 1rem 0.5rem;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.55;
-      min-height: 2.8rem;
-      font-family: 'Lato', sans-serif;
-    }
-    .post-story em { color: #2ECEC7; font-style: normal; font-weight: 700; }
-
-    /* Acciones: like + comentario */
-    .post-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.55rem 1rem 0.9rem;
-      border-top: 1px solid rgba(255,255,255,0.07);
-    }
-    .like-btn {
-      background: none; border: none;
-      display: flex; align-items: center; gap: 0.35rem;
-      color: rgba(255,255,255,0.55);
-      font-size: 0.82rem; cursor: pointer;
-      border-radius: 20px; padding: 0.35rem 0.7rem;
-      transition: all 0.2s; font-family: 'Lato', sans-serif;
-    }
-    .like-btn:hover { background: rgba(255,107,53,0.12); color: #FF6B35; }
-    .like-btn.liked { color: #FF6B35; }
-    .like-btn.liked i { animation: likeAnim 0.35s ease; }
+    .posts-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.2rem; }
+    .post-card { background:rgba(0,0,0,0.52); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(46,206,199,0.22); border-radius:16px; overflow:hidden; transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
+    .post-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(46,206,199,0.20); border-color:#2ECEC7; }
+    .post-header { display:flex; align-items:center; gap:0.7rem; padding:0.85rem 1rem 0.6rem; }
+    .post-avatar { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#2ECEC7,#1A9B95); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; border:2px solid rgba(46,206,199,0.40); }
+    .post-user { font-weight:700; font-size:0.88rem; color:#fff; line-height:1.2; }
+    .post-era { font-size:0.68rem; color:#2ECEC7; letter-spacing:1px; }
+    .post-img { width:100%; aspect-ratio:1; object-fit:cover; display:block; cursor:zoom-in; transition:transform 0.4s; }
+    .post-card:hover .post-img { transform:scale(1.03); }
+    .post-story { padding:0.7rem 1rem 0.5rem; font-size:0.85rem; color:rgba(255,255,255,0.75); line-height:1.55; min-height:2.8rem; font-family:'Lato',sans-serif; }
+    .post-story em { color:#2ECEC7; font-style:normal; font-weight:700; }
+    .post-actions { display:flex; align-items:center; gap:0.5rem; padding:0.55rem 1rem 0.9rem; border-top:1px solid rgba(255,255,255,0.07); }
+    .like-btn { background:none; border:none; display:flex; align-items:center; gap:0.35rem; color:rgba(255,255,255,0.55); font-size:0.82rem; cursor:pointer; border-radius:20px; padding:0.35rem 0.7rem; transition:all 0.2s; font-family:'Lato',sans-serif; }
+    .like-btn:hover { background:rgba(255,107,53,0.12); color:#FF6B35; }
+    .like-btn.liked { color:#FF6B35; }
+    .like-btn.liked i { animation:likeAnim 0.35s ease; }
     @keyframes likeAnim { 0%{transform:scale(1)} 50%{transform:scale(1.5)} 100%{transform:scale(1)} }
-    .like-count { font-weight: 700; min-width: 1ch; }
-
-    .comment-input-wrap {
-      flex: 1; display: flex; align-items: center; gap: 0.4rem;
-    }
-    .comment-input {
-      flex: 1; background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(46,206,199,0.20);
-      border-radius: 20px; padding: 0.3rem 0.85rem;
-      color: #fff; font-size: 0.78rem; outline: none;
-      font-family: 'Lato', sans-serif;
-      transition: border-color 0.2s;
-    }
-    .comment-input:focus { border-color: #2ECEC7; }
-    .comment-input::placeholder { color: rgba(255,255,255,0.28); }
-    .send-comment {
-      background: #2ECEC7; border: none; border-radius: 50%;
-      width: 26px; height: 26px;
-      display: flex; align-items: center; justify-content: center;
-      color: #000; font-size: 0.7rem; cursor: pointer;
-      flex-shrink: 0; transition: background 0.2s;
-    }
-    .send-comment:hover { background: #FF6B35; color: #fff; }
-
-    /* Comentarios listados */
-    .comments-list {
-      padding: 0 1rem 0.85rem;
-      max-height: 100px;
-      overflow-y: auto;
-    }
-    .comments-list::-webkit-scrollbar { width: 3px; }
-    .comments-list::-webkit-scrollbar-thumb { background: rgba(46,206,199,0.35); border-radius: 2px; }
-    .comment-item {
-      font-size: 0.78rem; color: rgba(255,255,255,0.60);
-      padding: 0.2rem 0; line-height: 1.4;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .comment-item:last-child { border-bottom: none; }
-    .comment-item strong { color: #2ECEC7; margin-right: 0.3rem; }
-
-    /* ── UPLOAD FORM ── */
-    .upload-card {
-      background: rgba(0,0,0,0.52);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(46,206,199,0.22);
-      border-radius: 16px;
-      padding: 1.8rem;
-    }
-    .drop-zone {
-      border: 2px dashed rgba(46,206,199,0.35);
-      border-radius: 12px;
-      padding: 2rem 1rem;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.25s;
-      background: rgba(46,206,199,0.04);
-    }
-    .drop-zone:hover, .drop-zone.drag { border-color: #2ECEC7; background: rgba(46,206,199,0.10); }
-    .drop-zone i { font-size: 2.2rem; color: #2ECEC7; display: block; margin-bottom: 0.75rem; }
-    .drop-zone p { color: rgba(255,255,255,0.55); font-size: 0.85rem; margin: 0; }
-
-    .preview-img-wrap { position: relative; margin-bottom: 1rem; }
-    .preview-img-wrap img { width: 100%; border-radius: 10px; max-height: 260px; object-fit: cover; border: 1px solid rgba(46,206,199,0.25); }
-    .remove-preview {
-      position: absolute; top: 8px; right: 8px;
-      background: rgba(0,0,0,0.70); border: none; color: #fff;
-      border-radius: 50%; width: 28px; height: 28px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 0.85rem;
-    }
-
-    .ts-form-input {
-      background: rgba(255,255,255,0.07) !important;
-      border: 1px solid rgba(46,206,199,0.25) !important;
-      color: #fff !important; border-radius: 8px !important;
-      font-family: 'Lato', sans-serif;
-    }
-    .ts-form-input:focus { border-color: #2ECEC7 !important; box-shadow: 0 0 0 3px rgba(46,206,199,0.18) !important; }
-    .ts-form-input::placeholder { color: rgba(255,255,255,0.28) !important; }
-    .ts-label { color: #2ECEC7; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; display: block; }
-
-    .publish-btn {
-      width: 100%; background: linear-gradient(135deg,#2ECEC7,#1A9B95);
-      border: none; border-radius: 30px; padding: 0.75rem;
-      color: #000; font-weight: 800; font-size: 0.88rem;
-      letter-spacing: 2px; text-transform: uppercase;
-      cursor: pointer; transition: all 0.3s;
-      font-family: 'Lato', sans-serif;
-    }
-    .publish-btn:hover { background: linear-gradient(135deg,#FF6B35,#d94e12); color: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,107,53,0.40); }
-
-    .success-msg { display: none; text-align: center; margin-top: 0.75rem; color: #2ECEC7; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; }
-
-    /* ── LIGHTBOX ── */
-    .lightbox {
-      display: none; position: fixed; inset: 0; z-index: 99999;
-      background: rgba(0,0,0,0.92);
-      align-items: center; justify-content: center;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 88vw; max-height: 84vh; object-fit: contain; border-radius: 10px; border: 2px solid rgba(46,206,199,0.35); }
-    .lb-close { position: absolute; top: 1.2rem; right: 1.5rem; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; line-height: 1; }
-    .lb-close:hover { color: #2ECEC7; }
-
-    /* sección títulos */
-    .sec-title {
-      font-family: 'Playfair Display', serif;
-      color: #2ECEC7;
-      font-size: 1.6rem;
-      margin-bottom: 0.25rem;
-    }
-    .sec-sub {
-      font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase;
-      color: rgba(255,255,255,0.40); margin-bottom: 1.5rem;
-    }
+    .like-count { font-weight:700; min-width:1ch; }
+    .comment-input-wrap { flex:1; display:flex; align-items:center; gap:0.4rem; }
+    .comment-input { flex:1; background:rgba(255,255,255,0.07); border:1px solid rgba(46,206,199,0.20); border-radius:20px; padding:0.3rem 0.85rem; color:#fff; font-size:0.78rem; outline:none; font-family:'Lato',sans-serif; transition:border-color 0.2s; }
+    .comment-input:focus { border-color:#2ECEC7; }
+    .comment-input::placeholder { color:rgba(255,255,255,0.28); }
+    .send-comment { background:#2ECEC7; border:none; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#000; font-size:0.7rem; cursor:pointer; flex-shrink:0; transition:background 0.2s; }
+    .send-comment:hover { background:#FF6B35; color:#fff; }
+    .comments-list { padding:0 1rem 0.85rem; max-height:100px; overflow-y:auto; }
+    .comments-list::-webkit-scrollbar { width:3px; }
+    .comments-list::-webkit-scrollbar-thumb { background:rgba(46,206,199,0.35); border-radius:2px; }
+    .comment-item { font-size:0.78rem; color:rgba(255,255,255,0.60); padding:0.2rem 0; line-height:1.4; border-bottom:1px solid rgba(255,255,255,0.05); }
+    .comment-item:last-child { border-bottom:none; }
+    .comment-item strong { color:#2ECEC7; margin-right:0.3rem; }
+    .upload-card { background:rgba(0,0,0,0.52); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(46,206,199,0.22); border-radius:16px; padding:1.8rem; }
+    .drop-zone { border:2px dashed rgba(46,206,199,0.35); border-radius:12px; padding:2rem 1rem; text-align:center; cursor:pointer; transition:all 0.25s; background:rgba(46,206,199,0.04); }
+    .drop-zone:hover,.drop-zone.drag { border-color:#2ECEC7; background:rgba(46,206,199,0.10); }
+    .drop-zone i { font-size:2.2rem; color:#2ECEC7; display:block; margin-bottom:0.75rem; }
+    .drop-zone p { color:rgba(255,255,255,0.55); font-size:0.85rem; margin:0; }
+    .preview-img-wrap { position:relative; margin-bottom:1rem; }
+    .preview-img-wrap img { width:100%; border-radius:10px; max-height:260px; object-fit:cover; border:1px solid rgba(46,206,199,0.25); }
+    .remove-preview { position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.70); border:none; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:0.85rem; }
+    .ts-form-input { background:rgba(255,255,255,0.07)!important; border:1px solid rgba(46,206,199,0.25)!important; color:#fff!important; border-radius:8px!important; font-family:'Lato',sans-serif; }
+    .ts-form-input:focus { border-color:#2ECEC7!important; box-shadow:0 0 0 3px rgba(46,206,199,0.18)!important; }
+    .ts-form-input::placeholder { color:rgba(255,255,255,0.28)!important; }
+    .ts-label { color:#2ECEC7; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:0.4rem; display:block; }
+    .publish-btn { width:100%; background:linear-gradient(135deg,#2ECEC7,#1A9B95); border:none; border-radius:30px; padding:0.75rem; color:#000; font-weight:800; font-size:0.88rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all 0.3s; font-family:'Lato',sans-serif; }
+    .publish-btn:hover { background:linear-gradient(135deg,#FF6B35,#d94e12); color:#fff; transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,107,53,0.40); }
+    .success-msg { display:none; text-align:center; margin-top:0.75rem; color:#2ECEC7; font-size:0.85rem; font-weight:700; letter-spacing:1px; }
+    .lightbox { display:none; position:fixed; inset:0; z-index:99999; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width:88vw; max-height:84vh; object-fit:contain; border-radius:10px; border:2px solid rgba(46,206,199,0.35); }
+    .lb-close { position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
+    .lb-close:hover { color:#2ECEC7; }
+    .sec-title { font-family:'Playfair Display',serif; color:#2ECEC7; font-size:1.6rem; margin-bottom:0.25rem; }
+    .sec-sub { font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.40); margin-bottom:1.5rem; }
+    .vote-priority { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35); color:rgba(255,255,255,0.80); border-radius:20px; padding:0.3rem 0.75rem; font-size:0.78rem; cursor:pointer; transition:all 0.2s; font-family:'Lato',sans-serif; }
+    .vote-priority:hover { background:rgba(255,255,255,0.22); color:#fff; }
+    .vote-priority.active { background:#2ECEC7; border-color:#2ECEC7; color:#000; font-weight:700; }
+    .idea-card { background:rgba(255,255,255,0.18); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,0.38); border-radius:12px; padding:0.9rem 1.1rem; display:flex; align-items:flex-start; gap:0.85rem; transition:border-color 0.2s; }
+    .idea-card:hover { border-color:rgba(255,255,255,0.60); }
+    .idea-cat-badge { font-size:0.65rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:10px; background:rgba(46,206,199,0.25); border:1px solid rgba(46,206,199,0.45); color:#fff; white-space:nowrap; flex-shrink:0; margin-top:0.1rem; }
+    .idea-body { flex:1; min-width:0; }
+    .idea-user { font-size:0.75rem; font-weight:700; color:#fff; margin-bottom:0.2rem; }
+    .idea-text { font-size:0.85rem; color:rgba(255,255,255,0.82); line-height:1.5; margin-bottom:0.35rem; }
+    .idea-meta { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
+    .idea-priority { font-size:0.70rem; color:rgba(255,255,255,0.55); }
+    .idea-votes { display:flex; align-items:center; gap:0.3rem; font-size:0.78rem; font-weight:700; color:rgba(255,255,255,0.70); cursor:pointer; border:none; background:none; transition:color 0.2s; font-family:'Lato',sans-serif; }
+    .idea-votes:hover { color:#FF6B35; }
+    .idea-votes.voted { color:#FF6B35; }
+    .donate-amount { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.40); color:#fff; border-radius:20px; padding:0.35rem 0.9rem; font-size:0.82rem; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Lato',sans-serif; min-height:36px; }
+    .donate-amount:hover { background:rgba(255,255,255,0.28); }
+    .donate-amount.active { background:#2ECEC7; border-color:#2ECEC7; color:#000; }
+    .donor-item { display:flex; align-items:center; gap:0.6rem; font-size:0.82rem; color:rgba(255,255,255,0.80); padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.07); }
+    .donor-item:last-child { border-bottom:none; }
+    .donor-avatar { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,#2ECEC7,#1A9B95); display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; color:#000; flex-shrink:0; }
+    .donor-amount { margin-left:auto; color:#2ECEC7; font-weight:700; }
+    .chat-msg { display:flex; }
+    .chat-msg.user { justify-content:flex-end; }
+    .chat-msg.ai { justify-content:flex-start; }
+    .chat-bubble { max-width:82%; padding:0.55rem 0.9rem; border-radius:12px; font-size:0.83rem; line-height:1.55; }
+    .ai-bubble { background:rgba(46,206,199,0.18); border:1px solid rgba(46,206,199,0.35); color:#fff; border-radius:4px 12px 12px 12px; }
+    .user-bubble { background:rgba(255,255,255,0.20); border:1px solid rgba(255,255,255,0.35); color:#fff; border-radius:12px 4px 12px 12px; }
+    .typing-bubble { background:rgba(46,206,199,0.12); border:1px solid rgba(46,206,199,0.25); color:rgba(255,255,255,0.55); font-style:italic; border-radius:4px 12px 12px 12px; padding:0.55rem 0.9rem; font-size:0.80rem; }
+    .quick-q { background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.28); color:rgba(255,255,255,0.75); border-radius:14px; padding:0.25rem 0.7rem; font-size:0.72rem; cursor:pointer; transition:all 0.2s; font-family:'Lato',sans-serif; }
+    .quick-q:hover { background:rgba(255,255,255,0.20); color:#fff; }
+    #chatWindow::-webkit-scrollbar { width:3px; }
+    #chatWindow::-webkit-scrollbar-thumb { background:rgba(46,206,199,0.35); border-radius:2px; }
   </style>
-
-
-    <script src="../security.js" defer></script>
 </head>
 
 <body>
 <a id="skip-link" href="#main-content">Saltar al contenido</a>
 
+<header class="text-center p-4">
+  <h1 class="text-danger">Taylor Swift</h1>
+  <p class="text-info">The Eras Collection</p>
+</header>
 
-  <!-- HEADER -->
-  <header class="text-center p-4">
-    <h1 class="text-danger">Taylor Swift</h1>
-    <p class="text-info">The Eras Collection</p>
-  </header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Navegación principal">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="jointhefanclub.html">jointhefanclub</a></li>
+        <li class="nav-item"><a class="nav-link" href="oficialstore.html">store</a></li>
+        <li class="nav-item"><a class="nav-link" href="toursmemories.html">toursmemories</a></li>
+        <li class="nav-item"><a class="nav-link" href="swifties.html">swifties</a></li>
+        <li class="nav-item"><a class="nav-link" href="memories.html">memories</a></li>
+        <li class="nav-item"><a class="nav-link active" href="fan.html">fan</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <!-- NAV -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Navegación principal">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="jointhefanclub.html">jointhefanclub</a></li>
-          <li class="nav-item"><a class="nav-link" href="oficialstore.html">store</a></li>
-          <li class="nav-item"><a class="nav-link" href="toursmemories.html">toursmemories</a></li>
-          <li class="nav-item"><a class="nav-link" href="swifties.html">swifties</a></li>
-          <li class="nav-item"><a class="nav-link" href="memories.html">memories</a></li>
-          <li class="nav-item"><a class="nav-link active" href="fans.html">fans</a></li>
-        </ul>
+<div class="lightbox" id="lightbox" onclick="closeLB()">
+  <button class="lb-close" onclick="closeLB()">&#x2715;</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<main id="main-content" tabindex="-1" role="main" class="container mt-5 mb-5">
+
+  <section class="text-center mb-5">
+    <h2 class="text-info">Zona de Fans</h2>
+    <p>Compartí tu foto del show, dale ❤️ a las fotos de otros fans y dejá tu historia breve.</p>
+  </section>
+
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="upload-card">
+        <div class="sec-title">📸 Tu foto</div>
+        <div class="sec-sub">Subí tu recuerdo del show</div>
+        <div class="drop-zone" id="dropZone"
+          onclick="document.getElementById('fileInput').click()"
+          ondragover="ev(event);this.classList.add('drag')"
+          ondragleave="this.classList.remove('drag')"
+          ondrop="dropFile(event)">
+          <i class="fas fa-camera-retro"></i>
+          <p>Arrastrá o hacé clic para elegir</p>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.28);margin-top:0.3rem">JPG, PNG · máx. 10MB</p>
+          <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="previewFile(event)">
+        </div>
+        <div id="previewSection" style="display:none;margin-top:1.2rem">
+          <div class="preview-img-wrap">
+            <img id="previewImg" src="" alt="preview">
+            <button class="remove-preview" onclick="cancelUpload()">&#x2715;</button>
+          </div>
+          <div class="mb-2">
+            <label class="ts-label">Tu nombre</label>
+            <input type="text" class="form-control ts-form-input" id="upName" placeholder="Swiftie anónimo">
+          </div>
+          <div class="mb-2">
+            <label class="ts-label">Era favorita</label>
+            <select class="form-select ts-form-input" id="upEra">
+              <option>Fearless ✨</option><option>Red 🔴</option>
+              <option>1989 🌊</option><option>Reputation 🐍</option>
+              <option>Lover 🌈</option><option>Folklore 🌲</option>
+              <option>Evermore 🍂</option><option>Midnights 🌙</option>
+              <option>TTPD 📖</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="ts-label">Tu historia (máx. 120 caracteres)</label>
+            <textarea class="form-control ts-form-input" id="upStory" rows="2" maxlength="120" placeholder="¿Cómo fue ese momento en el show?"></textarea>
+            <div style="text-align:right;font-size:0.68rem;color:rgba(255,255,255,0.30);margin-top:2px"><span id="charCount">0</span>/120</div>
+          </div>
+          <button class="publish-btn" onclick="publishPost()">Publicar ✦</button>
+          <div class="success-msg" id="successMsg">✦ ¡Publicado en la galería! ✦</div>
+        </div>
       </div>
     </div>
-  </nav>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" onclick="closeLB()">
-    <button class="lb-close" onclick="closeLB()">&#x2715;</button>
-    <img id="lbImg" src="" alt="">
+    <div class="col-lg-8">
+      <div class="sec-title">🎤 Fotos de fans</div>
+      <div class="sec-sub" id="postCount">6 historias compartidas</div>
+      <div class="posts-grid" id="postsGrid">
+
+        <div class="post-card">
+          <div class="post-header"><div class="post-avatar">🌲</div><div><div class="post-user">Valentina M.</div><div class="post-era">Folklore Era · Buenos Aires 🇦🇷</div></div></div>
+          <img src="../asset/taylortourBsAs.jpg" class="post-img" alt="BsAs" onclick="openLB('../asset/taylortourBsAs.jpg')">
+          <div class="post-story">Primer show de mi vida y lloramos con <em>Cardigan</em> sin parar. Noche que no voy a olvidar jamás.</div>
+          <div class="post-actions">
+            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">24</span></button>
+            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <div class="comments-list"><div class="comment-item"><strong>Sofia R.</strong> Yo también estaba ahí, fue épico 😭</div></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-header"><div class="post-avatar">🐍</div><div><div class="post-user">Carlos G.</div><div class="post-era">Reputation Era · Madrid 🇪🇸</div></div></div>
+          <img src="../asset/taylormadrid.jpg" class="post-img" alt="Madrid" onclick="openLB('../asset/taylormadrid.jpg')">
+          <div class="post-story">Madrid fue una locura total. <em>Look What You Made Me Do</em> en vivo me voló la cabeza.</div>
+          <div class="post-actions">
+            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">41</span></button>
+            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <div class="comments-list"><div class="comment-item"><strong>Ana K.</strong> Qué foto hermosa, se nota la energía del show!</div></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-header"><div class="post-avatar">🌊</div><div><div class="post-user">Sofia R.</div><div class="post-era">1989 Era · New York 🇺🇸</div></div></div>
+          <img src="../asset/tourtaylornweyork.jpg" class="post-img" alt="NY" onclick="openLB('../asset/tourtaylornweyork.jpg')">
+          <div class="post-story">Viajé sola a New York solo para este show. <em>Style</em> sonó y me quedé sin palabras.</div>
+          <div class="post-actions">
+            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">58</span></button>
+            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <div class="comments-list"><div class="comment-item"><strong>Valentina M.</strong> Sos una valiente! Dream trip 🙌</div><div class="comment-item"><strong>Isabella F.</strong> Yo también haría eso sin dudarlo</div></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-header"><div class="post-avatar">🎤</div><div><div class="post-user">Martina G.</div><div class="post-era">Eras Tour · Monumental 🇦🇷</div></div></div>
+          <img src="../asset/taylorswiftriverplate.jpg" class="post-img" alt="River" onclick="openLB('../asset/taylorswiftriverplate.jpg')">
+          <div class="post-story">Estadio Monumental lleno cantando <em>All Too Well</em>. Uno de los mejores días de mi vida.</div>
+          <div class="post-actions">
+            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">87</span></button>
+            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <div class="comments-list"><div class="comment-item"><strong>Carlos G.</strong> Icónico ese show!</div></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-header"><div class="post-avatar">✨</div><div><div class="post-user">Ana K.</div><div class="post-era">Fearless Era · Madrid 🇪🇸</div></div></div>
+          <img src="../asset/madridTaylor.jpg" class="post-img" alt="Madrid2" onclick="openLB('../asset/madridTaylor.jpg')">
+          <div class="post-story">Fui con mi mejor amiga. Cuando arrancó <em>Love Story</em> nos abrazamos y lloramos juntas.</div>
+          <div class="post-actions">
+            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">33</span></button>
+            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <div class="comments-list"><div class="comment-item"><strong>Martina G.</strong> Ay, me hiciste llorar leyendo esto 💚</div></div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-header"><div class="post-avatar">🌙</div><div><div class="post-user">Isabella F.</div><div class="post-era">Midnights Era · New York 🇺🇸</div></div></div>
+          <img src="../asset/newyorktaylor2.jpg" class="post-img" alt="NY2" onclick="openLB('../asset/newyorktaylor2.jpg')">
+          <div class="post-story">La noche de <em>Anti-Hero</em> en vivo fue surreal. 60.000 personas cantando al unísono.</div>
+          <div class="post-actions">
+            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">45</span></button>
+            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
+          </div>
+          <div class="comments-list"><div class="comment-item"><strong>Sofia R.</strong> Ese momento fue mágico!</div></div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <!-- MAIN -->
-  <main id="main-content" tabindex="-1" role="main" class="container mt-5 mb-5">
-
-    <!-- TÍTULO -->
-    <section class="text-center mb-5">
-      <h2 class="text-info">Zona de Fans</h2>
-      <p>Compartí tu foto del show, dale ❤️ a las fotos de otros fans y dejá tu historia breve.</p>
-    </section>
-
-    <div class="row g-4">
-
-      <!-- ══ COLUMNA IZQUIERDA: subir foto ══ -->
-      <div class="col-lg-4">
-        <div class="upload-card">
-          <div class="sec-title">📸 Tu foto</div>
-          <div class="sec-sub">Subí tu recuerdo del show</div>
-
-          <!-- Drop zone -->
-          <div class="drop-zone" id="dropZone"
-            onclick="document.getElementById('fileInput').click()"
-            ondragover="ev(event);this.classList.add('drag')"
-            ondragleave="this.classList.remove('drag')"
-            ondrop="dropFile(event)">
-            <i class="fas fa-camera-retro"></i>
-            <p>Arrastrá o hacé clic para elegir</p>
-            <p style="font-size:0.72rem;color:rgba(255,255,255,0.28);margin-top:0.3rem">JPG, PNG · máx. 10MB</p>
-            <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="previewFile(event)">
-          </div>
-
-          <!-- Preview -->
-          <div id="previewSection" style="display:none;margin-top:1.2rem">
-            <div class="preview-img-wrap">
-              <img id="previewImg" src="" alt="preview">
-              <button class="remove-preview" onclick="cancelUpload()">&#x2715;</button>
-            </div>
-
-            <div class="mb-2">
-              <label class="ts-label">Tu nombre</label>
-              <input type="text" class="form-control ts-form-input" id="upName" placeholder="Swiftie anónimo">
-            </div>
-            <div class="mb-2">
-              <label class="ts-label">Era favorita</label>
-              <select class="form-select ts-form-input" id="upEra">
-                <option>Fearless ✨</option><option>Red 🔴</option>
-                <option>1989 🌊</option><option>Reputation 🐍</option>
-                <option>Lover 🌈</option><option>Folklore 🌲</option>
-                <option>Evermore 🍂</option><option>Midnights 🌙</option>
-                <option>TTPD 📖</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label class="ts-label">Tu historia (máx. 120 caracteres)</label>
-              <textarea class="form-control ts-form-input" id="upStory" rows="2"
-                maxlength="120" placeholder="¿Cómo fue ese momento en el show?"></textarea>
-              <div style="text-align:right;font-size:0.68rem;color:rgba(255,255,255,0.30);margin-top:2px">
-                <span id="charCount">0</span>/120
+  <!-- IDEAS DE FANS -->
+  <section class="mt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="text-center mb-4">
+          <h2 class="text-info">💡 ¿Qué más querés ver en esta página?</h2>
+          <p style="color:rgba(255,255,255,0.75);font-size:0.92rem">Tus ideas hacen crecer esta comunidad.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-5">
+            <div class="card" style="padding:1.6rem">
+              <h5 class="card-title mb-3">✏️ Mandá tu idea</h5>
+              <div class="mb-3"><label class="form-label">Tu nombre</label><input type="text" class="form-control" id="ideaName" placeholder="Swiftie anónimo"></div>
+              <div class="mb-3">
+                <label class="form-label">Categoría</label>
+                <select class="form-select form-control" id="ideaCat">
+                  <option value="Contenido">📄 Contenido nuevo</option>
+                  <option value="Función">⚙️ Función del sitio</option>
+                  <option value="Diseño">🎨 Diseño / estética</option>
+                  <option value="Comunidad">🌎 Comunidad / eventos</option>
+                  <option value="Música">🎵 Música / discografía</option>
+                  <option value="Otro">✨ Otro</option>
+                </select>
               </div>
+              <div class="mb-3">
+                <label class="form-label">Tu idea</label>
+                <textarea class="form-control" id="ideaTxt" rows="3" maxlength="200" placeholder="Ej: Agregar un quiz de qué era sos..."></textarea>
+                <div style="text-align:right;font-size:0.68rem;color:rgba(255,255,255,0.45);margin-top:2px"><span id="ideaCharCount">0</span>/200</div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">¿Qué tan importante es para vos?</label>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+                  <button class="vote-priority active" data-val="🔥 Urgente" onclick="setPriority(this)">🔥 Urgente</button>
+                  <button class="vote-priority" data-val="⭐ Alta" onclick="setPriority(this)">⭐ Alta</button>
+                  <button class="vote-priority" data-val="💡 Normal" onclick="setPriority(this)">💡 Normal</button>
+                  <button class="vote-priority" data-val="🌱 A futuro" onclick="setPriority(this)">🌱 A futuro</button>
+                </div>
+              </div>
+              <button class="btn btn-danger w-100" onclick="submitIdea()" style="letter-spacing:1px">Enviar idea ✦</button>
+              <div id="ideaOk" style="display:none;text-align:center;margin-top:0.75rem;color:#2ECEC7;font-size:0.85rem;font-weight:700">✦ ¡Gracias! Tu idea fue publicada ✦</div>
             </div>
-            <button class="publish-btn" onclick="publishPost()">Publicar ✦</button>
-            <div class="success-msg" id="successMsg">✦ ¡Publicado en la galería! ✦</div>
+          </div>
+          <div class="col-md-7">
+            <h5 style="color:#fff;font-family:'Playfair Display',serif;margin-bottom:1rem">Ideas de la comunidad <span id="ideaCount" style="font-size:0.72rem;color:rgba(255,255,255,0.55);font-family:'Lato',sans-serif;margin-left:0.5rem;font-weight:400"></span></h5>
+            <div id="ideasWall" style="display:flex;flex-direction:column;gap:0.75rem"></div>
           </div>
         </div>
       </div>
-
-      <!-- ══ COLUMNA DERECHA: galería de posts ══ -->
-      <div class="col-lg-8">
-        <div class="sec-title">🎤 Fotos de fans</div>
-        <div class="sec-sub" id="postCount">6 historias compartidas</div>
-
-        <div class="posts-grid" id="postsGrid">
-
-          <!-- POST 1 -->
-          <div class="post-card">
-            <div class="post-header">
-              <div class="post-avatar">🌲</div>
-              <div>
-                <div class="post-user">Valentina M.</div>
-                <div class="post-era">Folklore Era · Buenos Aires 🇦🇷</div>
-              </div>
-            </div>
-            <img src="../asset/taylortourBsAs.jpg" class="post-img" alt="BsAs" onclick="openLB('../asset/taylortourBsAs.jpg')">
-            <div class="post-story">Primer show de mi vida y lloramos con <em>Cardigan</em> sin parar. Noche que no voy a olvidar jamás.</div>
-            <div class="post-actions">
-              <button class="like-btn" onclick="toggleLike(this)">
-                <i class="fas fa-heart"></i>
-                <span class="like-count">24</span>
-              </button>
-              <div class="comment-input-wrap">
-                <input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)">
-                <button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div>
-            <div class="comments-list">
-              <div class="comment-item"><strong>Sofia R.</strong> Yo también estaba ahí, fue épico 😭</div>
-            </div>
-          </div>
-
-          <!-- POST 2 -->
-          <div class="post-card">
-            <div class="post-header">
-              <div class="post-avatar">🐍</div>
-              <div>
-                <div class="post-user">Carlos G.</div>
-                <div class="post-era">Reputation Era · Madrid 🇪🇸</div>
-              </div>
-            </div>
-            <img src="../asset/taylormadrid.jpg" class="post-img" alt="Madrid" onclick="openLB('../asset/taylormadrid.jpg')">
-            <div class="post-story">Madrid fue una locura total. <em>Look What You Made Me Do</em> en vivo me voló la cabeza.</div>
-            <div class="post-actions">
-              <button class="like-btn" onclick="toggleLike(this)">
-                <i class="fas fa-heart"></i>
-                <span class="like-count">41</span>
-              </button>
-              <div class="comment-input-wrap">
-                <input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)">
-                <button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div>
-            <div class="comments-list">
-              <div class="comment-item"><strong>Ana K.</strong> Qué foto hermosa, se nota la energía del show!</div>
-            </div>
-          </div>
-
-          <!-- POST 3 -->
-          <div class="post-card">
-            <div class="post-header">
-              <div class="post-avatar">🌊</div>
-              <div>
-                <div class="post-user">Sofia R.</div>
-                <div class="post-era">1989 Era · New York 🇺🇸</div>
-              </div>
-            </div>
-            <img src="../asset/tourtaylornweyork.jpg" class="post-img" alt="NY" onclick="openLB('../asset/tourtaylornweyork.jpg')">
-            <div class="post-story">Viajé sola a New York solo para este show. <em>Style</em> sonó y me quedé sin palabras.</div>
-            <div class="post-actions">
-              <button class="like-btn" onclick="toggleLike(this)">
-                <i class="fas fa-heart"></i>
-                <span class="like-count">58</span>
-              </button>
-              <div class="comment-input-wrap">
-                <input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)">
-                <button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div>
-            <div class="comments-list">
-              <div class="comment-item"><strong>Valentina M.</strong> Sos una valiente! Dream trip 🙌</div>
-              <div class="comment-item"><strong>Isabella F.</strong> Yo también haría eso sin dudarlo</div>
-            </div>
-          </div>
-
-          <!-- POST 4 -->
-          <div class="post-card">
-            <div class="post-header">
-              <div class="post-avatar">🎤</div>
-              <div>
-                <div class="post-user">Martina G.</div>
-                <div class="post-era">Eras Tour · Monumental 🇦🇷</div>
-              </div>
-            </div>
-            <img src="../asset/taylorswiftriverplate.jpg" class="post-img" alt="River" onclick="openLB('../asset/taylorswiftriverplate.jpg')">
-            <div class="post-story">Estadio Monumental lleno cantando <em>All Too Well</em>. Uno de los mejores días de mi vida.</div>
-            <div class="post-actions">
-              <button class="like-btn" onclick="toggleLike(this)">
-                <i class="fas fa-heart"></i>
-                <span class="like-count">87</span>
-              </button>
-              <div class="comment-input-wrap">
-                <input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)">
-                <button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div>
-            <div class="comments-list">
-              <div class="comment-item"><strong>Carlos G.</strong> Icónico ese show!</div>
-            </div>
-          </div>
-
-          <!-- POST 5 -->
-          <div class="post-card">
-            <div class="post-header">
-              <div class="post-avatar">✨</div>
-              <div>
-                <div class="post-user">Ana K.</div>
-                <div class="post-era">Fearless Era · Madrid 🇪🇸</div>
-              </div>
-            </div>
-            <img src="../asset/madridTaylor.jpg" class="post-img" alt="Madrid2" onclick="openLB('../asset/madridTaylor.jpg')">
-            <div class="post-story">Fui con mi mejor amiga. Cuando arrancó <em>Love Story</em> nos abrazamos y lloramos juntas.</div>
-            <div class="post-actions">
-              <button class="like-btn" onclick="toggleLike(this)">
-                <i class="fas fa-heart"></i>
-                <span class="like-count">33</span>
-              </button>
-              <div class="comment-input-wrap">
-                <input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)">
-                <button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div>
-            <div class="comments-list">
-              <div class="comment-item"><strong>Martina G.</strong> Ay, me hiciste llorar leyendo esto 💚</div>
-            </div>
-          </div>
-
-          <!-- POST 6 -->
-          <div class="post-card">
-            <div class="post-header">
-              <div class="post-avatar">🌙</div>
-              <div>
-                <div class="post-user">Isabella F.</div>
-                <div class="post-era">Midnights Era · New York 🇺🇸</div>
-              </div>
-            </div>
-            <img src="../asset/newyorktaylor2.jpg" class="post-img" alt="NY2" onclick="openLB('../asset/newyorktaylor2.jpg')">
-            <div class="post-story">La noche de <em>Anti-Hero</em> en vivo fue surreal. 60.000 personas cantando al unísono.</div>
-            <div class="post-actions">
-              <button class="like-btn" onclick="toggleLike(this)">
-                <i class="fas fa-heart"></i>
-                <span class="like-count">45</span>
-              </button>
-              <div class="comment-input-wrap">
-                <input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)">
-                <button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button>
-              </div>
-            </div>
-            <div class="comments-list">
-              <div class="comment-item"><strong>Sofia R.</strong> Ese momento fue mágico!</div>
-            </div>
-          </div>
-
-        </div><!-- /posts-grid -->
-      </div><!-- /col -->
-    </div><!-- /row -->
-
-    <!-- ══ IDEAS DE FANS ══ -->
-    <section class="mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-
-          <div class="text-center mb-4">
-            <h2 class="text-info">💡 ¿Qué más querés ver en esta página?</h2>
-            <p style="color:rgba(255,255,255,0.75);font-size:0.92rem">
-              Tus ideas hacen crecer esta comunidad. Contanos qué sección, función o contenido querés que agreguemos.
-            </p>
-          </div>
-
-          <div class="row g-4">
-
-            <!-- FORMULARIO DE IDEA -->
-            <div class="col-md-5">
-              <div class="card" style="padding:1.6rem">
-                <h5 class="card-title mb-3">✏️ Mandá tu idea</h5>
-
-                <div class="mb-3">
-                  <label class="form-label">Tu nombre</label>
-                  <input type="text" class="form-control" id="ideaName" placeholder="Swiftie anónimo">
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label">Categoría</label>
-                  <select class="form-select form-control" id="ideaCat">
-                    <option value="Contenido">📄 Contenido nuevo</option>
-                    <option value="Función">⚙️ Función del sitio</option>
-                    <option value="Diseño">🎨 Diseño / estética</option>
-                    <option value="Comunidad">🌎 Comunidad / eventos</option>
-                    <option value="Música">🎵 Música / discografía</option>
-                    <option value="Otro">✨ Otro</option>
-                  </select>
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label">Tu idea</label>
-                  <textarea class="form-control" id="ideaTxt" rows="3"
-                    maxlength="200"
-                    placeholder="Ej: Agregar un quiz de qué era sos, una sección de letras traducidas, un ranking de canciones..."></textarea>
-                  <div style="text-align:right;font-size:0.68rem;color:rgba(255,255,255,0.45);margin-top:2px">
-                    <span id="ideaCharCount">0</span>/200
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label">¿Qué tan importante es para vos?</label>
-                  <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
-                    <button class="vote-priority active" data-val="🔥 Urgente"   onclick="setPriority(this)">🔥 Urgente</button>
-                    <button class="vote-priority"        data-val="⭐ Alta"       onclick="setPriority(this)">⭐ Alta</button>
-                    <button class="vote-priority"        data-val="💡 Normal"     onclick="setPriority(this)">💡 Normal</button>
-                    <button class="vote-priority"        data-val="🌱 A futuro"   onclick="setPriority(this)">🌱 A futuro</button>
-                  </div>
-                </div>
-
-                <button class="btn btn-danger w-100" onclick="submitIdea()" style="letter-spacing:1px">
-                  Enviar idea ✦
-                </button>
-                <div id="ideaOk" style="display:none;text-align:center;margin-top:0.75rem;color:#2ECEC7;font-size:0.85rem;font-weight:700">
-                  ✦ ¡Gracias! Tu idea fue publicada ✦
-                </div>
-              </div>
-            </div>
-
-            <!-- MURO DE IDEAS -->
-            <div class="col-md-7">
-              <h5 style="color:#fff;font-family:'Playfair Display',serif;margin-bottom:1rem;text-shadow:0 1px 4px rgba(0,0,0,0.4)">
-                Ideas de la comunidad
-                <span id="ideaCount" style="font-size:0.72rem;color:rgba(255,255,255,0.55);font-family:'Lato',sans-serif;margin-left:0.5rem;font-weight:400"></span>
-              </h5>
-              <div id="ideasWall" style="display:flex;flex-direction:column;gap:0.75rem">
-                <!-- ideas precargadas -->
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .vote-priority {
-        background: rgba(255,255,255,0.12);
-        border: 1px solid rgba(255,255,255,0.35);
-        color: rgba(255,255,255,0.80);
-        border-radius: 20px;
-        padding: 0.3rem 0.75rem;
-        font-size: 0.78rem;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-family: 'Lato', sans-serif;
-      }
-      .vote-priority:hover { background: rgba(255,255,255,0.22); color:#fff; }
-      .vote-priority.active { background: #2ECEC7; border-color: #2ECEC7; color: #000; font-weight:700; }
-
-      .idea-card {
-        background: rgba(255,255,255,0.18);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border: 1px solid rgba(255,255,255,0.38);
-        border-radius: 12px;
-        padding: 0.9rem 1.1rem;
-        display: flex;
-        align-items: flex-start;
-        gap: 0.85rem;
-        transition: border-color 0.2s;
-      }
-      .idea-card:hover { border-color: rgba(255,255,255,0.60); }
-      .idea-cat-badge {
-        font-size: 0.65rem;
-        font-weight: 700;
-        padding: 0.2rem 0.6rem;
-        border-radius: 10px;
-        background: rgba(46,206,199,0.25);
-        border: 1px solid rgba(46,206,199,0.45);
-        color: #fff;
-        white-space: nowrap;
-        flex-shrink: 0;
-        margin-top: 0.1rem;
-      }
-      .idea-body { flex:1; min-width:0; }
-      .idea-user { font-size:0.75rem; font-weight:700; color:#fff; margin-bottom:0.2rem; }
-      .idea-text { font-size:0.85rem; color:rgba(255,255,255,0.82); line-height:1.5; margin-bottom:0.35rem; }
-      .idea-meta { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
-      .idea-priority { font-size:0.70rem; color:rgba(255,255,255,0.55); }
-      .idea-votes {
-        display:flex; align-items:center; gap:0.3rem;
-        font-size:0.78rem; font-weight:700; color:rgba(255,255,255,0.70);
-        cursor:pointer; border:none; background:none;
-        transition: color 0.2s;
-        font-family:'Lato',sans-serif;
-      }
-      .idea-votes:hover { color: #FF6B35; }
-      .idea-votes.voted { color: #FF6B35; }
-    </style>
-
-    <script>
-      /* ── Prioridad seleccionada ── */
-      var selectedPriority = '🔥 Urgente';
-      function setPriority(btn) {
-        document.querySelectorAll('.vote-priority').forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active');
-        selectedPriority = btn.dataset.val;
-      }
-
-      /* ── Contador de caracteres ── */
-      var ideaTxtEl = document.getElementById('ideaTxt');
-      if (ideaTxtEl) {
-        ideaTxtEl.addEventListener('input', function(){
-          document.getElementById('ideaCharCount').textContent = this.value.length;
-        });
-      }
-
-      /* ── Ideas precargadas ── */
-      var ideas = [
-        { name:'Valentina M.', cat:'Función',    priority:'🔥 Urgente', text:'Un quiz interactivo para saber qué era de Taylor sos según tu personalidad.',   votes:18, voted:false },
-        { name:'Carlos G.',    cat:'Contenido',  priority:'⭐ Alta',    text:'Una sección con las letras de las canciones más icónicas traducidas al español.', votes:14, voted:false },
-        { name:'Sofia R.',     cat:'Comunidad',  priority:'💡 Normal',  text:'Organizar un listening party virtual cuando salga nuevo álbum.',                 votes:11, voted:false },
-        { name:'Ana K.',       cat:'Diseño',     priority:'🌱 A futuro', text:'Modo oscuro y modo claro para elegir.',                                          votes: 9, voted:false },
-        { name:'Martina G.',   cat:'Música',     priority:'⭐ Alta',    text:'Ranking de canciones donde todos podamos votar cuál es la mejor de cada era.',    votes:22, voted:false },
-      ];
-
-      function renderIdeas() {
-        var wall = document.getElementById('ideasWall');
-        var count = document.getElementById('ideaCount');
-        if (!wall) return;
-        wall.innerHTML = '';
-        ideas.forEach(function(idea, idx) {
-          var div = document.createElement('div');
-          div.className = 'idea-card';
-          div.innerHTML =
-            '<span class="idea-cat-badge">' + idea.cat + '</span>' +
-            '<div class="idea-body">' +
-              '<div class="idea-user">' + idea.name + '</div>' +
-              '<div class="idea-text">' + idea.text + '</div>' +
-              '<div class="idea-meta">' +
-                '<span class="idea-priority">' + idea.priority + '</span>' +
-                '<button class="idea-votes' + (idea.voted ? ' voted' : '') + '" onclick="voteIdea(' + idx + ')">' +
-                  '♥ <span>' + idea.votes + '</span>' +
-                '</button>' +
-              '</div>' +
-            '</div>';
-          wall.appendChild(div);
-        });
-        if (count) count.textContent = ideas.length + ' ideas enviadas';
-      }
-
-      function voteIdea(idx) {
-        if (ideas[idx].voted) {
-          ideas[idx].votes--;
-          ideas[idx].voted = false;
-        } else {
-          ideas[idx].votes++;
-          ideas[idx].voted = true;
-        }
-        renderIdeas();
-      }
-
-      function submitIdea() {
-        var name = document.getElementById('ideaName').value.trim() || 'Swiftie anónimo';
-        var cat  = document.getElementById('ideaCat').value;
-        var txt  = document.getElementById('ideaTxt').value.trim();
-        if (!txt) { alert('Escribí tu idea antes de enviar.'); return; }
-        ideas.unshift({ name:name, cat:cat, priority:selectedPriority, text:txt, votes:0, voted:false });
-        renderIdeas();
-        document.getElementById('ideaOk').style.display = 'block';
-        document.getElementById('ideaName').value = '';
-        document.getElementById('ideaTxt').value  = '';
-        document.getElementById('ideaCharCount').textContent = '0';
-        setTimeout(function(){ document.getElementById('ideaOk').style.display='none'; }, 3000);
-      }
-
-      window.addEventListener('DOMContentLoaded', renderIdeas);
-    </>
-
-  </main>
-
-  <!-- ══ DONACIONES + IA CHATBOT ══ -->
-  <section class="container mt-5 mb-5">
-    <div class="row g-4 align-items-start">
-
-      <!-- DONACIONES -->
-      <div class="col-md-6">
-        <div class="card" style="padding:1.8rem">
-          <h4 class="card-title mb-1">💚 Apoyá esta fan page</h4>
-          <p style="color:rgba(255,255,255,0.75);font-size:0.88rem;margin-bottom:1.5rem">
-            Este sitio es hecho con amor por fans, para fans. Tu donación nos ayuda a pagar el hosting, agregar nuevas funciones y seguir creciendo.
-          </p>
-
-          <!-- Selector de monto -->
-          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.2rem" role="group" aria-label="Seleccionar monto de donación">
-            <button class="donate-amount active" data-val="2"  onclick="setAmount(this)">$2 USD</button>
-            <button class="donate-amount"        data-val="5"  onclick="setAmount(this)">$5 USD</button>
-            <button class="donate-amount"        data-val="10" onclick="setAmount(this)">$10 USD</button>
-            <button class="donate-amount"        data-val="20" onclick="setAmount(this)">$20 USD</button>
-          </div>
-
-          <!-- Monto personalizado -->
-          <div style="margin-bottom:1.2rem">
-            <label class="form-label" for="customAmount">O ingresá tu monto (USD)</label>
-            <input type="number" class="form-control" id="customAmount"
-                  placeholder="Ej: 15" min="1" max="9999"
-                  aria-label="Monto personalizado en dólares"
-                  oninput="clearAmountBtns()">
-          </div>
-
-          <!-- Nombre opcional -->
-          <div style="margin-bottom:1.2rem">
-            <label class="form-label" for="donorName">Tu nombre (opcional)</label>
-            <input type="text" class="form-control" id="donorName"
-                  placeholder="Aparecer en el muro de donantes"
-                  maxlength="60" aria-label="Nombre del donante">
-          </div>
-
-          <div id="donateErrors" class="form-error" role="alert"></div>
-
-          <!-- Botón Tecito -->
-          <a href="https://tecito.app/taylorswiftfanpage" target="_blank" rel="noopener"
-          style="display:inline-block;background:linear-gradient(135deg,#2ECEC7,#1A9B95);
-          color:#000;font-weight:800;font-size:0.88rem;padding:0.75rem 2rem;
-          border-radius:30px;text-decoration:none;letter-spacing:1px;
-          transition:all 0.3s"
-          onmouseover="this.style.background='linear-gradient(135deg,#FF6B35,#d94e12)';this.style.color='#fff'"
-          onmouseout="this.style.background='linear-gradient(135deg,#2ECEC7,#1A9B95)';this.style.color='#000'">
-          ☕ Invitame un tecito
-        </a>
-Donar ahora ✦
-          <p style="font-size:0.68rem;color:rgba(255,255,255,0.40);text-align:center;margin-top:0.75rem">
-            🔒 Pago seguro · Los fondos van directamente al mantenimiento del sitio
-          </p>
-
-          <!-- Muro de donantes -->
-          <div style="margin-top:1.2rem;border-top:1px solid rgba(255,255,255,0.15);padding-top:1rem">
-            <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:#2ECEC7;font-weight:700;margin-bottom:0.75rem">
-              ✦ Donantes recientes
-            </div>
-            <div id="donorWall" style="display:flex;flex-direction:column;gap:0.5rem"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- IA CHATBOT -->
-      <div class="col-md-6">
-        <div class="card" style="padding:1.8rem">
-          <h4 class="card-title mb-1">🤖 Swiftie AI</h4>
-          <p style="color:rgba(255,255,255,0.75);font-size:0.88rem;margin-bottom:1.2rem">
-            Preguntame sobre Taylor Swift — eras, letras, tours, datos curiosos o qué hacer en la página.
-          </p>
-
-          <!-- Chat window -->
-          <div id="chatWindow"
-              role="log" aria-live="polite" aria-label="Chat con Swiftie AI"
-              style="height:240px;overflow-y:auto;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1rem;padding-right:4px">
-            <!-- Mensaje inicial -->
-            <div class="chat-msg ai">
-              <div class="chat-bubble ai-bubble">
-                ¡Hola Swiftie! 👋 Soy tu asistente Taylor Swift. Podés preguntarme sobre las eras, canciones, el Eras Tour, datos curiosos o qué agregar a esta fan page. ¿En qué te ayudo?
-              </div>
-            </div>
-          </div>
-
-          <!-- Input chat -->
-          <div style="display:flex;gap:0.5rem">
-            <input type="text" class="form-control" id="chatInput"
-                  placeholder="Ej: ¿Cuál es la era más popular?"
-                  maxlength="200"
-                  aria-label="Mensaje para Swiftie AI"
-                  onkeydown="if(event.key==='Enter')sendChat()">
-            <button class="btn btn-danger" onclick="sendChat()"
-                    style="flex-shrink:0;padding:0.5rem 1rem"
-                    aria-label="Enviar mensaje al chat">
-              ✦
-            </button>
-          </div>
-
-          <!-- Sugerencias rápidas -->
-          <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.75rem">
-            <button class="quick-q" onclick="quickQ(this)">¿Qué era sos?</button>
-            <button class="quick-q" onclick="quickQ(this)">Datos del Eras Tour</button>
-            <button class="quick-q" onclick="quickQ(this)">¿Qué agregar al sitio?</button>
-            <button class="quick-q" onclick="quickQ(this)">Canción más famosa</button>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <style>
-    /* Botones de monto */
-    .donate-amount {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.40);
-      color: #fff; border-radius: 20px;
-      padding: 0.35rem 0.9rem; font-size: 0.82rem;
-      font-weight: 700; cursor: pointer;
-      transition: all 0.2s; font-family: 'Lato', sans-serif;
-      min-height: 36px;
-    }
-    .donate-amount:hover  { background: rgba(255,255,255,0.28); }
-    .donate-amount.active { background: #2ECEC7; border-color: #2ECEC7; color: #000; }
+</main>
 
-    /* Donor wall item */
-    .donor-item {
-      display: flex; align-items: center; gap: 0.6rem;
-      font-size: 0.82rem; color: rgba(255,255,255,0.80);
-      padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .donor-item:last-child { border-bottom: none; }
-    .donor-avatar {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: linear-gradient(135deg,#2ECEC7,#1A9B95);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem; font-weight: 700; color: #000; flex-shrink: 0;
-    }
-    .donor-amount { margin-left: auto; color: #2ECEC7; font-weight: 700; }
+<!-- DONACIONES + CHATBOT -->
+<section class="container mt-5 mb-5">
+  <div class="row g-4 align-items-start">
 
-    /* Chat bubbles */
-    .chat-msg { display: flex; }
-    .chat-msg.user { justify-content: flex-end; }
-    .chat-msg.ai   { justify-content: flex-start; }
-    .chat-bubble {
-      max-width: 82%; padding: 0.55rem 0.9rem;
-      border-radius: 12px; font-size: 0.83rem; line-height: 1.55;
-    }
-    .ai-bubble {
-      background: rgba(46,206,199,0.18);
-      border: 1px solid rgba(46,206,199,0.35);
-      color: #fff; border-radius: 4px 12px 12px 12px;
-    }
-    .user-bubble {
-      background: rgba(255,255,255,0.20);
-      border: 1px solid rgba(255,255,255,0.35);
-      color: #fff; border-radius: 12px 4px 12px 12px;
-    }
-    .typing-bubble {
-      background: rgba(46,206,199,0.12);
-      border: 1px solid rgba(46,206,199,0.25);
-      color: rgba(255,255,255,0.55); font-style: italic;
-      border-radius: 4px 12px 12px 12px; padding: 0.55rem 0.9rem;
-      font-size: 0.80rem;
-    }
+    <div class="col-md-6">
+      <div class="card" style="padding:1.8rem">
+        <h4 class="card-title mb-1">💚 Apoyá esta fan page</h4>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.88rem;margin-bottom:1.5rem">Este sitio es hecho con amor por fans, para fans. Tu donación nos ayuda a seguir creciendo.</p>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.2rem" role="group">
+          <button class="donate-amount active" data-val="2" onclick="setAmount(this)">$2 USD</button>
+          <button class="donate-amount" data-val="5" onclick="setAmount(this)">$5 USD</button>
+          <button class="donate-amount" data-val="10" onclick="setAmount(this)">$10 USD</button>
+          <button class="donate-amount" data-val="20" onclick="setAmount(this)">$20 USD</button>
+        </div>
+        <div style="margin-bottom:1.2rem">
+          <label class="form-label" for="customAmount">O ingresá tu monto (USD)</label>
+          <input type="number" class="form-control" id="customAmount" placeholder="Ej: 15" min="1" max="9999" oninput="clearAmountBtns()">
+        </div>
+        <div style="margin-bottom:1.2rem">
+          <label class="form-label" for="donorName">Tu nombre (opcional)</label>
+          <input type="text" class="form-control" id="donorName" placeholder="Aparecer en el muro de donantes" maxlength="60">
+        </div>
+        <!-- ✅ BOTÓN TECITO REAL -->
+        <a href="https://tecito.app/taylorswiftfanpage" target="_blank" rel="noopener"
+           class="btn btn-danger w-100"
+           style="border-radius:30px;font-weight:800;letter-spacing:1px;padding:0.75rem;font-size:0.88rem;margin-bottom:0.75rem">
+          ☕ Invitame un tecito
+        </a>
+        <p style="font-size:0.68rem;color:rgba(255,255,255,0.40);text-align:center">🔒 Los fondos van directamente al mantenimiento del sitio</p>
+        <div style="margin-top:1.2rem;border-top:1px solid rgba(255,255,255,0.15);padding-top:1rem">
+          <div style="font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:#2ECEC7;font-weight:700;margin-bottom:0.75rem">✦ Donantes recientes</div>
+          <div id="donorWall" style="display:flex;flex-direction:column;gap:0.5rem"></div>
+        </div>
+      </div>
+    </div>
 
-    /* Quick questions */
-    .quick-q {
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.28);
-      color: rgba(255,255,255,0.75);
-      border-radius: 14px; padding: 0.25rem 0.7rem;
-      font-size: 0.72rem; cursor: pointer;
-      transition: all 0.2s; font-family: 'Lato', sans-serif;
-    }
-    .quick-q:hover { background: rgba(255,255,255,0.20); color: #fff; }
+    <div class="col-md-6">
+      <div class="card" style="padding:1.8rem">
+        <h4 class="card-title mb-1">🤖 Swiftie AI</h4>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.88rem;margin-bottom:1.2rem">Preguntame sobre Taylor Swift — eras, letras, tours, datos curiosos.</p>
+        <div id="chatWindow" role="log" aria-live="polite" style="height:240px;overflow-y:auto;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1rem;padding-right:4px">
+          <div class="chat-msg ai"><div class="chat-bubble ai-bubble">¡Hola Swiftie! 👋 Podés preguntarme sobre las eras, canciones, el Eras Tour o datos curiosos. ¿En qué te ayudo?</div></div>
+        </div>
+        <div style="display:flex;gap:0.5rem">
+          <input type="text" class="form-control" id="chatInput" placeholder="Ej: ¿Cuál es la era más popular?" maxlength="200" onkeydown="if(event.key==='Enter')sendChat()">
+          <button class="btn btn-danger" onclick="sendChat()" style="flex-shrink:0;padding:0.5rem 1rem">✦</button>
+        </div>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.75rem">
+          <button class="quick-q" onclick="quickQ(this)">¿Qué era sos?</button>
+          <button class="quick-q" onclick="quickQ(this)">Datos del Eras Tour</button>
+          <button class="quick-q" onclick="quickQ(this)">Canción más famosa</button>
+        </div>
+      </div>
+    </div>
 
-    #chatWindow::-webkit-scrollbar { width: 3px; }
-    #chatWindow::-webkit-scrollbar-thumb { background: rgba(46,206,199,0.35); border-radius: 2px; }
-  </style>
+  </div>
+</section>
 
-  <script>
-    /* ── DONACIONES ── */
-    var selectedAmount = 2;
-    var donors = [
-      { name:'Valentina M.', amount:10, emoji:'🌲' },
-      { name:'Sofia R.',     amount: 5, emoji:'🌊' },
-      { name:'Donante anónimo', amount:2, emoji:'💚' },
-    ];
-
-    function renderDonors() {
-      var wall = document.getElementById('donorWall');
-      if (!wall) return;
-      wall.innerHTML = donors.slice(0,5).map(function(d) {
-        return '<div class="donor-item">' +
-          '<div class="donor-avatar">' + d.emoji + '</div>' +
-          '<span>' + sanitize(d.name) + '</span>' +
-          '<span class="donor-amount">$' + d.amount + ' USD</span>' +
-        '</div>';
-      }).join('');
-    }
-
-    function setAmount(btn) {
-      document.querySelectorAll('.donate-amount').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      selectedAmount = parseInt(btn.dataset.val);
-      document.getElementById('customAmount').value = '';
-    }
-    function clearAmountBtns() {
-      document.querySelectorAll('.donate-amount').forEach(function(b){ b.classList.remove('active'); });
-      selectedAmount = 0;
-    }
-
-    function processDonate() {
-      var custom = document.getElementById('customAmount').value;
-      var amount = custom ? parseInt(custom) : selectedAmount;
-      var name   = document.getElementById('donorName').value.trim();
-
-      var result = validateForm([
-        { id:'donorName', label:'Nombre', rules:{ maxLen:60, noScript:true } }
-      ]);
-      if (custom) {
-        if (!amount || amount < 1) {
-          showErrors(['El monto mínimo es $1 USD.'], 'donateErrors'); return;
-        }
-        if (amount > 9999) {
-          showErrors(['El monto máximo es $9999 USD.'], 'donateErrors'); return;
-        }
-      }
-      showErrors([], 'donateErrors');
-
-      /* Simulación de pago — reemplazá con Stripe / MercadoPago */
-      var displayName = name ? sanitize(name) : 'Donante anónimo';
-      var emojis = ['💚','🌟','✨','🎵','🌈'];
-      donors.unshift({
-        name: displayName,
-        amount: amount,
-        emoji: emojis[Math.floor(Math.random() * emojis.length)]
-      });
-      renderDonors();
-      document.getElementById('donorName').value = '';
-      document.getElementById('customAmount').value = '';
-      document.querySelectorAll('.donate-amount').forEach(function(b){ b.classList.remove('active'); });
-      document.querySelector('[data-val="2"]').classList.add('active');
-      selectedAmount = 2;
-      if (window.announce) announce('¡Gracias por tu donación de $' + amount + ' USD!');
-      alert('🎉 ¡Gracias ' + displayName + ' por donar $' + amount + ' USD!\n\nEsta es una demo — integrá Stripe o MercadoPago para pagos reales.');
-    }
-
-    window.addEventListener('DOMContentLoaded', renderDonors);
-
-    /* ── SWIFTIE AI CHATBOT ── */
-    var aiKnowledge = {
-      'era':      'Las 11 eras son: Taylor Swift (2006), Fearless (2008), Speak Now (2010), Red (2012), 1989 (2014), Reputation (2017), Lover (2019), Folklore (2020), Evermore (2020), Midnights (2022) y TTPD (2024). Cada una tiene su estética, paleta de colores y sonido único. ¿Sobre cuál querés saber más?',
-      'popular':  'La era más popular según streams es Midnights (2022) con Anti-Hero como el sencillo más exitoso. Pero Folklore y 1989 son las más queridas por la crítica. El Eras Tour confirmó que todas las eras tienen fans acérrimos.',
-      'tour':     'The Eras Tour (2023-2024) fue el tour más taquillero de la historia con más de $2 billones recaudados, 149 shows en 5 continentes y más de 10 millones de fans en vivo. En Argentina tocó en el Estadio Monumental en noviembre de 2024.',
-      'cancion':  'Las canciones más famosas son: Anti-Hero, Shake It Off, Love Story, Blank Space, Cruel Summer, All Too Well (10 min), Cardigan, Style y Lavender Haze. Anti-Hero fue #1 por 8 semanas consecutivas en Billboard Hot 100.',
-      'dato':     'Datos curiosos: Taylor escribió su primer álbum completo ella sola a los 16 años. Tiene 14 Grammys. Es la primera artista en tener 5 álbumes que debutan en #1. Re-grabó sus primeros 6 álbumes para recuperar sus masters. Su gato más famoso se llama Olivia Benson.',
-      'agregar':  'Ideas geniales para la fan page: un quiz interactivo de eras, letras con traducción al español, un ranking de canciones votable, un timeline visual de toda la carrera, una sección de outfits por era, un generador de nombre Swiftie personalizado, y un contador para el próximo álbum.',
-      'sitio':    'Esta fan page tiene: galería de fotos de fans, subida de fotos con historias, me gusta, muro de ideas, memories con las 11 eras, tienda oficial, tours y más. ¡Y seguimos creciendo gracias a las donaciones y sugerencias de la comunidad!',
-      'folklore': 'Folklore (2020) es considerado el mejor álbum de Taylor según Metacritic. Es un álbum indie folk grabado en cuarentena junto a Aaron Dessner. Sus canciones más icónicas son: cardigan, august, seven, exile (con Bon Iver) y betty.',
-      'midnights':'Midnights (2022) es el álbum más streameado de Taylor. Fue lanzado en 4 versiones diferentes. Anti-Hero fue el sencillo más exitoso. La 3am Edition incluye 7 canciones adicionales.',
-      'ttpd':     'The Tortured Poets Department (2024) fue lanzado en abril de 2024 con 31 canciones. Es un álbum sobre relaciones complejas. Fortnight (feat. Post Malone) fue el primer sencillo. Batió récords de Spotify el día de su lanzamiento.',
-    };
-
-    function getAIResponse(q) {
-      q = q.toLowerCase();
-      if (q.includes('era') || q.includes('album') || q.includes('álbum'))       return aiKnowledge['era'];
-      if (q.includes('popular') || q.includes('mejor') || q.includes('favorit')) return aiKnowledge['popular'];
-      if (q.includes('tour') || q.includes('show') || q.includes('concierto'))   return aiKnowledge['tour'];
-      if (q.includes('cancion') || q.includes('canción') || q.includes('tema'))  return aiKnowledge['cancion'];
-      if (q.includes('dato') || q.includes('curio') || q.includes('sab'))        return aiKnowledge['dato'];
-      if (q.includes('agre') || q.includes('idea') || q.includes('mejorar'))     return aiKnowledge['agregar'];
-      if (q.includes('sitio') || q.includes('pagina') || q.includes('página'))   return aiKnowledge['sitio'];
-      if (q.includes('folklore') || q.includes('cardigan'))                      return aiKnowledge['folklore'];
-      if (q.includes('midnight'))                                                 return aiKnowledge['midnights'];
-      if (q.includes('ttpd') || q.includes('tortured') || q.includes('fortnight')) return aiKnowledge['ttpd'];
-      if (q.includes('hola') || q.includes('buenas') || q.includes('hey'))
-        return '¡Hola Swiftie! 👋 Podés preguntarme sobre las eras, canciones, el Eras Tour, datos curiosos de Taylor o qué agregar a esta fan page.';
-      if (q.includes('gracias'))
-        return '¡De nada! Estoy aquí para cualquier cosa Swiftie-related. ✦';
-      return 'Mmm, no tengo esa info todavía. 🤔 Probá preguntarme sobre las eras, el Eras Tour, canciones famosas, datos curiosos o ideas para la fan page. ¡Seguimos aprendiendo juntos!';
-    }
-
-    function addMessage(text, role) {
-      var win  = document.getElementById('chatWindow');
-      var div  = document.createElement('div');
-      div.className = 'chat-msg ' + role;
-      div.innerHTML = '<div class="chat-bubble ' + role + '-bubble">' + sanitize(text) + '</div>';
-      win.appendChild(div);
-      win.scrollTop = win.scrollHeight;
-    }
-
-    function sendChat() {
-      if (!checkRateLimit('chat', 1500)) return;   /* máx 1 msg cada 1.5 seg */
-      var inp = document.getElementById('chatInput');
-      var q   = inp.value.trim();
-      if (!q) return;
-      /* Validar input del usuario */
-      var r = validateForm([{ id:'chatInput', label:'Mensaje', rules:{ maxLen:200, noScript:true } }]);
-      if (!r.valid) return;
-      addMessage(q, 'user');
-      inp.value = '';
-      /* Typing indicator */
-      var win = document.getElementById('chatWindow');
-      var typing = document.createElement('div');
-      typing.className = 'chat-msg ai';
-      typing.id = 'typing';
-      typing.innerHTML = '<div class="typing-bubble">Escribiendo...</div>';
-      win.appendChild(typing);
-      win.scrollTop = win.scrollHeight;
-      /* Respuesta con delay natural */
-      setTimeout(function() {
-        var t = document.getElementById('typing');
-        if (t) t.remove();
-        addMessage(getAIResponse(q), 'ai');
-        if (window.announce) announce('Respuesta del asistente recibida.');
-      }, 900 + Math.random() * 600);
-    }
-
-    function quickQ(btn) {
-      document.getElementById('chatInput').value = btn.textContent;
-      sendChat();
-    }
-  </script>
-
-  <!-- FOOTER -->
-  <footer class="bg-dark text-center p-4 mt-5">
+<footer class="bg-dark text-center p-4 mt-5">
   <div class="container py-4 text-center">
-
-    <!-- Logo -->
     <div style="font-family:'Shadows Into Light',cursive;font-size:2rem;color:#2ECEC7;margin-bottom:0.2rem">Taylor Swift</div>
     <div style="font-size:0.60rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem">Fan Page Educativa · The Eras Collection · 2026</div>
-
-    <!-- Botón sitio oficial -->
-    <a href="https://www.taylorswift.com" target="_blank" rel="noopener" class="oficial-link">
-      &#9733; Sitio Oficial Taylor Swift &#9733;
-    </a>
-
-    <!-- Redes sociales -->
+    <a href="https://www.taylorswift.com" target="_blank" rel="noopener" class="oficial-link">&#9733; Sitio Oficial Taylor Swift &#9733;</a>
     <div class="social-footer">
-      <a href="https://x.com/taylorswif2026" target="_blank" rel="noopener" title="Twitter/X @taylorswif2026" aria-label="Twitter">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-      <a href="https://www.tiktok.com/@taylorswiffan26" target="_blank" rel="noopener" title="TikTok @taylorswiffan26" aria-label="TikTok">
-        <i class="fab fa-tiktok"></i>
-      </a>
-      <a href="/cdn-cgi/l/email-protection#a5c6cad7d7c0cae5c0c8c4ccc98bc6cac8" title="taylorswiftfanpageswifties@gmail.com" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+      <a href="https://x.com/taylorswif2026" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.tiktok.com/@taylorswiffan26" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="mailto:taylorswiftfanpageswifties@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
-
-    <!-- Newsletter -->
-    <div style="display:flex;max-width:380px;margin:0.5rem auto 1.5rem;border-radius:50px;overflow:hidden;border:1px solid rgba(46,206,199,0.35);background:rgba(255,255,255,0.06)">
-      <input type="email" placeholder="Tu email para novedades"
-            style="flex:1;background:transparent;border:none;color:#fff;padding:0.65rem 1.2rem;font-size:0.78rem;outline:none;font-family:'Lato',sans-serif">
-      <button style="background:var(--teal,#2ECEC7);border:none;color:#000;padding:0.65rem 1.2rem;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'Lato',sans-serif;flex-shrink:0;transition:background 0.2s"
-              onmouseover="this.style.background='#FF6B35';this.style.color='#fff'"
-              onmouseout="this.style.background='#2ECEC7';this.style.color='#000'">
-        Suscribirse
-      </button>
-    </div>
-
     <hr style="border:none;border-top:1px solid rgba(255,255,255,0.08);margin:1rem 0">
     <p style="font-size:0.68rem;color:rgba(255,255,255,0.22);margin-bottom:0">© 2026 Fan Page Educativa — Taylor Swift · Todos los derechos corresponden a sus respectivos dueños.</p>
   </div>
-
-  <!-- README TÉCNICO -->
   <div style="background:rgba(255,255,255,0.05);border-top:1px solid rgba(46,206,199,0.15);padding:1.4rem 0 1rem;text-align:center">
     <div class="container">
-      <p style="font-family:'Shadows Into Light',cursive;font-size:0.9rem;color:rgba(255,255,255,0.40);letter-spacing:3px;text-transform:uppercase;margin-bottom:0.75rem">✦ Proyecto de Estudio · Desarrollo Web ✦</p>
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.4rem;margin-bottom:0.75rem">
-        <span style="background:rgba(46,206,199,0.15);border:1px solid rgba(46,206,199,0.35);color:#7EEAE6;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">HTML5</span>
-        <span style="background:rgba(46,206,199,0.15);border:1px solid rgba(46,206,199,0.35);color:#7EEAE6;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">CSS3</span>
-        <span style="background:rgba(46,206,199,0.15);border:1px solid rgba(46,206,199,0.35);color:#7EEAE6;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">JavaScript ES6</span>
-        <span style="background:rgba(46,206,199,0.15);border:1px solid rgba(46,206,199,0.35);color:#7EEAE6;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">Bootstrap 5</span>
-        <span style="background:rgba(255,107,53,0.15);border:1px solid rgba(255,107,53,0.35);color:#FF9A6C;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">SEO On-Page</span>
-        <span style="background:rgba(255,107,53,0.15);border:1px solid rgba(255,107,53,0.35);color:#FF9A6C;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">ARIA Accesibilidad</span>
-        <span style="background:rgba(255,107,53,0.15);border:1px solid rgba(255,107,53,0.35);color:#FF9A6C;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">Seguridad XSS</span>
-        <span style="background:rgba(255,107,53,0.15);border:1px solid rgba(255,107,53,0.35);color:#FF9A6C;font-size:0.62rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:20px">Glassmorphism</span>
-      </div>
-      <p style="font-size:0.68rem;color:rgba(255,255,255,0.28);margin-bottom:0.5rem">
-        Desarrollado por <strong style="color:rgba(255,255,255,0.55)">Damián</strong> · Estudiante de Desarrollo Web · Buenos Aires, Argentina · 2026
-      </p>
+      <p style="font-size:0.68rem;color:rgba(255,255,255,0.28);margin-bottom:0.5rem">Desarrollado por <strong style="color:rgba(255,255,255,0.55)">Damián</strong> · Estudiante de Desarrollo Web · Buenos Aires, Argentina · 2026</p>
       <a href="https://github.com/arzaDam/Proyecto-Taylor-Swift" target="_blank" rel="noopener"
-        style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:0.3rem 0.9rem;font-family:'Lato',sans-serif;transition:all 0.2s;display:inline-block"
+        style="font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:0.3rem 0.9rem;font-family:'Lato',sans-serif;display:inline-block"
         onmouseover="this.style.color='#7EEAE6';this.style.borderColor='rgba(46,206,199,0.45)'"
         onmouseout="this.style.color='rgba(255,255,255,0.38)';this.style.borderColor='rgba(255,255,255,0.18)'">
         &#128279; Ver código en GitHub
@@ -1131,10 +411,10 @@ Donar ahora ✦
   </div>
 </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- FONDO ROTATIVO -->
-  <div id="bgSlider">
+<!-- FONDO ROTATIVO -->
+<div id="bgSlider">
   <div class="bg-slide" style="background-image:url('../asset/taylorfondo1.jpg');background-position:center 20%"></div>
   <div class="bg-slide" style="background-image:url('../asset/taylorswiftriverplate.jpg');background-position:center 15%"></div>
   <div class="bg-slide" style="background-image:url('../asset/madridTaylor.jpg');background-position:center 20%"></div>
@@ -1148,138 +428,345 @@ Donar ahora ✦
   <div class="bg-dot" onclick="setBg(3)"></div>
   <div class="bg-dot" onclick="setBg(4)"></div>
 </div>
-    <div class="bg-dot" onclick="setBg(1)"></div>
-    <div class="bg-dot" onclick="setBg(2)"></div>
-    <div class="bg-dot" onclick="setBg(3)"></div>
-    <div class="bg-dot" onclick="setBg(4)"></div>
+
+<!-- REPRODUCTOR -->
+<div id="tsPlayer">
+  <div class="player-song" id="pSong">Taylor Swift</div>
+  <div class="player-artist">The Eras Collection</div>
+  <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
+    <div class="player-bar-fill" id="pBar"></div>
   </div>
-
-  <!-- REPRODUCTOR -->
-  <div id="tsPlayer">
-    <div class="player-song" id="pSong">Cargando...</div>
-    <div class="player-artist">Taylor Swift · The Eras Collection</div>
-    <div class="player-bar-wrap" id="pBarWrap" onclick="seekAudio(event)">
-      <div class="player-bar-fill" id="pBar"></div>
-    </div>
-    <div class="player-controls">
-      <button class="player-btn" onclick="prevSong()">&#9664;&#9664;</button>
-      <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
-      <button class="player-btn" onclick="nextSong()">&#9654;&#9654;</button>
-      <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7" oninput="setVol(this.value)">
-    </div>
+  <div class="player-controls">
+    <button class="player-btn" onclick="prevSong()" title="Anterior">&#9664;&#9664;</button>
+    <button class="player-btn play-main" id="pPlayBtn" onclick="togglePlay()">&#9654;</button>
+    <button class="player-btn" onclick="nextSong()" title="Siguiente">&#9654;&#9654;</button>
+    <input type="range" class="player-vol" id="pVol" min="0" max="1" step="0.05" value="0.7" oninput="setVol(this.value)" title="Volumen">
   </div>
-
-  
-
-
-
+</div>
 
 <script>
-/* ══ CANCIONES — .mp3 ══ */
+/* ══ CANCIONES — rutas corregidas con ../ ══ */
 var songs = [
-  { title: "Song 1 — poné tu mp3", src: "asset/tayloralbum.mp3"},
-  { title: "Song 2 — poné tu mp3", src: "asset/albun2taylor.mp3"},
-  { title: "Song 3 — poné tu mp3", src: "asset/thefateofophelia.mp3"},
-  { title: "Song 4 — poné tu mp3", src: "asset/nowthat.mp3"},
-  { title: "Song 5 — poné tu mp3", src: "asset/22.mp3"},
-  { title: "Song 6 — poné tu mp3", src: "asset/BlankSpace.mp3"},
-  { title: "Song 7 — poné tu mp3", src: "asset/WildestDreams.mp3"},
-  { title: "Song 8 — poné tu mp3", src: "asset/I Knew You WereTrouble.mp3"},
-  { title: "Song 9 — poné tu mp3", src: "asset/Out Of The Woods.mp3"},
-  { title: "Song 10 — poné tu mp3", src: "asset/Style.mp3"},
-  { title: "Song 11 — poné tu mp3", src: "asset/Delicate.mp3"},
-  { title: "Song 12 — poné tu mp3", src: "asset/I Dont Wanna Live Forever.mp3"}
+  { title: "Taylor Album",              src: "../asset/tayloralbum.mp3" },
+  { title: "Album 2",                   src: "../asset/albun2taylor.mp3" },
+  { title: "The Fate of Ophelia",       src: "../asset/thefateofophelia.mp3" },
+  { title: "Now That",                  src: "../asset/nowthat.mp3" },
+  { title: "22",                        src: "../asset/22.mp3" },
+  { title: "Blank Space",               src: "../asset/BlankSpace.mp3" },
+  { title: "Wildest Dreams",            src: "../asset/WildestDreams.mp3" },
+  { title: "I Knew You Were Trouble",   src: "../asset/IKnewYouWereTrouble.mp3" },
+  { title: "Out Of The Woods",          src: "../asset/OutOfTheWoods.mp3" },
+  { title: "Style",                     src: "../asset/Style.mp3" },
+  { title: "Delicate",                  src: "../asset/Delicate.mp3" },
+  { title: "I Don't Wanna Live Forever",src: "../asset/IDontWannaLiveForever.mp3" }
 ];
 
-/* Recuperar estado guardado entre páginas */
-var si       = parseInt(sessionStorage.getItem('ts_song') || '0');
+var si = parseInt(sessionStorage.getItem('ts_song') || '0');
 var wasPlaying = sessionStorage.getItem('ts_playing') === 'true';
-var tsAudio  = new Audio();
+var tsAudio = new Audio();
 var tsPlaying = false;
 
-function loadSong(i, autoplay) {{
+function loadSong(i, autoplay) {
   si = ((i % songs.length) + songs.length) % songs.length;
   sessionStorage.setItem('ts_song', si);
   tsAudio.src = songs[si].src;
   var pSong = document.getElementById('pSong');
-  var pBar  = document.getElementById('pBar');
+  var pBar = document.getElementById('pBar');
   if (pSong) pSong.textContent = songs[si].title;
-  if (pBar)  pBar.style.width  = '0%';
-  if (autoplay || tsPlaying) {{
-    tsAudio.play().catch(function(){{}});
+  if (pBar) pBar.style.width = '0%';
+  if (autoplay || tsPlaying) {
+    tsAudio.play().catch(function() {});
     setPlayUI(true);
     tsPlaying = true;
-  }}
-}}
+  }
+}
 
-function setPlayUI(playing) {{
+function setPlayUI(playing) {
   var btn = document.getElementById('pPlayBtn');
   if (!btn) return;
   btn.innerHTML = playing ? '&#9646;&#9646;' : '&#9654;';
   if (playing) btn.classList.add('playing');
   else btn.classList.remove('playing');
-}}
+}
 
-function togglePlay() {{
-  if (tsPlaying) {{
+function togglePlay() {
+  if (tsPlaying) {
     tsAudio.pause();
     tsPlaying = false;
     sessionStorage.setItem('ts_playing', 'false');
     setPlayUI(false);
-  }} else {{
-    tsAudio.play().catch(function(){{}});
+  } else {
+    tsAudio.play().catch(function() {});
     tsPlaying = true;
     sessionStorage.setItem('ts_playing', 'true');
     setPlayUI(true);
-  }}
-}}
+  }
+}
 
-function prevSong() {{ loadSong(si - 1, tsPlaying); }}
-function nextSong() {{ loadSong(si + 1, tsPlaying); }}
-function setVol(v)  {{ tsAudio.volume = parseFloat(v); }}
-function seekAudio(e) {{
+function prevSong() { loadSong(si - 1, tsPlaying); }
+function nextSong() { loadSong(si + 1, tsPlaying); }
+function setVol(v) { tsAudio.volume = parseFloat(v); }
+function seekAudio(e) {
   var wrap = document.getElementById('pBarWrap');
-  if (wrap && tsAudio.duration)
-    tsAudio.currentTime = (e.offsetX / wrap.offsetWidth) * tsAudio.duration;
-}}
+  if (wrap && tsAudio.duration) tsAudio.currentTime = (e.offsetX / wrap.offsetWidth) * tsAudio.duration;
+}
 
-tsAudio.addEventListener('timeupdate', function() {{
+tsAudio.addEventListener('timeupdate', function() {
   var pBar = document.getElementById('pBar');
-  if (pBar && tsAudio.duration)
-    pBar.style.width = ((tsAudio.currentTime / tsAudio.duration) * 100) + '%';
-}});
-tsAudio.addEventListener('ended', function() {{ loadSong(si + 1, true); }});
+  if (pBar && tsAudio.duration) pBar.style.width = ((tsAudio.currentTime / tsAudio.duration) * 100) + '%';
+});
+tsAudio.addEventListener('ended', function() { loadSong(si + 1, true); });
 tsAudio.volume = 0.7;
 
-/* Guardar posición antes de salir */
-window.addEventListener('beforeunload', function() {{
+window.addEventListener('beforeunload', function() {
   sessionStorage.setItem('ts_playing', tsPlaying ? 'true' : 'false');
   sessionStorage.setItem('ts_song', si);
-}});
+});
 
-window.addEventListener('DOMContentLoaded', function() {{
-  loadSong(si, wasPlaying);
-  if (wasPlaying) {{
-    tsAudio.play().catch(function(){{}});
+window.addEventListener('DOMContentLoaded', function() {
+  loadSong(si, false);
+  if (wasPlaying) {
+    tsAudio.play().catch(function() {});
     tsPlaying = true;
     setPlayUI(true);
-  }}
-}});
+  }
+});
 </script>
 
 <script>
 var bgIdx = 0;
-window.addEventListener('DOMContentLoaded', function() {{
+window.addEventListener('DOMContentLoaded', function() {
   var slides = document.querySelectorAll('.bg-slide');
-  var dots   = document.querySelectorAll('.bg-dot');
+  var dots = document.querySelectorAll('.bg-dot');
   if (!slides.length) return;
   slides[0].classList.add('active');
   if (dots.length) dots[0].classList.add('active');
-  setInterval(function() {{ setBg((bgIdx + 1) % slides.length); }}, 6000);
-}});
-function setBg(i) {{
+  setInterval(function() { setBg((bgIdx + 1) % slides.length); }, 6000);
+});
+function setBg(i) {
   var slides = document.querySelectorAll('.bg-slide');
-  var dots   = document.querySelectorAll('.bg-dot');
+  var dots = document.querySelectorAll('.bg-dot');
   if (!slides.length) return;
   slides[bgIdx].classList.remove('active');
-  if (dots.length) dots[bgIdx].classList.remove('ac
+  if (dots.length) dots[bgIdx].classList.remove('active');
+  bgIdx = i;
+  slides[bgIdx].classList.add('active');
+  if (dots.length) dots[bgIdx].classList.add('active');
+}
+</script>
+
+<script>
+/* ── IDEAS ── */
+var selectedPriority = '🔥 Urgente';
+function setPriority(btn) {
+  document.querySelectorAll('.vote-priority').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  selectedPriority = btn.dataset.val;
+}
+var ideaTxtEl = document.getElementById('ideaTxt');
+if (ideaTxtEl) {
+  ideaTxtEl.addEventListener('input', function() { document.getElementById('ideaCharCount').textContent = this.value.length; });
+}
+var ideas = [
+  { name:'Valentina M.', cat:'Función',   priority:'🔥 Urgente', text:'Un quiz interactivo para saber qué era de Taylor sos.', votes:18, voted:false },
+  { name:'Carlos G.',    cat:'Contenido', priority:'⭐ Alta',    text:'Letras de canciones icónicas traducidas al español.',   votes:14, voted:false },
+  { name:'Sofia R.',     cat:'Comunidad', priority:'💡 Normal',  text:'Listening party virtual para el próximo álbum.',        votes:11, voted:false },
+  { name:'Ana K.',       cat:'Diseño',    priority:'🌱 A futuro',text:'Modo oscuro y modo claro para elegir.',                 votes: 9, voted:false },
+  { name:'Martina G.',   cat:'Música',    priority:'⭐ Alta',    text:'Ranking de canciones votable por era.',                 votes:22, voted:false },
+];
+function renderIdeas() {
+  var wall = document.getElementById('ideasWall');
+  var count = document.getElementById('ideaCount');
+  if (!wall) return;
+  wall.innerHTML = '';
+  ideas.forEach(function(idea, idx) {
+    var div = document.createElement('div');
+    div.className = 'idea-card';
+    div.innerHTML = '<span class="idea-cat-badge">' + idea.cat + '</span><div class="idea-body"><div class="idea-user">' + idea.name + '</div><div class="idea-text">' + idea.text + '</div><div class="idea-meta"><span class="idea-priority">' + idea.priority + '</span><button class="idea-votes' + (idea.voted ? ' voted' : '') + '" onclick="voteIdea(' + idx + ')">♥ <span>' + idea.votes + '</span></button></div></div>';
+    wall.appendChild(div);
+  });
+  if (count) count.textContent = ideas.length + ' ideas enviadas';
+}
+function voteIdea(idx) {
+  ideas[idx].voted ? ideas[idx].votes-- : ideas[idx].votes++;
+  ideas[idx].voted = !ideas[idx].voted;
+  renderIdeas();
+}
+function submitIdea() {
+  var name = document.getElementById('ideaName').value.trim() || 'Swiftie anónimo';
+  var cat = document.getElementById('ideaCat').value;
+  var txt = document.getElementById('ideaTxt').value.trim();
+  if (!txt) { alert('Escribí tu idea antes de enviar.'); return; }
+  ideas.unshift({ name:name, cat:cat, priority:selectedPriority, text:txt, votes:0, voted:false });
+  renderIdeas();
+  document.getElementById('ideaOk').style.display = 'block';
+  document.getElementById('ideaName').value = '';
+  document.getElementById('ideaTxt').value = '';
+  document.getElementById('ideaCharCount').textContent = '0';
+  setTimeout(function() { document.getElementById('ideaOk').style.display = 'none'; }, 3000);
+}
+window.addEventListener('DOMContentLoaded', renderIdeas);
+</script>
+
+<script>
+/* ── DONANTES ── */
+var donors = [
+  { name:'Valentina M.', amount:10, emoji:'🌲' },
+  { name:'Sofia R.',     amount:5,  emoji:'🌊' },
+  { name:'Donante anónimo', amount:2, emoji:'💚' },
+];
+function renderDonors() {
+  var wall = document.getElementById('donorWall');
+  if (!wall) return;
+  wall.innerHTML = donors.slice(0,5).map(function(d) {
+    return '<div class="donor-item"><div class="donor-avatar">' + d.emoji + '</div><span>' + d.name + '</span><span class="donor-amount">$' + d.amount + ' USD</span></div>';
+  }).join('');
+}
+function setAmount(btn) {
+  document.querySelectorAll('.donate-amount').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('customAmount').value = '';
+}
+function clearAmountBtns() {
+  document.querySelectorAll('.donate-amount').forEach(function(b) { b.classList.remove('active'); });
+}
+window.addEventListener('DOMContentLoaded', renderDonors);
+</script>
+
+<script>
+/* ── CHATBOT ── */
+var aiKnowledge = {
+  'era':      'Las 11 eras son: Taylor Swift (2006), Fearless (2008), Speak Now (2010), Red (2012), 1989 (2014), Reputation (2017), Lover (2019), Folklore (2020), Evermore (2020), Midnights (2022) y TTPD (2024).',
+  'popular':  'La era más popular según streams es Midnights (2022) con Anti-Hero como sencillo más exitoso. Folklore y 1989 son las más queridas por la crítica.',
+  'tour':     'The Eras Tour (2023-2024) fue el tour más taquillero de la historia con más de $2 billones recaudados y 149 shows en 5 continentes.',
+  'cancion':  'Las canciones más famosas: Anti-Hero, Shake It Off, Love Story, Blank Space, Cruel Summer, All Too Well (10 min), Cardigan y Style.',
+  'dato':     'Datos curiosos: Taylor escribió su primer álbum a los 16 años. Tiene 14 Grammys. Es la primera artista con 5 álbumes debutando en #1.',
+  'folklore': 'Folklore (2020) es un álbum indie folk grabado en cuarentena. Sus canciones más icónicas: cardigan, august, exile (con Bon Iver) y betty.',
+  'midnights':'Midnights (2022) es el álbum más streameado de Taylor. Anti-Hero fue #1 por 8 semanas en Billboard Hot 100.',
+  'ttpd':     'The Tortured Poets Department (2024) tiene 31 canciones. Fortnight (feat. Post Malone) fue el primer sencillo.',
+};
+function getAIResponse(q) {
+  q = q.toLowerCase();
+  if (q.includes('era') || q.includes('album'))     return aiKnowledge['era'];
+  if (q.includes('popular') || q.includes('mejor')) return aiKnowledge['popular'];
+  if (q.includes('tour') || q.includes('show'))     return aiKnowledge['tour'];
+  if (q.includes('cancion') || q.includes('tema'))  return aiKnowledge['cancion'];
+  if (q.includes('dato') || q.includes('curio'))    return aiKnowledge['dato'];
+  if (q.includes('folklore') || q.includes('cardigan')) return aiKnowledge['folklore'];
+  if (q.includes('midnight'))                       return aiKnowledge['midnights'];
+  if (q.includes('ttpd') || q.includes('tortured')) return aiKnowledge['ttpd'];
+  if (q.includes('hola') || q.includes('hey'))      return '¡Hola Swiftie! 👋 Preguntame sobre las eras, canciones o el Eras Tour.';
+  if (q.includes('gracias'))                        return '¡De nada! Estoy aquí para cualquier cosa Swiftie-related. ✦';
+  return 'No tengo esa info todavía. 🤔 Probá preguntarme sobre las eras, el Eras Tour, canciones famosas o datos curiosos.';
+}
+function addMessage(text, role) {
+  var win = document.getElementById('chatWindow');
+  var div = document.createElement('div');
+  div.className = 'chat-msg ' + role;
+  div.innerHTML = '<div class="chat-bubble ' + role + '-bubble">' + text + '</div>';
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+}
+function sendChat() {
+  var inp = document.getElementById('chatInput');
+  var q = inp.value.trim();
+  if (!q) return;
+  addMessage(q, 'user');
+  inp.value = '';
+  var win = document.getElementById('chatWindow');
+  var typing = document.createElement('div');
+  typing.className = 'chat-msg ai';
+  typing.id = 'typing';
+  typing.innerHTML = '<div class="typing-bubble">Escribiendo...</div>';
+  win.appendChild(typing);
+  win.scrollTop = win.scrollHeight;
+  setTimeout(function() {
+    var t = document.getElementById('typing');
+    if (t) t.remove();
+    addMessage(getAIResponse(q), 'ai');
+  }, 900 + Math.random() * 600);
+}
+function quickQ(btn) {
+  document.getElementById('chatInput').value = btn.textContent;
+  sendChat();
+}
+</script>
+
+<script>
+/* ── LIGHTBOX ── */
+function openLB(src) {
+  document.getElementById('lbImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLB() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lbImg').src = '';
+}
+/* ── LIKE ── */
+function toggleLike(btn) {
+  btn.classList.toggle('liked');
+  var count = btn.querySelector('.like-count');
+  count.textContent = btn.classList.contains('liked') ? parseInt(count.textContent) + 1 : parseInt(count.textContent) - 1;
+}
+/* ── COMENTARIOS ── */
+function sendComment(e, input) {
+  if (e.key === 'Enter') sendCommentBtn(input.nextElementSibling);
+}
+function sendCommentBtn(btn) {
+  var input = btn.previousElementSibling;
+  var text = input.value.trim();
+  if (!text) return;
+  var list = btn.closest('.post-card').querySelector('.comments-list');
+  var div = document.createElement('div');
+  div.className = 'comment-item';
+  div.innerHTML = '<strong>Vos</strong> ' + text;
+  list.appendChild(div);
+  input.value = '';
+  list.scrollTop = list.scrollHeight;
+}
+/* ── UPLOAD ── */
+function ev(e) { e.preventDefault(); }
+function dropFile(e) {
+  e.preventDefault();
+  document.getElementById('dropZone').classList.remove('drag');
+  var file = e.dataTransfer.files[0];
+  if (file) showPreview(file);
+}
+function previewFile(e) { if (e.target.files[0]) showPreview(e.target.files[0]); }
+function showPreview(file) {
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    document.getElementById('previewImg').src = e.target.result;
+    document.getElementById('previewSection').style.display = 'block';
+    document.getElementById('dropZone').style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+function cancelUpload() {
+  document.getElementById('previewSection').style.display = 'none';
+  document.getElementById('dropZone').style.display = 'block';
+  document.getElementById('fileInput').value = '';
+}
+function publishPost() {
+  var name = document.getElementById('upName').value.trim() || 'Swiftie anónimo';
+  var era = document.getElementById('upEra').value;
+  var story = document.getElementById('upStory').value.trim() || '';
+  var imgSrc = document.getElementById('previewImg').src;
+  var grid = document.getElementById('postsGrid');
+  var card = document.createElement('div');
+  card.className = 'post-card';
+  card.innerHTML = '<div class="post-header"><div class="post-avatar">📸</div><div><div class="post-user">' + name + '</div><div class="post-era">' + era + '</div></div></div><img src="' + imgSrc + '" class="post-img" alt="Fan post"><div class="post-story">' + story + '</div><div class="post-actions"><button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">0</span></button><div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div></div><div class="comments-list"></div>';
+  grid.insertBefore(card, grid.firstChild);
+  document.getElementById('successMsg').style.display = 'block';
+  setTimeout(function() { document.getElementById('successMsg').style.display = 'none'; }, 3000);
+  cancelUpload();
+  var count = document.getElementById('postCount');
+  if (count) count.textContent = grid.children.length + ' historias compartidas';
+}
+document.getElementById('upStory') && document.getElementById('upStory').addEventListener('input', function() {
+  document.getElementById('charCount').textContent = this.value.length;
+});
+</script>
+
+</body>
+</html>
