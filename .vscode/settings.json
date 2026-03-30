@@ -1,0 +1,29 @@
+{
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/",
+  "liveServer.settings.NoBrowser": false,
+  "liveServer.settings.CustomBrowser": null,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.file": "index.html",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+
+  "[html]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  "html.validate.scripts": false,
+  "html.validate.styles": false,
+
+  "javascript.validate.enable": false,
+
+  "files.associations": {
+    "*.html": "html"
+  },
+
+  "emmet.includeLanguages": {
+    "html": "html"
+  }
+}

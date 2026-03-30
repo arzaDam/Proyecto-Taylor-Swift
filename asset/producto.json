@@ -1,0 +1,8 @@
+[
+    { "name": "Vinilo — The Eras",     "era": "Eras Tour",     "price": 45, "image": "vinilotaylor1.png",   "category": "Vinilo"  },
+    { "name": "CD — Midnights",        "era": "Midnights Era", "price": 15, "image": "cdtaylor1.png",       "category": "CD"      },
+    { "name": "Cassette — Folklore",   "era": "Folklore Era",  "price": 5,  "image": "casettetaylor1.png",  "category": "Cassette"},
+    { "name": "Vinilo — 1989 (TV)",    "era": "1989 Era",      "price": 42, "image": "vinilotaylor1.png",   "category": "Vinilo"  },
+    { "name": "CD — Fearless (TV)",    "era": "Fearless Era",  "price": 14, "image": "cdtaylor1.png",       "category": "CD"      },
+    { "name": "Vinilo — Red (TV)",     "era": "Red Era",       "price": 48, "image": "vinilotaylor1.png",   "category": "Vinilo"  }
+]

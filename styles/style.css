@@ -1,0 +1,710 @@
+/* ================================================================
+  TAYLOR SWIFT — 
+  Imagen visible · Overlay crema suave · Glass blanco
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Shadows+Into+Light&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --teal:      #2ECEC7;
+  --teal-d:    #1A9B95;
+  --teal-l:    #7EEAE6;
+  --orange:    #FF6B35;
+  --orange-d:  #d94e12;
+  --border:    rgba(46,206,199,0.35);
+  /* Glass blanco — la imagen de Taylor se ve detrás */
+  --glass-nav:  rgba(255,255,255,0.22);
+  --glass-card: rgba(255,255,255,0.18);
+  --glass-foot: rgba(255,255,255,0.25);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  background: #0a3836;   /* fallback si no cargan las imgs */
+  color: #fff;
+}
+a { text-decoration: none; color: inherit; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+
+/* ================================================================
+  FONDO ROTATIVO
+  Imagen de Taylor SE VE COMPLETA — overlay crema mínimo
+================================================================ */
+#bgSlider {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+#bgSlider .bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+#bgSlider .bg-slide.active { opacity: 1; }
+
+/* Overlay crema suave — solo 20%, Taylor se ve clara */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 245, 230, 0.20);
+  pointer-events: none;
+}
+
+body > *:not(#bgSlider) { position: relative; z-index: 1; }
+
+@media (max-width: 768px) {
+  #bgSlider .bg-slide { background-attachment: scroll; }
+}
+
+/* ================================================================
+  TIPOGRAFÍA
+================================================================ */
+h1 {
+  font-family: 'Shadows Into Light', cursive !important;
+  font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+  letter-spacing: 3px !important;
+}
+h2, h3 { font-family: 'Playfair Display', serif !important; letter-spacing: 2px !important; }
+h4, h5, h6 { font-family: 'Playfair Display', serif !important; }
+p, label, input, textarea, select { font-family: 'Lato', sans-serif !important; }
+
+/* ================================================================
+  HEADER — glass blanco
+================================================================ */
+header {
+  background: var(--glass-nav) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.45) !important;
+  padding: 1.2rem 1rem !important;
+}
+header h1 {
+  font-family: 'Shadows Into Light', cursive !important;
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55) !important;
+}
+header p {
+  color: var(--orange) !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4) !important;
+}
+
+/* ================================================================
+  NAVBAR — glass blanco translúcido
+================================================================ */
+.navbar,
+.navbar.bg-dark,
+nav.navbar {
+  background: var(--glass-nav) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.40) !important;
+}
+.navbar-brand {
+  font-family: 'Shadows Into Light', cursive !important;
+  font-size: 1.5rem !important;
+  color: #fff !important;
+  letter-spacing: 2px !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.45) !important;
+}
+.navbar-brand:hover { color: var(--teal-l) !important; }
+.nav-link {
+  color: rgba(255,255,255,0.90) !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.40) !important;
+  border-bottom: 2px solid transparent !important;
+  padding-bottom: 3px !important;
+  transition: all 0.2s !important;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+  border-bottom-color: var(--teal) !important;
+}
+.navbar-toggler { border-color: rgba(255,255,255,0.55) !important; }
+.navbar-toggler-icon { filter: brightness(0) invert(1) !important; }
+
+/* ================================================================
+  TÍTULOS
+================================================================ */
+.text-danger { color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.5) !important; }
+.text-info   { color: #fff !important; text-shadow: 0 2px 8px rgba(0,0,0,0.5) !important; }
+
+/* ================================================================
+  CARDS — glass blanco translúcido
+================================================================ */
+.card,
+.card.bg-dark,
+div.card {
+  background: var(--glass-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,0.45) !important;
+  border-radius: 14px !important;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s !important;
+  color: #fff !important;
+  overflow: hidden !important;
+}
+.card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25) !important;
+  border-color: rgba(255,255,255,0.70) !important;
+}
+.card-img-top {
+  height: 220px !important;
+  object-fit: cover !important;
+  transition: transform 0.4s !important;
+}
+.card:hover .card-img-top { transform: scale(1.04) !important; }
+.card-title {
+  font-family: 'Playfair Display', serif !important;
+  color: #fff !important;
+  font-size: 1.05rem !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35) !important;
+}
+.card-body { padding: 1.2rem !important; }
+.card-body p { color: rgba(255,255,255,0.82) !important; font-size: 0.87rem !important; }
+.fw-bold { color: var(--orange) !important; font-size: 1.05rem !important; text-shadow: 0 1px 4px rgba(0,0,0,0.3) !important; }
+
+/* ================================================================
+  BOTONES
+================================================================ */
+.btn-danger {
+  background: var(--teal) !important;
+  border-color: var(--teal) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+  letter-spacing: 1px !important;
+  font-family: 'Lato', sans-serif !important;
+  transition: all 0.25s !important;
+}
+.btn-danger:hover {
+  background: #fff !important;
+  border-color: #fff !important;
+  color: var(--teal-d) !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25) !important;
+}
+.btn-info {
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+  letter-spacing: 1px !important;
+  font-family: 'Lato', sans-serif !important;
+  transition: all 0.25s !important;
+}
+.btn-info:hover {
+  background: #fff !important;
+  color: var(--orange-d) !important;
+  transform: scale(1.05) !important;
+}
+.btn-outline-light {
+  border-color: rgba(255,255,255,0.80) !important;
+  color: #fff !important;
+  border-radius: 30px !important;
+  font-weight: 700 !important;
+  transition: all 0.25s !important;
+}
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.25) !important;
+  color: #fff !important;
+  transform: scale(1.05) !important;
+}
+.btn-primary {
+  background: var(--teal) !important;
+  border-color: var(--teal) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+}
+.btn-primary:hover {
+  background: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: #fff !important;
+}
+
+/* ================================================================
+  FORMULARIOS — glass blanco
+================================================================ */
+.form-control,
+.form-select {
+  background: rgba(255,255,255,0.20) !important;
+  border: 1px solid rgba(255,255,255,0.50) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+.form-control:focus,
+.form-select:focus {
+  background: rgba(255,255,255,0.30) !important;
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 3px rgba(46,206,199,0.25) !important;
+}
+.form-control::placeholder { color: rgba(255,255,255,0.55) !important; }
+.form-label {
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35) !important;
+}
+form.bg-dark {
+  background: var(--glass-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,0.40) !important;
+  border-radius: 14px !important;
+}
+
+/* ================================================================
+  FOOTER — glass blanco
+================================================================ */
+footer,
+footer.bg-dark {
+  background: var(--glass-foot) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-top: 1px solid rgba(255,255,255,0.40) !important;
+}
+footer p {
+  color: rgba(255,255,255,0.75) !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3) !important;
+}
+
+/* ================================================================
+  IMAGEN HERO
+================================================================ */
+.img-fluid.rounded {
+  border: 2px solid rgba(255,255,255,0.50) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.30) !important;
+}
+
+/* ================================================================
+  REPRODUCTOR FLOTANTE — glass blanco
+================================================================ */
+#tsPlayer {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 9999;
+  width: 255px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+  animation: playerFloat 4s ease-in-out infinite;
+  left: 1%;
+
+}
+@keyframes playerFloat {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+#tsPlayer:hover { animation-play-state: paused; }
+
+.player-song {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 0.82rem;
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.player-artist {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.70);
+  margin-bottom: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.player-bar-wrap {
+  width: 100%; height: 3px;
+  background: rgba(255,255,255,0.30);
+  border-radius: 3px; margin-bottom: 0.65rem;
+  cursor: pointer;
+}
+.player-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--teal), var(--orange));
+  border-radius: 3px; width: 0%;
+  transition: width 0.5s linear;
+  pointer-events: none;
+}
+.player-controls {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 0.35rem;
+}
+.player-btn {
+  background: none; border: none;
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem; cursor: pointer;
+  padding: 0.2rem 0.35rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+.player-btn:hover { color: #fff; background: rgba(255,255,255,0.20); }
+.player-btn.play-main {
+  background: var(--teal);
+  color: #000; border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(46,206,199,0.50);
+}
+.player-btn.play-main:hover { background: var(--orange); color: #fff; }
+.player-btn.play-main.playing { background: var(--orange); color: #fff; }
+.player-vol {
+  -webkit-appearance: none; appearance: none;
+  width: 52px; height: 3px;
+  background: rgba(255,255,255,0.30);
+  border-radius: 3px; cursor: pointer; outline: none;
+}
+.player-vol::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 10px; height: 10px;
+  border-radius: 50%; background: #fff; cursor: pointer;
+}
+
+/* ── DOTS del fondo ── */
+.bg-dots {
+  position: fixed; bottom: 1.5rem; left: 50%;
+  transform: translateX(-50%); z-index: 9998;
+  display: flex; gap: 6px;
+}
+.bg-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,0.40);
+  border: 1px solid rgba(255,255,255,0.60);
+  cursor: pointer; transition: all 0.3s;
+}
+.bg-dot.active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.3);
+}
+
+/* ================================================================
+  RESPONSIVE MÓVIL
+================================================================ */
+@media (max-width: 768px) {
+  .navbar-brand { font-size: 1.2rem !important; }
+  .nav-link { font-size: 0.72rem !important; padding: 0.4rem 0.5rem !important; }
+  header h1 { font-size: 1.9rem !important; }
+  header p  { font-size: 0.72rem !important; }
+  #tsPlayer { width: 200px !important; right: 0.7rem !important; bottom: 0.7rem !important; }
+  .player-song { font-size: 0.70rem !important; }
+  .bg-dots { bottom: 5.5rem !important; }
+  .w-50 { width: 100% !important; }
+  form.w-50 { width: 100% !important; }
+  .col-md-4, .col-md-6, .col-md-3 { margin-bottom: 1rem; }
+}
+@media (max-width: 480px) {
+  #tsPlayer { width: 175px !important; }
+  .player-vol { display: none !important; }
+}
+
+/* ================================================================
+  ACCESIBILIDAD + CONTRASTE + FOCO
+================================================================ */
+
+/* Skip to content — accesibilidad teclado */
+#skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--teal);
+  color: #000;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 99999;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+#skip-link:focus { top: 0; }
+
+/* Foco visible para navegación por teclado */
+.keyboard-nav *:focus {
+  outline: 3px solid var(--teal) !important;
+  outline-offset: 3px !important;
+}
+.keyboard-nav .player-btn:focus,
+.keyboard-nav .like-btn:focus,
+.keyboard-nav .btn-danger:focus,
+.keyboard-nav .btn-info:focus {
+  outline: 3px solid #fff !important;
+  outline-offset: 2px !important;
+}
+
+/* Formularios — errores de validación */
+.form-error {
+  background: rgba(230,57,70,0.18);
+  border: 1px solid rgba(230,57,70,0.55);
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  color: #fff;
+  font-size: 0.82rem;
+  margin-bottom: 0.85rem;
+  display: none;
+}
+.form-field-error {
+  border-color: rgba(230,57,70,0.70) !important;
+}
+.form-field-ok {
+  border-color: rgba(46,206,199,0.60) !important;
+}
+
+/* Contraste mínimo WCAG AA — texto sobre glass blanco */
+.card-body p,
+.card-body small { color: rgba(255,255,255,0.88) !important; }
+footer p          { color: rgba(255,255,255,0.80) !important; }
+.nav-link         { text-shadow: 0 1px 6px rgba(0,0,0,0.55) !important; }
+
+/* ARIA live regions */
+#sr-announcer { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+/* Botones — tamaño mínimo accesible 44x44px */
+.btn-danger, .btn-info, .btn-primary {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+.like-btn   { min-height: 36px !important; }
+.player-btn { min-height: 36px !important; min-width: 36px !important; }
+
+/* ================================================================
+  FIXES — Fondo visible + Skip link oculto + Navbar sin franja negra
+================================================================ */
+
+/* 1. SKIP LINK — completamente invisible hasta Tab */
+#skip-link {
+  position: absolute !important;
+  top: -999px !important;
+  left: -999px !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  font-size: 0;
+  opacity: 0;
+}
+#skip-link:focus {
+  position: fixed !important;
+  top: 0.5rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto; height: auto;
+  font-size: 0.8rem;
+  opacity: 1;
+  z-index: 99999;
+  background: var(--teal);
+  color: #000;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* 2. FONDO — asegurar que bgSlider se vea SIN overlay negro */
+#bgSlider {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  background: #0a3836;
+}
+#bgSlider .bg-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+}
+#bgSlider .bg-slide.active { opacity: 1 !important; }
+
+/* Overlay crema MUY suave — Taylor se ve clara */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background: rgba(10, 8, 6, 0.38) !important;
+  pointer-events: none !important;
+}
+
+/* 3. NAVBAR y HEADER — sin fondo negro sólido, glass transparente */
+header,
+header.bg-black,
+.navbar.bg-dark,
+nav.navbar.bg-dark,
+.navbar-dark.bg-dark {
+  background: rgba(10, 10, 10, 0.45) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+}
+
+/* 4. FOOTER — glass, no negro sólido */
+footer,
+footer.bg-dark {
+  background: rgba(10, 10, 10, 0.62) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-top: 1px solid rgba(46,206,199,0.28) !important;
+}
+
+/* 5. BOTONES REDES SOCIALES en footer */
+.social-footer {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.social-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.70);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.06);
+}
+.social-footer a:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  background: rgba(46,206,199,0.12);
+  transform: scale(1.10);
+}
+.oficial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--teal), var(--teal-d));
+  color: #000 !important;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+  font-family: 'Lato', sans-serif;
+}
+.oficial-link:hover {
+  background: linear-gradient(135deg, var(--orange), #d94e12);
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* 6. REPRODUCTOR — más separado del borde */
+#tsPlayer {
+  right: 2.5rem !important;
+  bottom: 2rem !important;
+  width: 245px !important;
+}
+@media (max-width: 768px) {
+  #tsPlayer { right: 0.5rem !important; width: 190px !important; }
+}
+
+/* ── ERA CARDS CON FOTO DE ÁLBUM ── */
+.era-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s, box-shadow 0.35s;
+  aspect-ratio: 1;
+  background: rgba(10,10,10,0.60);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.era-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.60);
+  border-color: rgba(46,206,199,0.60);
+}
+.era-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.4s;
+}
+.era-card:hover .era-img { transform: scale(1.06); }
+.era-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.10) 55%, transparent 100%);
+  z-index: 2;
+}
+.era-info {
+  position: relative;
+  z-index: 3;
+  padding: 0.85rem 0.9rem 0.8rem;
+  width: 100%;
+  margin-top: auto;
+  align-self: flex-end;
+}
+.era-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 0.15rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+.era-year {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.era-song {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.15rem;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.eras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
