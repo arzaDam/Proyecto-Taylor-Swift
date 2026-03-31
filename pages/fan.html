@@ -7,114 +7,110 @@
   <meta name="keywords" content="fotos fans Taylor Swift, Eras Tour fotos, Swifties historias, subir foto Taylor Swift, comunidad fans">
   <meta name="author" content="Taylor Swift Fan Page">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://github.com/arzaDam/Proyecto-Taylor-Swift/pages/fans.html">
+  <link rel="canonical" href="https://arzadam.github.io/Proyecto-Taylor-Swift/pages/fan.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Zona de Fans — Taylor Swift Fan Page">
   <meta property="og:description" content="Subí tu foto del show, escribí tu historia y conectate con otros Swifties.">
-  <meta property="og:url" content="https://github.com/arzaDam/Proyecto-Taylor-Swift/pages/fans.html">
-  <meta property="og:image" content="https://github.com/arzaDam/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
+  <meta property="og:image" content="https://arzadam.github.io/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Taylor Swift Fan Page">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zona de Fans — Taylor Swift Fan Page">
-  <meta name="twitter:description" content="Subí tu foto del show, escribí tu historia y conectate con otros Swifties.">
-  <meta name="twitter:image" content="https://github.com/arzaDam/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
-
+  <meta name="twitter:image" content="https://arzadam.github.io/Proyecto-Taylor-Swift/asset/taylorpag3.jpg">
   <title>Zona de Fans — Subí tu Foto del Show | Taylor Swift Fan Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Shadows+Into+Light&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../styles/style.css">
   <script src="../security.js" defer></script>
-
   <style>
-    .posts-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.2rem; }
-    .post-card { background:rgba(0,0,0,0.52); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(46,206,199,0.22); border-radius:16px; overflow:hidden; transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
-    .post-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(46,206,199,0.20); border-color:#2ECEC7; }
-    .post-header { display:flex; align-items:center; gap:0.7rem; padding:0.85rem 1rem 0.6rem; }
-    .post-avatar { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#2ECEC7,#1A9B95); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; border:2px solid rgba(46,206,199,0.40); }
-    .post-user { font-weight:700; font-size:0.88rem; color:#fff; line-height:1.2; }
-    .post-era { font-size:0.68rem; color:#2ECEC7; letter-spacing:1px; }
-    .post-img { width:100%; aspect-ratio:1; object-fit:cover; display:block; cursor:zoom-in; transition:transform 0.4s; }
-    .post-card:hover .post-img { transform:scale(1.03); }
-    .post-story { padding:0.7rem 1rem 0.5rem; font-size:0.85rem; color:rgba(255,255,255,0.75); line-height:1.55; min-height:2.8rem; font-family:'Lato',sans-serif; }
-    .post-story em { color:#2ECEC7; font-style:normal; font-weight:700; }
-    .post-actions { display:flex; align-items:center; gap:0.5rem; padding:0.55rem 1rem 0.9rem; border-top:1px solid rgba(255,255,255,0.07); }
-    .like-btn { background:none; border:none; display:flex; align-items:center; gap:0.35rem; color:rgba(255,255,255,0.55); font-size:0.82rem; cursor:pointer; border-radius:20px; padding:0.35rem 0.7rem; transition:all 0.2s; font-family:'Lato',sans-serif; }
-    .like-btn:hover { background:rgba(255,107,53,0.12); color:#FF6B35; }
-    .like-btn.liked { color:#FF6B35; }
-    .like-btn.liked i { animation:likeAnim 0.35s ease; }
-    @keyframes likeAnim { 0%{transform:scale(1)} 50%{transform:scale(1.5)} 100%{transform:scale(1)} }
-    .like-count { font-weight:700; min-width:1ch; }
-    .comment-input-wrap { flex:1; display:flex; align-items:center; gap:0.4rem; }
-    .comment-input { flex:1; background:rgba(255,255,255,0.07); border:1px solid rgba(46,206,199,0.20); border-radius:20px; padding:0.3rem 0.85rem; color:#fff; font-size:0.78rem; outline:none; font-family:'Lato',sans-serif; transition:border-color 0.2s; }
-    .comment-input:focus { border-color:#2ECEC7; }
-    .comment-input::placeholder { color:rgba(255,255,255,0.28); }
-    .send-comment { background:#2ECEC7; border:none; border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#000; font-size:0.7rem; cursor:pointer; flex-shrink:0; transition:background 0.2s; }
-    .send-comment:hover { background:#FF6B35; color:#fff; }
-    .comments-list { padding:0 1rem 0.85rem; max-height:100px; overflow-y:auto; }
-    .comments-list::-webkit-scrollbar { width:3px; }
-    .comments-list::-webkit-scrollbar-thumb { background:rgba(46,206,199,0.35); border-radius:2px; }
-    .comment-item { font-size:0.78rem; color:rgba(255,255,255,0.60); padding:0.2rem 0; line-height:1.4; border-bottom:1px solid rgba(255,255,255,0.05); }
-    .comment-item:last-child { border-bottom:none; }
-    .comment-item strong { color:#2ECEC7; margin-right:0.3rem; }
-    .upload-card { background:rgba(0,0,0,0.52); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(46,206,199,0.22); border-radius:16px; padding:1.8rem; }
-    .drop-zone { border:2px dashed rgba(46,206,199,0.35); border-radius:12px; padding:2rem 1rem; text-align:center; cursor:pointer; transition:all 0.25s; background:rgba(46,206,199,0.04); }
-    .drop-zone:hover,.drop-zone.drag { border-color:#2ECEC7; background:rgba(46,206,199,0.10); }
-    .drop-zone i { font-size:2.2rem; color:#2ECEC7; display:block; margin-bottom:0.75rem; }
-    .drop-zone p { color:rgba(255,255,255,0.55); font-size:0.85rem; margin:0; }
-    .preview-img-wrap { position:relative; margin-bottom:1rem; }
-    .preview-img-wrap img { width:100%; border-radius:10px; max-height:260px; object-fit:cover; border:1px solid rgba(46,206,199,0.25); }
-    .remove-preview { position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.70); border:none; color:#fff; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:0.85rem; }
-    .ts-form-input { background:rgba(255,255,255,0.07)!important; border:1px solid rgba(46,206,199,0.25)!important; color:#fff!important; border-radius:8px!important; font-family:'Lato',sans-serif; }
-    .ts-form-input:focus { border-color:#2ECEC7!important; box-shadow:0 0 0 3px rgba(46,206,199,0.18)!important; }
-    .ts-form-input::placeholder { color:rgba(255,255,255,0.28)!important; }
-    .ts-label { color:#2ECEC7; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:0.4rem; display:block; }
-    .publish-btn { width:100%; background:linear-gradient(135deg,#2ECEC7,#1A9B95); border:none; border-radius:30px; padding:0.75rem; color:#000; font-weight:800; font-size:0.88rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all 0.3s; font-family:'Lato',sans-serif; }
-    .publish-btn:hover { background:linear-gradient(135deg,#FF6B35,#d94e12); color:#fff; transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,107,53,0.40); }
-    .success-msg { display:none; text-align:center; margin-top:0.75rem; color:#2ECEC7; font-size:0.85rem; font-weight:700; letter-spacing:1px; }
-    .lightbox { display:none; position:fixed; inset:0; z-index:99999; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; }
-    .lightbox.open { display:flex; }
-    .lightbox img { max-width:88vw; max-height:84vh; object-fit:contain; border-radius:10px; border:2px solid rgba(46,206,199,0.35); }
-    .lb-close { position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
-    .lb-close:hover { color:#2ECEC7; }
-    .sec-title { font-family:'Playfair Display',serif; color:#2ECEC7; font-size:1.6rem; margin-bottom:0.25rem; }
-    .sec-sub { font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.40); margin-bottom:1.5rem; }
-    .vote-priority { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.35); color:rgba(255,255,255,0.80); border-radius:20px; padding:0.3rem 0.75rem; font-size:0.78rem; cursor:pointer; transition:all 0.2s; font-family:'Lato',sans-serif; }
-    .vote-priority:hover { background:rgba(255,255,255,0.22); color:#fff; }
-    .vote-priority.active { background:#2ECEC7; border-color:#2ECEC7; color:#000; font-weight:700; }
-    .idea-card { background:rgba(255,255,255,0.18); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,255,255,0.38); border-radius:12px; padding:0.9rem 1.1rem; display:flex; align-items:flex-start; gap:0.85rem; transition:border-color 0.2s; }
-    .idea-card:hover { border-color:rgba(255,255,255,0.60); }
-    .idea-cat-badge { font-size:0.65rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:10px; background:rgba(46,206,199,0.25); border:1px solid rgba(46,206,199,0.45); color:#fff; white-space:nowrap; flex-shrink:0; margin-top:0.1rem; }
-    .idea-body { flex:1; min-width:0; }
-    .idea-user { font-size:0.75rem; font-weight:700; color:#fff; margin-bottom:0.2rem; }
-    .idea-text { font-size:0.85rem; color:rgba(255,255,255,0.82); line-height:1.5; margin-bottom:0.35rem; }
-    .idea-meta { display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
-    .idea-priority { font-size:0.70rem; color:rgba(255,255,255,0.55); }
-    .idea-votes { display:flex; align-items:center; gap:0.3rem; font-size:0.78rem; font-weight:700; color:rgba(255,255,255,0.70); cursor:pointer; border:none; background:none; transition:color 0.2s; font-family:'Lato',sans-serif; }
-    .idea-votes:hover { color:#FF6B35; }
-    .idea-votes.voted { color:#FF6B35; }
-    .donate-amount { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.40); color:#fff; border-radius:20px; padding:0.35rem 0.9rem; font-size:0.82rem; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'Lato',sans-serif; min-height:36px; }
-    .donate-amount:hover { background:rgba(255,255,255,0.28); }
-    .donate-amount.active { background:#2ECEC7; border-color:#2ECEC7; color:#000; }
-    .donor-item { display:flex; align-items:center; gap:0.6rem; font-size:0.82rem; color:rgba(255,255,255,0.80); padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.07); }
-    .donor-item:last-child { border-bottom:none; }
-    .donor-avatar { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,#2ECEC7,#1A9B95); display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; color:#000; flex-shrink:0; }
-    .donor-amount { margin-left:auto; color:#2ECEC7; font-weight:700; }
-    .chat-msg { display:flex; }
-    .chat-msg.user { justify-content:flex-end; }
-    .chat-msg.ai { justify-content:flex-start; }
-    .chat-bubble { max-width:82%; padding:0.55rem 0.9rem; border-radius:12px; font-size:0.83rem; line-height:1.55; }
-    .ai-bubble { background:rgba(46,206,199,0.18); border:1px solid rgba(46,206,199,0.35); color:#fff; border-radius:4px 12px 12px 12px; }
-    .user-bubble { background:rgba(255,255,255,0.20); border:1px solid rgba(255,255,255,0.35); color:#fff; border-radius:12px 4px 12px 12px; }
-    .typing-bubble { background:rgba(46,206,199,0.12); border:1px solid rgba(46,206,199,0.25); color:rgba(255,255,255,0.55); font-style:italic; border-radius:4px 12px 12px 12px; padding:0.55rem 0.9rem; font-size:0.80rem; }
-    .quick-q { background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.28); color:rgba(255,255,255,0.75); border-radius:14px; padding:0.25rem 0.7rem; font-size:0.72rem; cursor:pointer; transition:all 0.2s; font-family:'Lato',sans-serif; }
-    .quick-q:hover { background:rgba(255,255,255,0.20); color:#fff; }
-    #chatWindow::-webkit-scrollbar { width:3px; }
-    #chatWindow::-webkit-scrollbar-thumb { background:rgba(46,206,199,0.35); border-radius:2px; }
+    .posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;}
+    .post-card{background:rgba(0,0,0,0.52);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(46,206,199,0.22);border-radius:16px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;}
+    .post-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(46,206,199,0.20);border-color:#2ECEC7;}
+    .post-header{display:flex;align-items:center;gap:0.7rem;padding:0.85rem 1rem 0.6rem;}
+    .post-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2ECEC7,#1A9B95);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:2px solid rgba(46,206,199,0.40);}
+    .post-user{font-weight:700;font-size:0.88rem;color:#fff;line-height:1.2;}
+    .post-era{font-size:0.68rem;color:#2ECEC7;letter-spacing:1px;}
+    .post-img{width:100%;aspect-ratio:1;object-fit:cover;display:block;cursor:zoom-in;transition:transform 0.4s;}
+    .post-card:hover .post-img{transform:scale(1.03);}
+    .post-story{padding:0.7rem 1rem 0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.55;min-height:2.8rem;font-family:'Lato',sans-serif;}
+    .post-story em{color:#2ECEC7;font-style:normal;font-weight:700;}
+    .post-actions{display:flex;align-items:center;gap:0.5rem;padding:0.55rem 1rem 0.9rem;border-top:1px solid rgba(255,255,255,0.07);}
+    .like-btn{background:none;border:none;display:flex;align-items:center;gap:0.35rem;color:rgba(255,255,255,0.55);font-size:0.82rem;cursor:pointer;border-radius:20px;padding:0.35rem 0.7rem;transition:all 0.2s;font-family:'Lato',sans-serif;}
+    .like-btn:hover{background:rgba(255,107,53,0.12);color:#FF6B35;}
+    .like-btn.liked{color:#FF6B35;}
+    .like-btn.liked i{animation:likeAnim 0.35s ease;}
+    @keyframes likeAnim{0%{transform:scale(1)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
+    .like-count{font-weight:700;min-width:1ch;}
+    .comment-input-wrap{flex:1;display:flex;align-items:center;gap:0.4rem;}
+    .comment-input{flex:1;background:rgba(255,255,255,0.07);border:1px solid rgba(46,206,199,0.20);border-radius:20px;padding:0.3rem 0.85rem;color:#fff;font-size:0.78rem;outline:none;font-family:'Lato',sans-serif;transition:border-color 0.2s;}
+    .comment-input:focus{border-color:#2ECEC7;}
+    .comment-input::placeholder{color:rgba(255,255,255,0.28);}
+    .send-comment{background:#2ECEC7;border:none;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;color:#000;font-size:0.7rem;cursor:pointer;flex-shrink:0;transition:background 0.2s;}
+    .send-comment:hover{background:#FF6B35;color:#fff;}
+    .comments-list{padding:0 1rem 0.85rem;max-height:100px;overflow-y:auto;}
+    .comments-list::-webkit-scrollbar{width:3px;}
+    .comments-list::-webkit-scrollbar-thumb{background:rgba(46,206,199,0.35);border-radius:2px;}
+    .comment-item{font-size:0.78rem;color:rgba(255,255,255,0.60);padding:0.2rem 0;line-height:1.4;border-bottom:1px solid rgba(255,255,255,0.05);}
+    .comment-item:last-child{border-bottom:none;}
+    .comment-item strong{color:#2ECEC7;margin-right:0.3rem;}
+    .upload-card{background:rgba(0,0,0,0.52);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(46,206,199,0.22);border-radius:16px;padding:1.8rem;}
+    .drop-zone{border:2px dashed rgba(46,206,199,0.35);border-radius:12px;padding:2rem 1rem;text-align:center;cursor:pointer;transition:all 0.25s;background:rgba(46,206,199,0.04);}
+    .drop-zone:hover,.drop-zone.drag{border-color:#2ECEC7;background:rgba(46,206,199,0.10);}
+    .drop-zone i{font-size:2.2rem;color:#2ECEC7;display:block;margin-bottom:0.75rem;}
+    .drop-zone p{color:rgba(255,255,255,0.55);font-size:0.85rem;margin:0;}
+    .preview-img-wrap{position:relative;margin-bottom:1rem;}
+    .preview-img-wrap img{width:100%;border-radius:10px;max-height:260px;object-fit:cover;border:1px solid rgba(46,206,199,0.25);}
+    .remove-preview{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.70);border:none;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.85rem;}
+    .ts-form-input{background:rgba(255,255,255,0.07)!important;border:1px solid rgba(46,206,199,0.25)!important;color:#fff!important;border-radius:8px!important;font-family:'Lato',sans-serif;}
+    .ts-form-input:focus{border-color:#2ECEC7!important;box-shadow:0 0 0 3px rgba(46,206,199,0.18)!important;}
+    .ts-form-input::placeholder{color:rgba(255,255,255,0.28)!important;}
+    .ts-label{color:#2ECEC7;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.4rem;display:block;}
+    .publish-btn{width:100%;background:linear-gradient(135deg,#2ECEC7,#1A9B95);border:none;border-radius:30px;padding:0.75rem;color:#000;font-weight:800;font-size:0.88rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;font-family:'Lato',sans-serif;}
+    .publish-btn:hover{background:linear-gradient(135deg,#FF6B35,#d94e12);color:#fff;transform:translateY(-2px);}
+    .success-msg{display:none;text-align:center;margin-top:0.75rem;color:#2ECEC7;font-size:0.85rem;font-weight:700;letter-spacing:1px;}
+    .lightbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;}
+    .lightbox.open{display:flex;}
+    .lightbox img{max-width:88vw;max-height:84vh;object-fit:contain;border-radius:10px;border:2px solid rgba(46,206,199,0.35);}
+    .lb-close{position:absolute;top:1.2rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;}
+    .lb-close:hover{color:#2ECEC7;}
+    .sec-title{font-family:'Playfair Display',serif;color:#2ECEC7;font-size:1.6rem;margin-bottom:0.25rem;}
+    .sec-sub{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.40);margin-bottom:1.5rem;}
+    .loading-posts{text-align:center;color:rgba(255,255,255,0.50);padding:2rem;font-size:0.88rem;grid-column:1/-1;}
+    .vote-priority{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.80);border-radius:20px;padding:0.3rem 0.75rem;font-size:0.78rem;cursor:pointer;transition:all 0.2s;font-family:'Lato',sans-serif;}
+    .vote-priority:hover{background:rgba(255,255,255,0.22);color:#fff;}
+    .vote-priority.active{background:#2ECEC7;border-color:#2ECEC7;color:#000;font-weight:700;}
+    .idea-card{background:rgba(255,255,255,0.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.38);border-radius:12px;padding:0.9rem 1.1rem;display:flex;align-items:flex-start;gap:0.85rem;transition:border-color 0.2s;}
+    .idea-card:hover{border-color:rgba(255,255,255,0.60);}
+    .idea-cat-badge{font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:10px;background:rgba(46,206,199,0.25);border:1px solid rgba(46,206,199,0.45);color:#fff;white-space:nowrap;flex-shrink:0;margin-top:0.1rem;}
+    .idea-body{flex:1;min-width:0;}
+    .idea-user{font-size:0.75rem;font-weight:700;color:#fff;margin-bottom:0.2rem;}
+    .idea-text{font-size:0.85rem;color:rgba(255,255,255,0.82);line-height:1.5;margin-bottom:0.35rem;}
+    .idea-meta{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;}
+    .idea-priority{font-size:0.70rem;color:rgba(255,255,255,0.55);}
+    .idea-votes{display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.70);cursor:pointer;border:none;background:none;transition:color 0.2s;font-family:'Lato',sans-serif;}
+    .idea-votes:hover{color:#FF6B35;}
+    .idea-votes.voted{color:#FF6B35;}
+    .donate-amount{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.40);color:#fff;border-radius:20px;padding:0.35rem 0.9rem;font-size:0.82rem;font-weight:700;cursor:pointer;transition:all 0.2s;font-family:'Lato',sans-serif;min-height:36px;}
+    .donate-amount:hover{background:rgba(255,255,255,0.28);}
+    .donate-amount.active{background:#2ECEC7;border-color:#2ECEC7;color:#000;}
+    .donor-item{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:rgba(255,255,255,0.80);padding:0.35rem 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+    .donor-item:last-child{border-bottom:none;}
+    .donor-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#2ECEC7,#1A9B95);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#000;flex-shrink:0;}
+    .donor-amount{margin-left:auto;color:#2ECEC7;font-weight:700;}
+    .chat-msg{display:flex;}
+    .chat-msg.user{justify-content:flex-end;}
+    .chat-msg.ai{justify-content:flex-start;}
+    .chat-bubble{max-width:82%;padding:0.55rem 0.9rem;border-radius:12px;font-size:0.83rem;line-height:1.55;}
+    .ai-bubble{background:rgba(46,206,199,0.18);border:1px solid rgba(46,206,199,0.35);color:#fff;border-radius:4px 12px 12px 12px;}
+    .user-bubble{background:rgba(255,255,255,0.20);border:1px solid rgba(255,255,255,0.35);color:#fff;border-radius:12px 4px 12px 12px;}
+    .typing-bubble{background:rgba(46,206,199,0.12);border:1px solid rgba(46,206,199,0.25);color:rgba(255,255,255,0.55);font-style:italic;border-radius:4px 12px 12px 12px;padding:0.55rem 0.9rem;font-size:0.80rem;}
+    .quick-q{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.28);color:rgba(255,255,255,0.75);border-radius:14px;padding:0.25rem 0.7rem;font-size:0.72rem;cursor:pointer;transition:all 0.2s;font-family:'Lato',sans-serif;}
+    .quick-q:hover{background:rgba(255,255,255,0.20);color:#fff;}
+    #chatWindow::-webkit-scrollbar{width:3px;}
+    #chatWindow::-webkit-scrollbar-thumb{background:rgba(46,206,199,0.35);border-radius:2px;}
   </style>
 </head>
-
 <body>
 <a id="skip-link" href="#main-content">Saltar al contenido</a>
 
@@ -136,7 +132,7 @@
         <li class="nav-item"><a class="nav-link" href="toursmemories.html">toursmemories</a></li>
         <li class="nav-item"><a class="nav-link" href="swifties.html">swifties</a></li>
         <li class="nav-item"><a class="nav-link" href="memories.html">memories</a></li>
-        <li class="nav-item"><a class="nav-link active" href="fans.html">fans</a></li>
+        <li class="nav-item"><a class="nav-link active" href="fan.html">fans</a></li>
       </ul>
     </div>
   </div>
@@ -166,7 +162,7 @@
           ondrop="dropFile(event)">
           <i class="fas fa-camera-retro"></i>
           <p>Arrastrá o hacé clic para elegir</p>
-          <p style="font-size:0.72rem;color:rgba(255,255,255,0.28);margin-top:0.3rem">JPG, PNG · máx. 10MB</p>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.28);margin-top:0.3rem">JPG, PNG · máx. 5MB</p>
           <input type="file" id="fileInput" accept="image/*" style="display:none" onchange="previewFile(event)">
         </div>
         <div id="previewSection" style="display:none;margin-top:1.2rem">
@@ -193,7 +189,7 @@
             <textarea class="form-control ts-form-input" id="upStory" rows="2" maxlength="120" placeholder="¿Cómo fue ese momento en el show?"></textarea>
             <div style="text-align:right;font-size:0.68rem;color:rgba(255,255,255,0.30);margin-top:2px"><span id="charCount">0</span>/120</div>
           </div>
-          <button class="publish-btn" onclick="publishPost()">Publicar ✦</button>
+          <button class="publish-btn" id="publishBtn" onclick="publishPost()">Publicar ✦</button>
           <div class="success-msg" id="successMsg">✦ ¡Publicado en la galería! ✦</div>
         </div>
       </div>
@@ -201,75 +197,9 @@
 
     <div class="col-lg-8">
       <div class="sec-title">🎤 Fotos de fans</div>
-      <div class="sec-sub" id="postCount">6 historias compartidas</div>
+      <div class="sec-sub" id="postCount">Cargando historias...</div>
       <div class="posts-grid" id="postsGrid">
-
-        <div class="post-card">
-          <div class="post-header"><div class="post-avatar">🌲</div><div><div class="post-user">Valentina M.</div><div class="post-era">Folklore Era · Buenos Aires 🇦🇷</div></div></div>
-          <img src="../asset/taylortourBsAs.jpg" class="post-img" alt="BsAs" onclick="openLB('../asset/taylortourBsAs.jpg')">
-          <div class="post-story">Primer show de mi vida y lloramos con <em>Cardigan</em> sin parar. Noche que no voy a olvidar jamás.</div>
-          <div class="post-actions">
-            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">24</span></button>
-            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
-          </div>
-          <div class="comments-list"><div class="comment-item"><strong>Sofia R.</strong> Yo también estaba ahí, fue épico 😭</div></div>
-        </div>
-
-        <div class="post-card">
-          <div class="post-header"><div class="post-avatar">🐍</div><div><div class="post-user">Carlos G.</div><div class="post-era">Reputation Era · Madrid 🇪🇸</div></div></div>
-          <img src="../asset/taylormadrid.jpg" class="post-img" alt="Madrid" onclick="openLB('../asset/taylormadrid.jpg')">
-          <div class="post-story">Madrid fue una locura total. <em>Look What You Made Me Do</em> en vivo me voló la cabeza.</div>
-          <div class="post-actions">
-            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">41</span></button>
-            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
-          </div>
-          <div class="comments-list"><div class="comment-item"><strong>Ana K.</strong> Qué foto hermosa, se nota la energía del show!</div></div>
-        </div>
-
-        <div class="post-card">
-          <div class="post-header"><div class="post-avatar">🌊</div><div><div class="post-user">Sofia R.</div><div class="post-era">1989 Era · New York 🇺🇸</div></div></div>
-          <img src="../asset/tourtaylornweyork.jpg" class="post-img" alt="NY" onclick="openLB('../asset/tourtaylornweyork.jpg')">
-          <div class="post-story">Viajé sola a New York solo para este show. <em>Style</em> sonó y me quedé sin palabras.</div>
-          <div class="post-actions">
-            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">58</span></button>
-            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
-          </div>
-          <div class="comments-list"><div class="comment-item"><strong>Valentina M.</strong> Sos una valiente! Dream trip 🙌</div><div class="comment-item"><strong>Isabella F.</strong> Yo también haría eso sin dudarlo</div></div>
-        </div>
-
-        <div class="post-card">
-          <div class="post-header"><div class="post-avatar">🎤</div><div><div class="post-user">Martina G.</div><div class="post-era">Eras Tour · Monumental 🇦🇷</div></div></div>
-          <img src="../asset/taylorswiftriverplate.jpg" class="post-img" alt="River" onclick="openLB('../asset/taylorswiftriverplate.jpg')">
-          <div class="post-story">Estadio Monumental lleno cantando <em>All Too Well</em>. Uno de los mejores días de mi vida.</div>
-          <div class="post-actions">
-            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">87</span></button>
-            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
-          </div>
-          <div class="comments-list"><div class="comment-item"><strong>Carlos G.</strong> Icónico ese show!</div></div>
-        </div>
-
-        <div class="post-card">
-          <div class="post-header"><div class="post-avatar">✨</div><div><div class="post-user">Ana K.</div><div class="post-era">Fearless Era · Madrid 🇪🇸</div></div></div>
-          <img src="../asset/madridTaylor.jpg" class="post-img" alt="Madrid2" onclick="openLB('../asset/madridTaylor.jpg')">
-          <div class="post-story">Fui con mi mejor amiga. Cuando arrancó <em>Love Story</em> nos abrazamos y lloramos juntas.</div>
-          <div class="post-actions">
-            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">33</span></button>
-            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
-          </div>
-          <div class="comments-list"><div class="comment-item"><strong>Martina G.</strong> Ay, me hiciste llorar leyendo esto 💚</div></div>
-        </div>
-
-        <div class="post-card">
-          <div class="post-header"><div class="post-avatar">🌙</div><div><div class="post-user">Isabella F.</div><div class="post-era">Midnights Era · New York 🇺🇸</div></div></div>
-          <img src="../asset/newyorktaylor2.jpg" class="post-img" alt="NY2" onclick="openLB('../asset/newyorktaylor2.jpg')">
-          <div class="post-story">La noche de <em>Anti-Hero</em> en vivo fue surreal. 60.000 personas cantando al unísono.</div>
-          <div class="post-actions">
-            <button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">45</span></button>
-            <div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div>
-          </div>
-          <div class="comments-list"><div class="comment-item"><strong>Sofia R.</strong> Ese momento fue mágico!</div></div>
-        </div>
-
+        <div class="loading-posts">⏳ Cargando posts de la comunidad...</div>
       </div>
     </div>
   </div>
@@ -330,11 +260,10 @@
 <!-- DONACIONES + CHATBOT -->
 <section class="container mt-5 mb-5">
   <div class="row g-4 align-items-start">
-
     <div class="col-md-6">
       <div class="card" style="padding:1.8rem">
         <h4 class="card-title mb-1">💚 Apoyá esta fan page</h4>
-        <p style="color:rgba(255,255,255,0.75);font-size:0.88rem;margin-bottom:1.5rem">Este sitio es hecho con amor por fans, para fans. Tu donación nos ayuda a seguir creciendo.</p>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.88rem;margin-bottom:1.5rem">Este sitio es hecho con amor por fans, para fans.</p>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.2rem" role="group">
           <button class="donate-amount active" data-val="2" onclick="setAmount(this)">$2 USD</button>
           <button class="donate-amount" data-val="5" onclick="setAmount(this)">$5 USD</button>
@@ -349,7 +278,6 @@
           <label class="form-label" for="donorName">Tu nombre (opcional)</label>
           <input type="text" class="form-control" id="donorName" placeholder="Aparecer en el muro de donantes" maxlength="60">
         </div>
-        <!-- ✅ BOTÓN TECITO REAL -->
         <a href="https://tecito.app/taylorswiftfanpage" target="_blank" rel="noopener"
            class="btn btn-danger w-100"
            style="border-radius:30px;font-weight:800;letter-spacing:1px;padding:0.75rem;font-size:0.88rem;margin-bottom:0.75rem">
@@ -362,7 +290,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-md-6">
       <div class="card" style="padding:1.8rem">
         <h4 class="card-title mb-1">🤖 Swiftie AI</h4>
@@ -381,7 +308,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -444,328 +370,210 @@
   </div>
 </div>
 
-<script>
-/* ══ CANCIONES — rutas corregidas con ../ ══ */
-var songs = [
-  { title: "Taylor Album",              src: "../asset/tayloralbum.mp3" },
-  { title: "Album 2",                   src: "../asset/albun2taylor.mp3" },
-  { title: "The Fate of Ophelia",       src: "../asset/thefateofophelia.mp3" },
-  { title: "Now That",                  src: "../asset/nowthat.mp3" },
-  { title: "22",                        src: "../asset/22.mp3" },
-  { title: "Blank Space",               src: "../asset/BlankSpace.mp3" },
-  { title: "Wildest Dreams",            src: "../asset/WildestDreams.mp3" },
-  { title: "I Knew You Were Trouble",   src: "../asset/IKnewYouWereTrouble.mp3" },
-  { title: "Out Of The Woods",          src: "../asset/OutOfTheWoods.mp3" },
-  { title: "Style",                     src: "../asset/Style.mp3" },
-  { title: "Delicate",                  src: "../asset/Delicate.mp3" },
-  { title: "I Don't Wanna Live Forever",src: "../asset/IDontWannaLiveForever.mp3" }
-];
+<!-- ══ FIREBASE — guarda comentarios y posts reales en la nube ══ -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, increment, arrayUnion, orderBy, query } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-var si = parseInt(sessionStorage.getItem('ts_song') || '0');
-var wasPlaying = sessionStorage.getItem('ts_playing') === 'true';
-var tsAudio = new Audio();
-var tsPlaying = false;
-
-function loadSong(i, autoplay) {
-  si = ((i % songs.length) + songs.length) % songs.length;
-  sessionStorage.setItem('ts_song', si);
-  tsAudio.src = songs[si].src;
-  var pSong = document.getElementById('pSong');
-  var pBar = document.getElementById('pBar');
-  if (pSong) pSong.textContent = songs[si].title;
-  if (pBar) pBar.style.width = '0%';
-  if (autoplay || tsPlaying) {
-    tsAudio.play().catch(function() {});
-    setPlayUI(true);
-    tsPlaying = true;
-  }
-}
-
-function setPlayUI(playing) {
-  var btn = document.getElementById('pPlayBtn');
-  if (!btn) return;
-  btn.innerHTML = playing ? '&#9646;&#9646;' : '&#9654;';
-  if (playing) btn.classList.add('playing');
-  else btn.classList.remove('playing');
-}
-
-function togglePlay() {
-  if (tsPlaying) {
-    tsAudio.pause();
-    tsPlaying = false;
-    sessionStorage.setItem('ts_playing', 'false');
-    setPlayUI(false);
-  } else {
-    tsAudio.play().catch(function() {});
-    tsPlaying = true;
-    sessionStorage.setItem('ts_playing', 'true');
-    setPlayUI(true);
-  }
-}
-
-function prevSong() { loadSong(si - 1, tsPlaying); }
-function nextSong() { loadSong(si + 1, tsPlaying); }
-function setVol(v) { tsAudio.volume = parseFloat(v); }
-function seekAudio(e) {
-  var wrap = document.getElementById('pBarWrap');
-  if (wrap && tsAudio.duration) tsAudio.currentTime = (e.offsetX / wrap.offsetWidth) * tsAudio.duration;
-}
-
-tsAudio.addEventListener('timeupdate', function() {
-  var pBar = document.getElementById('pBar');
-  if (pBar && tsAudio.duration) pBar.style.width = ((tsAudio.currentTime / tsAudio.duration) * 100) + '%';
-});
-tsAudio.addEventListener('ended', function() { loadSong(si + 1, true); });
-tsAudio.volume = 0.7;
-
-window.addEventListener('beforeunload', function() {
-  sessionStorage.setItem('ts_playing', tsPlaying ? 'true' : 'false');
-  sessionStorage.setItem('ts_song', si);
-});
-
-window.addEventListener('DOMContentLoaded', function() {
-  loadSong(si, false);
-  if (wasPlaying) {
-    tsAudio.play().catch(function() {});
-    tsPlaying = true;
-    setPlayUI(true);
-  }
-});
-</script>
-
-<script>
-var bgIdx = 0;
-window.addEventListener('DOMContentLoaded', function() {
-  var slides = document.querySelectorAll('.bg-slide');
-  var dots = document.querySelectorAll('.bg-dot');
-  if (!slides.length) return;
-  slides[0].classList.add('active');
-  if (dots.length) dots[0].classList.add('active');
-  setInterval(function() { setBg((bgIdx + 1) % slides.length); }, 6000);
-});
-function setBg(i) {
-  var slides = document.querySelectorAll('.bg-slide');
-  var dots = document.querySelectorAll('.bg-dot');
-  if (!slides.length) return;
-  slides[bgIdx].classList.remove('active');
-  if (dots.length) dots[bgIdx].classList.remove('active');
-  bgIdx = i;
-  slides[bgIdx].classList.add('active');
-  if (dots.length) dots[bgIdx].classList.add('active');
-}
-</script>
-
-<script>
-/* ── IDEAS ── */
-var selectedPriority = '🔥 Urgente';
-function setPriority(btn) {
-  document.querySelectorAll('.vote-priority').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  selectedPriority = btn.dataset.val;
-}
-var ideaTxtEl = document.getElementById('ideaTxt');
-if (ideaTxtEl) {
-  ideaTxtEl.addEventListener('input', function() { document.getElementById('ideaCharCount').textContent = this.value.length; });
-}
-var ideas = [
-  { name:'Valentina M.', cat:'Función',   priority:'🔥 Urgente', text:'Un quiz interactivo para saber qué era de Taylor sos.', votes:18, voted:false },
-  { name:'Carlos G.',    cat:'Contenido', priority:'⭐ Alta',    text:'Letras de canciones icónicas traducidas al español.',   votes:14, voted:false },
-  { name:'Sofia R.',     cat:'Comunidad', priority:'💡 Normal',  text:'Listening party virtual para el próximo álbum.',        votes:11, voted:false },
-  { name:'Ana K.',       cat:'Diseño',    priority:'🌱 A futuro',text:'Modo oscuro y modo claro para elegir.',                 votes: 9, voted:false },
-  { name:'Martina G.',   cat:'Música',    priority:'⭐ Alta',    text:'Ranking de canciones votable por era.',                 votes:22, voted:false },
-];
-function renderIdeas() {
-  var wall = document.getElementById('ideasWall');
-  var count = document.getElementById('ideaCount');
-  if (!wall) return;
-  wall.innerHTML = '';
-  ideas.forEach(function(idea, idx) {
-    var div = document.createElement('div');
-    div.className = 'idea-card';
-    div.innerHTML = '<span class="idea-cat-badge">' + idea.cat + '</span><div class="idea-body"><div class="idea-user">' + idea.name + '</div><div class="idea-text">' + idea.text + '</div><div class="idea-meta"><span class="idea-priority">' + idea.priority + '</span><button class="idea-votes' + (idea.voted ? ' voted' : '') + '" onclick="voteIdea(' + idx + ')">♥ <span>' + idea.votes + '</span></button></div></div>';
-    wall.appendChild(div);
-  });
-  if (count) count.textContent = ideas.length + ' ideas enviadas';
-}
-function voteIdea(idx) {
-  ideas[idx].voted ? ideas[idx].votes-- : ideas[idx].votes++;
-  ideas[idx].voted = !ideas[idx].voted;
-  renderIdeas();
-}
-function submitIdea() {
-  var name = document.getElementById('ideaName').value.trim() || 'Swiftie anónimo';
-  var cat = document.getElementById('ideaCat').value;
-  var txt = document.getElementById('ideaTxt').value.trim();
-  if (!txt) { alert('Escribí tu idea antes de enviar.'); return; }
-  ideas.unshift({ name:name, cat:cat, priority:selectedPriority, text:txt, votes:0, voted:false });
-  renderIdeas();
-  document.getElementById('ideaOk').style.display = 'block';
-  document.getElementById('ideaName').value = '';
-  document.getElementById('ideaTxt').value = '';
-  document.getElementById('ideaCharCount').textContent = '0';
-  setTimeout(function() { document.getElementById('ideaOk').style.display = 'none'; }, 3000);
-}
-window.addEventListener('DOMContentLoaded', renderIdeas);
-</script>
-
-<script>
-/* ── DONANTES ── */
-var donors = [
-  { name:'Valentina M.', amount:10, emoji:'🌲' },
-  { name:'Sofia R.',     amount:5,  emoji:'🌊' },
-  { name:'Donante anónimo', amount:2, emoji:'💚' },
-];
-function renderDonors() {
-  var wall = document.getElementById('donorWall');
-  if (!wall) return;
-  wall.innerHTML = donors.slice(0,5).map(function(d) {
-    return '<div class="donor-item"><div class="donor-avatar">' + d.emoji + '</div><span>' + d.name + '</span><span class="donor-amount">$' + d.amount + ' USD</span></div>';
-  }).join('');
-}
-function setAmount(btn) {
-  document.querySelectorAll('.donate-amount').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  document.getElementById('customAmount').value = '';
-}
-function clearAmountBtns() {
-  document.querySelectorAll('.donate-amount').forEach(function(b) { b.classList.remove('active'); });
-}
-window.addEventListener('DOMContentLoaded', renderDonors);
-</script>
-
-<script>
-/* ── CHATBOT ── */
-var aiKnowledge = {
-  'era':      'Las 11 eras son: Taylor Swift (2006), Fearless (2008), Speak Now (2010), Red (2012), 1989 (2014), Reputation (2017), Lover (2019), Folklore (2020), Evermore (2020), Midnights (2022) y TTPD (2024).',
-  'popular':  'La era más popular según streams es Midnights (2022) con Anti-Hero como sencillo más exitoso. Folklore y 1989 son las más queridas por la crítica.',
-  'tour':     'The Eras Tour (2023-2024) fue el tour más taquillero de la historia con más de $2 billones recaudados y 149 shows en 5 continentes.',
-  'cancion':  'Las canciones más famosas: Anti-Hero, Shake It Off, Love Story, Blank Space, Cruel Summer, All Too Well (10 min), Cardigan y Style.',
-  'dato':     'Datos curiosos: Taylor escribió su primer álbum a los 16 años. Tiene 14 Grammys. Es la primera artista con 5 álbumes debutando en #1.',
-  'folklore': 'Folklore (2020) es un álbum indie folk grabado en cuarentena. Sus canciones más icónicas: cardigan, august, exile (con Bon Iver) y betty.',
-  'midnights':'Midnights (2022) es el álbum más streameado de Taylor. Anti-Hero fue #1 por 8 semanas en Billboard Hot 100.',
-  'ttpd':     'The Tortured Poets Department (2024) tiene 31 canciones. Fortnight (feat. Post Malone) fue el primer sencillo.',
+const firebaseConfig = {
+  apiKey: "AIzaSyCqu1SBAFyWU1v7XWLvKXD-3HX4UHHaXA8",
+  authDomain: "proyecto-taylor-swift.firebaseapp.com",
+  projectId: "proyecto-taylor-swift",
+  storageBucket: "proyecto-taylor-swift.firebasestorage.app",
+  messagingSenderId: "338281846083",
+  appId: "1:338281846083:web:3669e99a9cf53f43e80bf6"
 };
-function getAIResponse(q) {
-  q = q.toLowerCase();
-  if (q.includes('era') || q.includes('album'))     return aiKnowledge['era'];
-  if (q.includes('popular') || q.includes('mejor')) return aiKnowledge['popular'];
-  if (q.includes('tour') || q.includes('show'))     return aiKnowledge['tour'];
-  if (q.includes('cancion') || q.includes('tema'))  return aiKnowledge['cancion'];
-  if (q.includes('dato') || q.includes('curio'))    return aiKnowledge['dato'];
-  if (q.includes('folklore') || q.includes('cardigan')) return aiKnowledge['folklore'];
-  if (q.includes('midnight'))                       return aiKnowledge['midnights'];
-  if (q.includes('ttpd') || q.includes('tortured')) return aiKnowledge['ttpd'];
-  if (q.includes('hola') || q.includes('hey'))      return '¡Hola Swiftie! 👋 Preguntame sobre las eras, canciones o el Eras Tour.';
-  if (q.includes('gracias'))                        return '¡De nada! Estoy aquí para cualquier cosa Swiftie-related. ✦';
-  return 'No tengo esa info todavía. 🤔 Probá preguntarme sobre las eras, el Eras Tour, canciones famosas o datos curiosos.';
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* Posts fijos que siempre se muestran */
+const postsHardcoded = [
+  {name:'Valentina M.',era:'Folklore Era · Buenos Aires 🇦🇷',emoji:'🌲',img:'../asset/taylortourBsAs.jpg',      story:'Primer show de mi vida y lloramos con Cardigan sin parar. Noche que no voy a olvidar jamás.',likes:24,comments:[{name:'Sofia R.',text:'Yo también estaba ahí, fue épico 😭'}]},
+  {name:'Carlos G.',   era:'Reputation Era · Madrid 🇪🇸',    emoji:'🐍',img:'../asset/taylormadrid.jpg',        story:'Madrid fue una locura total. Look What You Made Me Do en vivo me voló la cabeza.',        likes:41,comments:[{name:'Ana K.',text:'Qué foto hermosa, se nota la energía del show!'}]},
+  {name:'Sofia R.',    era:'1989 Era · New York 🇺🇸',         emoji:'🌊',img:'../asset/tourtaylornweyork.jpg',   story:'Viajé sola a New York solo para este show. Style sonó y me quedé sin palabras.',           likes:58,comments:[{name:'Valentina M.',text:'Sos una valiente! Dream trip 🙌'},{name:'Isabella F.',text:'Yo también haría eso sin dudarlo'}]},
+  {name:'Martina G.',  era:'Eras Tour · Monumental 🇦🇷',      emoji:'🎤',img:'../asset/taylorswiftriverplate.jpg',story:'Estadio Monumental lleno cantando All Too Well. Uno de los mejores días de mi vida.',    likes:87,comments:[{name:'Carlos G.',text:'Icónico ese show!'}]},
+  {name:'Ana K.',      era:'Fearless Era · Madrid 🇪🇸',       emoji:'✨',img:'../asset/madridTaylor.jpg',        story:'Fui con mi mejor amiga. Cuando arrancó Love Story nos abrazamos y lloramos juntas.',      likes:33,comments:[{name:'Martina G.',text:'Ay, me hiciste llorar leyendo esto 💚'}]},
+  {name:'Isabella F.', era:'Midnights Era · New York 🇺🇸',    emoji:'🌙',img:'../asset/newyorktaylor2.jpg',      story:'La noche de Anti-Hero en vivo fue surreal. 60.000 personas cantando al unísono.',        likes:45,comments:[{name:'Sofia R.',text:'Ese momento fue mágico!'}]},
+];
+
+function crearCard(data, postId, esFirebase) {
+  const card = document.createElement('div');
+  card.className = 'post-card';
+  let commentsHtml = '';
+  if (data.comments && data.comments.length > 0) {
+    data.comments.forEach(c => {
+      commentsHtml += '<div class="comment-item"><strong>' + c.name + '</strong> ' + c.text + '</div>';
+    });
+  }
+  const cardId = postId || ('h_' + data.name.replace(/\s/g,''));
+  const likeH   = esFirebase ? 'likeFirebase(this,\''+postId+'\')' : 'toggleLike(this)';
+  const commKH  = esFirebase ? 'sendCFB(event,this,\''+postId+'\')' : 'sendComment(event,this)';
+  const commBH  = esFirebase ? 'sendCFBBtn(this,\''+postId+'\')' : 'sendCommentBtn(this)';
+  card.innerHTML =
+    '<div class="post-header"><div class="post-avatar">'+data.emoji+'</div><div><div class="post-user">'+data.name+'</div><div class="post-era">'+data.era+'</div></div></div>'+
+    '<img src="'+data.img+'" class="post-img" alt="Fan post" onclick="openLB(\''+data.img+'\')">'+
+    '<div class="post-story">'+data.story+'</div>'+
+    '<div class="post-actions">'+
+      '<button class="like-btn" onclick="'+likeH+'"><i class="fas fa-heart"></i><span class="like-count">'+(data.likes||0)+'</span></button>'+
+      '<div class="comment-input-wrap">'+
+        '<input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="'+commKH+'">'+
+        '<button class="send-comment" onclick="'+commBH+'"><i class="fas fa-paper-plane"></i></button>'+
+      '</div>'+
+    '</div>'+
+    '<div class="comments-list" id="comments-'+cardId+'">'+commentsHtml+'</div>';
+  return card;
 }
-function addMessage(text, role) {
-  var win = document.getElementById('chatWindow');
-  var div = document.createElement('div');
-  div.className = 'chat-msg ' + role;
-  div.innerHTML = '<div class="chat-bubble ' + role + '-bubble">' + text + '</div>';
-  win.appendChild(div);
-  win.scrollTop = win.scrollHeight;
+
+async function loadPosts() {
+  const grid = document.getElementById('postsGrid');
+  const countEl = document.getElementById('postCount');
+  grid.innerHTML = '<div class="loading-posts">⏳ Cargando posts...</div>';
+  let firebasePosts = [];
+  try {
+    const q = query(collection(db, "posts"), orderBy("created", "desc"));
+    const snap = await getDocs(q);
+    snap.forEach(d => firebasePosts.push({data:d.data(), id:d.id}));
+  } catch(e) { console.warn("Firebase:", e); }
+
+  grid.innerHTML = '';
+  const emojis = ['🌲','🐍','🌊','🎤','✨','🌙','🔴','🌈','🍂'];
+
+  firebasePosts.forEach(item => {
+    const d = item.data;
+    grid.appendChild(crearCard({
+      name: d.name||'Swiftie', era: d.era||'', story: d.story||'',
+      img: d.imgSrc||'', likes: d.likes||0, comments: d.comments||[],
+      emoji: emojis[Math.floor(Math.random()*emojis.length)]
+    }, item.id, true));
+  });
+
+  postsHardcoded.forEach(p => grid.appendChild(crearCard(p, null, false)));
+
+  if (countEl) countEl.textContent = (firebasePosts.length + postsHardcoded.length) + ' historias compartidas';
 }
-function sendChat() {
-  var inp = document.getElementById('chatInput');
-  var q = inp.value.trim();
-  if (!q) return;
-  addMessage(q, 'user');
-  inp.value = '';
-  var win = document.getElementById('chatWindow');
-  var typing = document.createElement('div');
-  typing.className = 'chat-msg ai';
-  typing.id = 'typing';
-  typing.innerHTML = '<div class="typing-bubble">Escribiendo...</div>';
-  win.appendChild(typing);
-  win.scrollTop = win.scrollHeight;
-  setTimeout(function() {
-    var t = document.getElementById('typing');
-    if (t) t.remove();
-    addMessage(getAIResponse(q), 'ai');
-  }, 900 + Math.random() * 600);
+
+window.likeFirebase = async (btn, postId) => {
+  btn.classList.toggle('liked');
+  const c = btn.querySelector('.like-count');
+  const liked = btn.classList.contains('liked');
+  c.textContent = parseInt(c.textContent) + (liked ? 1 : -1);
+  try { await updateDoc(doc(db,'posts',postId), {likes: increment(liked?1:-1)}); } catch(e){console.error(e);}
+};
+
+async function guardarComentario(input, postId) {
+  const text = input.value.trim();
+  if (!text) return;
+  const nombre = prompt('¿Cuál es tu nombre Swiftie?') || 'Swiftie';
+  const list = document.getElementById('comments-' + postId);
+  const div = document.createElement('div');
+  div.className = 'comment-item';
+  div.innerHTML = '<strong>' + nombre + '</strong> ' + text;
+  if (list) { list.appendChild(div); list.scrollTop = list.scrollHeight; }
+  input.value = '';
+  try { await updateDoc(doc(db,'posts',postId), {comments: arrayUnion({name:nombre, text:text})}); } catch(e){console.error(e);}
 }
-function quickQ(btn) {
-  document.getElementById('chatInput').value = btn.textContent;
-  sendChat();
-}
+
+window.sendCFB    = (e,input,postId) => { if(e.key==='Enter') guardarComentario(input,postId); };
+window.sendCFBBtn = (btn,postId)     => guardarComentario(btn.previousElementSibling, postId);
+
+window.publishPost = async () => {
+  const btn = document.getElementById('publishBtn');
+  const name = document.getElementById('upName').value.trim() || 'Swiftie anónimo';
+  const era  = document.getElementById('upEra').value;
+  const story = document.getElementById('upStory').value.trim();
+  const imgSrc = document.getElementById('previewImg').src;
+  if (!imgSrc || imgSrc === window.location.href) { alert('Seleccioná una foto primero.'); return; }
+  btn.textContent = '⏳ Publicando...'; btn.disabled = true;
+  try {
+    await addDoc(collection(db,'posts'), {name, era, story, imgSrc, likes:0, comments:[], created:new Date()});
+    document.getElementById('successMsg').style.display = 'block';
+    setTimeout(()=>{ document.getElementById('successMsg').style.display='none'; }, 3000);
+    cancelUpload();
+    loadPosts();
+  } catch(e) {
+    console.error(e);
+    alert('❌ Error al publicar. Verificá tu conexión.');
+  } finally { btn.textContent = 'Publicar ✦'; btn.disabled = false; }
+};
+
+window.addEventListener('DOMContentLoaded', loadPosts);
 </script>
 
+<!-- ══ SCRIPTS GENERALES ══ -->
 <script>
-/* ── LIGHTBOX ── */
-function openLB(src) {
-  document.getElementById('lbImg').src = src;
-  document.getElementById('lightbox').classList.add('open');
-}
-function closeLB() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.getElementById('lbImg').src = '';
-}
-/* ── LIKE ── */
-function toggleLike(btn) {
-  btn.classList.toggle('liked');
-  var count = btn.querySelector('.like-count');
-  count.textContent = btn.classList.contains('liked') ? parseInt(count.textContent) + 1 : parseInt(count.textContent) - 1;
-}
-/* ── COMENTARIOS ── */
-function sendComment(e, input) {
-  if (e.key === 'Enter') sendCommentBtn(input.nextElementSibling);
-}
-function sendCommentBtn(btn) {
-  var input = btn.previousElementSibling;
-  var text = input.value.trim();
-  if (!text) return;
-  var list = btn.closest('.post-card').querySelector('.comments-list');
-  var div = document.createElement('div');
-  div.className = 'comment-item';
-  div.innerHTML = '<strong>Vos</strong> ' + text;
-  list.appendChild(div);
-  input.value = '';
-  list.scrollTop = list.scrollHeight;
-}
-/* ── UPLOAD ── */
-function ev(e) { e.preventDefault(); }
-function dropFile(e) {
-  e.preventDefault();
-  document.getElementById('dropZone').classList.remove('drag');
-  var file = e.dataTransfer.files[0];
-  if (file) showPreview(file);
-}
-function previewFile(e) { if (e.target.files[0]) showPreview(e.target.files[0]); }
-function showPreview(file) {
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    document.getElementById('previewImg').src = e.target.result;
-    document.getElementById('previewSection').style.display = 'block';
-    document.getElementById('dropZone').style.display = 'none';
-  };
-  reader.readAsDataURL(file);
-}
-function cancelUpload() {
-  document.getElementById('previewSection').style.display = 'none';
-  document.getElementById('dropZone').style.display = 'block';
-  document.getElementById('fileInput').value = '';
-}
-function publishPost() {
-  var name = document.getElementById('upName').value.trim() || 'Swiftie anónimo';
-  var era = document.getElementById('upEra').value;
-  var story = document.getElementById('upStory').value.trim() || '';
-  var imgSrc = document.getElementById('previewImg').src;
-  var grid = document.getElementById('postsGrid');
-  var card = document.createElement('div');
-  card.className = 'post-card';
-  card.innerHTML = '<div class="post-header"><div class="post-avatar">📸</div><div><div class="post-user">' + name + '</div><div class="post-era">' + era + '</div></div></div><img src="' + imgSrc + '" class="post-img" alt="Fan post"><div class="post-story">' + story + '</div><div class="post-actions"><button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">0</span></button><div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div></div><div class="comments-list"></div>';
-  grid.insertBefore(card, grid.firstChild);
-  document.getElementById('successMsg').style.display = 'block';
-  setTimeout(function() { document.getElementById('successMsg').style.display = 'none'; }, 3000);
-  cancelUpload();
-  var count = document.getElementById('postCount');
-  if (count) count.textContent = grid.children.length + ' historias compartidas';
-}
-document.getElementById('upStory') && document.getElementById('upStory').addEventListener('input', function() {
-  document.getElementById('charCount').textContent = this.value.length;
-});
+var songs=[
+  {title:"Taylor Album",              src:"../asset/tayloralbum.mp3"},
+  {title:"Album 2",                   src:"../asset/albun2taylor.mp3"},
+  {title:"The Fate of Ophelia",       src:"../asset/thefateofophelia.mp3"},
+  {title:"Now That",                  src:"../asset/nowthat.mp3"},
+  {title:"22",                        src:"../asset/22.mp3"},
+  {title:"Blank Space",               src:"../asset/BlankSpace.mp3"},
+  {title:"Wildest Dreams",            src:"../asset/WildestDreams.mp3"},
+  {title:"I Knew You Were Trouble",   src:"../asset/IKnewYouWereTrouble.mp3"},
+  {title:"Out Of The Woods",          src:"../asset/OutOfTheWoods.mp3"},
+  {title:"Style",                     src:"../asset/Style.mp3"},
+  {title:"Delicate",                  src:"../asset/Delicate.mp3"},
+  {title:"I Don't Wanna Live Forever",src:"../asset/IDontWannaLiveForever.mp3"}
+];
+var si=parseInt(sessionStorage.getItem('ts_song')||'0');
+var wasPlaying=sessionStorage.getItem('ts_playing')==='true';
+var tsAudio=new Audio();var tsPlaying=false;
+function loadSong(i,a){si=((i%songs.length)+songs.length)%songs.length;sessionStorage.setItem('ts_song',si);tsAudio.src=songs[si].src;var ps=document.getElementById('pSong'),pb=document.getElementById('pBar');if(ps)ps.textContent=songs[si].title;if(pb)pb.style.width='0%';if(a||tsPlaying){tsAudio.play().catch(function(){});setPlayUI(true);tsPlaying=true;}}
+function setPlayUI(p){var b=document.getElementById('pPlayBtn');if(!b)return;b.innerHTML=p?'&#9646;&#9646;':'&#9654;';p?b.classList.add('playing'):b.classList.remove('playing');}
+function togglePlay(){if(tsPlaying){tsAudio.pause();tsPlaying=false;sessionStorage.setItem('ts_playing','false');setPlayUI(false);}else{tsAudio.play().catch(function(){});tsPlaying=true;sessionStorage.setItem('ts_playing','true');setPlayUI(true);}}
+function prevSong(){loadSong(si-1,tsPlaying);}function nextSong(){loadSong(si+1,tsPlaying);}
+function setVol(v){tsAudio.volume=parseFloat(v);}
+function seekAudio(e){var w=document.getElementById('pBarWrap');if(w&&tsAudio.duration)tsAudio.currentTime=(e.offsetX/w.offsetWidth)*tsAudio.duration;}
+tsAudio.addEventListener('timeupdate',function(){var b=document.getElementById('pBar');if(b&&tsAudio.duration)b.style.width=((tsAudio.currentTime/tsAudio.duration)*100)+'%';});
+tsAudio.addEventListener('ended',function(){loadSong(si+1,true);});
+tsAudio.volume=0.7;
+window.addEventListener('beforeunload',function(){sessionStorage.setItem('ts_playing',tsPlaying?'true':'false');sessionStorage.setItem('ts_song',si);});
+window.addEventListener('DOMContentLoaded',function(){loadSong(si,false);if(wasPlaying){tsAudio.play().catch(function(){});tsPlaying=true;setPlayUI(true);}});
+
+var bgIdx=0;
+window.addEventListener('DOMContentLoaded',function(){var sl=document.querySelectorAll('.bg-slide'),dt=document.querySelectorAll('.bg-dot');if(!sl.length)return;sl[0].classList.add('active');if(dt.length)dt[0].classList.add('active');setInterval(function(){setBg((bgIdx+1)%sl.length);},6000);});
+function setBg(i){var sl=document.querySelectorAll('.bg-slide'),dt=document.querySelectorAll('.bg-dot');if(!sl.length)return;sl[bgIdx].classList.remove('active');if(dt.length)dt[bgIdx].classList.remove('active');bgIdx=i;sl[bgIdx].classList.add('active');if(dt.length)dt[bgIdx].classList.add('active');}
+
+function openLB(src){document.getElementById('lbImg').src=src;document.getElementById('lightbox').classList.add('open');}
+function closeLB(){document.getElementById('lightbox').classList.remove('open');document.getElementById('lbImg').src='';}
+function toggleLike(btn){btn.classList.toggle('liked');var c=btn.querySelector('.like-count');c.textContent=btn.classList.contains('liked')?parseInt(c.textContent)+1:parseInt(c.textContent)-1;}
+function sendComment(e,input){if(e.key==='Enter')sendCommentBtn(input.nextElementSibling);}
+function sendCommentBtn(btn){var input=btn.previousElementSibling,text=input.value.trim();if(!text)return;var list=btn.closest('.post-card').querySelector('.comments-list'),div=document.createElement('div');div.className='comment-item';div.innerHTML='<strong>Vos</strong> '+text;list.appendChild(div);input.value='';list.scrollTop=list.scrollHeight;}
+function ev(e){e.preventDefault();}
+function dropFile(e){e.preventDefault();document.getElementById('dropZone').classList.remove('drag');var f=e.dataTransfer.files[0];if(f)showPreview(f);}
+function previewFile(e){if(e.target.files[0])showPreview(e.target.files[0]);}
+function showPreview(file){if(file.size>5*1024*1024){alert('La imagen debe ser menor a 5MB.');return;}var r=new FileReader();r.onload=function(e){document.getElementById('previewImg').src=e.target.result;document.getElementById('previewSection').style.display='block';document.getElementById('dropZone').style.display='none';};r.readAsDataURL(file);}
+function cancelUpload(){document.getElementById('previewSection').style.display='none';document.getElementById('dropZone').style.display='block';document.getElementById('fileInput').value='';document.getElementById('upName').value='';document.getElementById('upStory').value='';document.getElementById('charCount').textContent='0';}
+document.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('upStory');if(s)s.addEventListener('input',function(){document.getElementById('charCount').textContent=this.value.length;});});
+
+var selectedPriority='🔥 Urgente';
+function setPriority(btn){document.querySelectorAll('.vote-priority').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');selectedPriority=btn.dataset.val;}
+var ideaTxtEl=document.getElementById('ideaTxt');
+if(ideaTxtEl){ideaTxtEl.addEventListener('input',function(){document.getElementById('ideaCharCount').textContent=this.value.length;});}
+var ideas=[
+  {name:'Valentina M.',cat:'Función',  priority:'🔥 Urgente',text:'Un quiz interactivo para saber qué era de Taylor sos.',votes:18,voted:false},
+  {name:'Carlos G.',   cat:'Contenido',priority:'⭐ Alta',   text:'Letras de canciones icónicas traducidas al español.',  votes:14,voted:false},
+  {name:'Sofia R.',    cat:'Comunidad',priority:'💡 Normal', text:'Listening party virtual para el próximo álbum.',       votes:11,voted:false},
+  {name:'Ana K.',      cat:'Diseño',   priority:'🌱 A futuro',text:'Modo oscuro y modo claro para elegir.',               votes:9, voted:false},
+  {name:'Martina G.',  cat:'Música',   priority:'⭐ Alta',   text:'Ranking de canciones votable por era.',               votes:22,voted:false},
+];
+function renderIdeas(){var wall=document.getElementById('ideasWall'),count=document.getElementById('ideaCount');if(!wall)return;wall.innerHTML='';ideas.forEach(function(idea,idx){var div=document.createElement('div');div.className='idea-card';div.innerHTML='<span class="idea-cat-badge">'+idea.cat+'</span><div class="idea-body"><div class="idea-user">'+idea.name+'</div><div class="idea-text">'+idea.text+'</div><div class="idea-meta"><span class="idea-priority">'+idea.priority+'</span><button class="idea-votes'+(idea.voted?' voted':'')+'" onclick="voteIdea('+idx+')">♥ <span>'+idea.votes+'</span></button></div></div>';wall.appendChild(div);});if(count)count.textContent=ideas.length+' ideas enviadas';}
+function voteIdea(idx){ideas[idx].voted?ideas[idx].votes--:ideas[idx].votes++;ideas[idx].voted=!ideas[idx].voted;renderIdeas();}
+function submitIdea(){var name=document.getElementById('ideaName').value.trim()||'Swiftie anónimo',cat=document.getElementById('ideaCat').value,txt=document.getElementById('ideaTxt').value.trim();if(!txt){alert('Escribí tu idea antes de enviar.');return;}ideas.unshift({name:name,cat:cat,priority:selectedPriority,text:txt,votes:0,voted:false});renderIdeas();document.getElementById('ideaOk').style.display='block';document.getElementById('ideaName').value='';document.getElementById('ideaTxt').value='';document.getElementById('ideaCharCount').textContent='0';setTimeout(function(){document.getElementById('ideaOk').style.display='none';},3000);}
+window.addEventListener('DOMContentLoaded',renderIdeas);
+
+var donors=[{name:'Valentina M.',amount:10,emoji:'🌲'},{name:'Sofia R.',amount:5,emoji:'🌊'},{name:'Donante anónimo',amount:2,emoji:'💚'}];
+function renderDonors(){var wall=document.getElementById('donorWall');if(!wall)return;wall.innerHTML=donors.slice(0,5).map(function(d){return '<div class="donor-item"><div class="donor-avatar">'+d.emoji+'</div><span>'+d.name+'</span><span class="donor-amount">$'+d.amount+' USD</span></div>';}).join('');}
+function setAmount(btn){document.querySelectorAll('.donate-amount').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');document.getElementById('customAmount').value='';}
+function clearAmountBtns(){document.querySelectorAll('.donate-amount').forEach(function(b){b.classList.remove('active');});}
+window.addEventListener('DOMContentLoaded',renderDonors);
+
+var aiK={era:'Las 11 eras: Taylor Swift (2006), Fearless (2008), Speak Now (2010), Red (2012), 1989 (2014), Reputation (2017), Lover (2019), Folklore (2020), Evermore (2020), Midnights (2022) y TTPD (2024).',popular:'La más popular en streams es Midnights (2022). Anti-Hero fue #1 por 8 semanas en Billboard.',tour:'The Eras Tour fue el tour más taquillero de la historia: +$2 billones, 149 shows en 5 continentes. Argentina noviembre 2024.',cancion:'Las más famosas: Anti-Hero, Shake It Off, Love Story, Blank Space, Cruel Summer, All Too Well, Cardigan y Style.',dato:'Datos: escribió su primer álbum a los 16, tiene 14 Grammys, primera artista con 5 álbumes debutando en #1.',folklore:'Folklore (2020): indie folk grabado en cuarentena. Icónicas: cardigan, august, exile (Bon Iver) y betty.',midnights:'Midnights (2022): 23 canciones en la 3am Edition. Anti-Hero es el sencillo más exitoso.',ttpd:'TTPD (2024): 31 canciones. Fortnight feat. Post Malone fue el primer sencillo.'};
+function getAIResponse(q){q=q.toLowerCase();if(q.includes('era')||q.includes('album'))return aiK.era;if(q.includes('popular')||q.includes('mejor'))return aiK.popular;if(q.includes('tour')||q.includes('show'))return aiK.tour;if(q.includes('cancion')||q.includes('tema'))return aiK.cancion;if(q.includes('dato')||q.includes('curio'))return aiK.dato;if(q.includes('folklore'))return aiK.folklore;if(q.includes('midnight'))return aiK.midnights;if(q.includes('ttpd'))return aiK.ttpd;if(q.includes('hola')||q.includes('hey'))return '¡Hola Swiftie! 👋 Preguntame sobre las eras, canciones o el Eras Tour.';if(q.includes('gracias'))return '¡De nada! Estoy aquí para lo que necesités ✦';return 'No tengo esa info 🤔 Probá preguntarme sobre las eras, el Eras Tour o canciones famosas.';}
+function addMessage(text,role){var win=document.getElementById('chatWindow'),div=document.createElement('div');div.className='chat-msg '+role;div.innerHTML='<div class="chat-bubble '+role+'-bubble">'+text+'</div>';win.appendChild(div);win.scrollTop=win.scrollHeight;}
+function sendChat(){var inp=document.getElementById('chatInput'),q=inp.value.trim();if(!q)return;addMessage(q,'user');inp.value='';var win=document.getElementById('chatWindow'),typing=document.createElement('div');typing.className='chat-msg ai';typing.id='typing';typing.innerHTML='<div class="typing-bubble">Escribiendo...</div>';win.appendChild(typing);win.scrollTop=win.scrollHeight;setTimeout(function(){var t=document.getElementById('typing');if(t)t.remove();addMessage(getAIResponse(q),'ai');},900+Math.random()*600);}
+function quickQ(btn){document.getElementById('chatInput').value=btn.textContent;sendChat();}
 </script>
 
 </body>
