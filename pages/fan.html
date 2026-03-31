@@ -752,16 +752,21 @@ function publishPost() {
   var era = document.getElementById('upEra').value;
   var story = document.getElementById('upStory').value.trim() || '';
   var imgSrc = document.getElementById('previewImg').src;
-  var grid = document.getElementById('postsGrid');
-  var card = document.createElement('div');
-  card.className = 'post-card';
-  card.innerHTML = '<div class="post-header"><div class="post-avatar">📸</div><div><div class="post-user">' + name + '</div><div class="post-era">' + era + '</div></div></div><img src="' + imgSrc + '" class="post-img" alt="Fan post"><div class="post-story">' + story + '</div><div class="post-actions"><button class="like-btn" onclick="toggleLike(this)"><i class="fas fa-heart"></i><span class="like-count">0</span></button><div class="comment-input-wrap"><input type="text" class="comment-input" placeholder="Dejá tu comentario..." onkeydown="sendComment(event,this)"><button class="send-comment" onclick="sendCommentBtn(this)"><i class="fas fa-paper-plane"></i></button></div></div><div class="comments-list"></div>';
-  grid.insertBefore(card, grid.firstChild);
-  document.getElementById('successMsg').style.display = 'block';
-  setTimeout(function() { document.getElementById('successMsg').style.display = 'none'; }, 3000);
+
+  let newPost = {
+    name,
+    era,
+    story,
+    img: imgSrc,
+    likes: 0,
+    comments: []
+  };
+
+  posts.unshift(newPost);
+  localStorage.setItem('fanPosts', JSON.stringify(posts));
+
+  renderPosts();
   cancelUpload();
-  var count = document.getElementById('postCount');
-  if (count) count.textContent = grid.children.length + ' historias compartidas';
 }
 document.getElementById('upStory') && document.getElementById('upStory').addEventListener('input', function() {
   document.getElementById('charCount').textContent = this.value.length;
