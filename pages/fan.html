@@ -502,7 +502,66 @@ function togglePlay() {
     setPlayUI(true);
   }
 }
+function renderPosts() {
+  var grid = document.getElementById('postsGrid');
+  grid.innerHTML = '';
 
+  posts.forEach((post, index) => {
+    let commentsHTML = post.comments.map(c => 
+      `<div class="comment-item"><strong>${c.user}</strong> ${c.text}</div>`
+    ).join('');
+
+    let card = document.createElement('div');
+    card.className = 'post-card';
+    card.innerHTML = `
+      <div class="post-header">
+        <div class="post-avatar">📸</div>
+        <div>
+          <div class="post-user">${post.name}</div>
+          <div class="post-era">${post.era}</div>
+        </div>
+      </div>
+
+      <img src="${post.img}" class="post-img">
+
+      <div class="post-story">${post.story}</div>
+
+      <div class="post-actions">
+        <button class="like-btn" onclick="toggleLikeSaved(${index})">
+          ❤️ <span class="like-count">${post.likes}</span>
+        </button>
+
+        <div class="comment-input-wrap">
+          <input type="text" class="comment-input" placeholder="Comentario..."
+            onkeydown="addComment(event, ${index}, this)">
+        </div>
+      </div>
+
+      <div class="comments-list">${commentsHTML}</div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+function toggleLikeSaved(index) {
+  posts[index].likes++;
+  localStorage.setItem('fanPosts', JSON.stringify(posts));
+  renderPosts();
+}
+function addComment(e, index, input) {
+  if (e.key === 'Enter') {
+    let text = input.value.trim();
+    if (!text) return;
+
+    posts[index].comments.push({
+      user: "Vos",
+      text: text
+    });
+
+    localStorage.setItem('fanPosts', JSON.stringify(posts));
+    renderPosts();
+  }
+}
 function prevSong() { loadSong(si - 1, tsPlaying); }
 function nextSong() { loadSong(si + 1, tsPlaying); }
 function setVol(v) { tsAudio.volume = parseFloat(v); }
@@ -523,13 +582,32 @@ window.addEventListener('beforeunload', function() {
   sessionStorage.setItem('ts_song', si);
 });
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
+
+  // 🎵 PLAYER
   loadSong(si, false);
+
   if (wasPlaying) {
-    tsAudio.play().catch(function() {});
+    tsAudio.play().catch(function () {});
     tsPlaying = true;
     setPlayUI(true);
   }
+
+  // 💾 POSTS GUARDADOS
+  if (typeof renderPosts === "function") {
+    renderPosts();
+  }
+
+  // 💡 IDEAS
+  if (typeof renderIdeas === "function") {
+    renderIdeas();
+  }
+
+  // 💚 DONANTES
+  if (typeof renderDonors === "function") {
+    renderDonors();
+  }
+
 });
 </script>
 
