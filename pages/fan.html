@@ -319,7 +319,7 @@
     <div class="social-footer">
       <a href="https://x.com/taylorswif2026" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       <a href="https://www.tiktok.com/@taylorswiffan26" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="mailto:taylorswiftfanpageswifties@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="/cdn-cgi/l/email-protection#097d687065667b7a7e606f7d6f686779686e6c7a7e606f7d606c7a496e64686065276a6664" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
     <hr style="border:none;border-top:1px solid rgba(255,255,255,0.08);margin:1rem 0">
     <p style="font-size:0.68rem;color:rgba(255,255,255,0.22);margin-bottom:0">© 2026 Fan Page Educativa — Taylor Swift · Todos los derechos corresponden a sus respectivos dueños.</p>
@@ -337,7 +337,7 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- FONDO ROTATIVO -->
 <div id="bgSlider">
@@ -373,7 +373,7 @@
 <!-- ══ FIREBASE — guarda comentarios y posts reales en la nube ══ -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, increment, arrayUnion, orderBy, query } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, increment, arrayUnion, orderBy, query, onSnapshot, limit } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCqu1SBAFyWU1v7XWLvKXD-3HX4UHHaXA8",
@@ -498,6 +498,64 @@ window.publishPost = async () => {
 };
 
 window.addEventListener('DOMContentLoaded', loadPosts);
+
+/* ══ CHAT PERSISTENTE EN FIREBASE ══ */
+const chatCol = collection(db, "chatMessages");
+
+// Renderiza un mensaje en el chatWindow
+window._addChatMsg = function(text, role) {
+  const win = document.getElementById('chatWindow');
+  if (!win) return;
+  const div = document.createElement('div');
+  div.className = 'chat-msg ' + role;
+  div.innerHTML = '<div class="chat-bubble ' + role + '-bubble">' + text + '</div>';
+  win.appendChild(div);
+  win.scrollTop = win.scrollHeight;
+};
+
+// Escucha los últimos 50 mensajes en tiempo real
+function initChatListener() {
+  const q = query(chatCol, orderBy("created", "asc"), limit(50));
+  onSnapshot(q, (snap) => {
+    const win = document.getElementById('chatWindow');
+    if (!win) return;
+    win.innerHTML = '';
+    snap.forEach(d => {
+      const m = d.data();
+      window._addChatMsg(m.text, m.role);
+    });
+  });
+}
+
+// Guarda un mensaje en Firestore
+async function saveChatMsg(text, role) {
+  try {
+    await addDoc(chatCol, { text, role, created: new Date() });
+  } catch(e) { console.error("Chat save error:", e); }
+}
+
+// Override sendChat para usar Firebase
+window.sendChat = function() {
+  const inp = document.getElementById('chatInput');
+  const q = inp.value.trim();
+  if (!q) return;
+  inp.value = '';
+  saveChatMsg(q, 'user');
+  // Respuesta de la AI
+  setTimeout(async function() {
+    const resp = getAIResponse(q);
+    await saveChatMsg(resp, 'ai');
+  }, 700);
+};
+
+// Override quickQ
+window.quickQ = function(btn) {
+  const inp = document.getElementById('chatInput');
+  inp.value = btn.textContent;
+  window.sendChat();
+};
+
+window.addEventListener('DOMContentLoaded', initChatListener);
 </script>
 
 <!-- ══ SCRIPTS GENERALES ══ -->
@@ -571,10 +629,6 @@ window.addEventListener('DOMContentLoaded',renderDonors);
 
 var aiK={era:'Las 11 eras: Taylor Swift (2006), Fearless (2008), Speak Now (2010), Red (2012), 1989 (2014), Reputation (2017), Lover (2019), Folklore (2020), Evermore (2020), Midnights (2022) y TTPD (2024).',popular:'La más popular en streams es Midnights (2022). Anti-Hero fue #1 por 8 semanas en Billboard.',tour:'The Eras Tour fue el tour más taquillero de la historia: +$2 billones, 149 shows en 5 continentes. Argentina noviembre 2024.',cancion:'Las más famosas: Anti-Hero, Shake It Off, Love Story, Blank Space, Cruel Summer, All Too Well, Cardigan y Style.',dato:'Datos: escribió su primer álbum a los 16, tiene 14 Grammys, primera artista con 5 álbumes debutando en #1.',folklore:'Folklore (2020): indie folk grabado en cuarentena. Icónicas: cardigan, august, exile (Bon Iver) y betty.',midnights:'Midnights (2022): 23 canciones en la 3am Edition. Anti-Hero es el sencillo más exitoso.',ttpd:'TTPD (2024): 31 canciones. Fortnight feat. Post Malone fue el primer sencillo.'};
 function getAIResponse(q){q=q.toLowerCase();if(q.includes('era')||q.includes('album'))return aiK.era;if(q.includes('popular')||q.includes('mejor'))return aiK.popular;if(q.includes('tour')||q.includes('show'))return aiK.tour;if(q.includes('cancion')||q.includes('tema'))return aiK.cancion;if(q.includes('dato')||q.includes('curio'))return aiK.dato;if(q.includes('folklore'))return aiK.folklore;if(q.includes('midnight'))return aiK.midnights;if(q.includes('ttpd'))return aiK.ttpd;if(q.includes('hola')||q.includes('hey'))return '¡Hola Swiftie! 👋 Preguntame sobre las eras, canciones o el Eras Tour.';if(q.includes('gracias'))return '¡De nada! Estoy aquí para lo que necesités ✦';return 'No tengo esa info 🤔 Probá preguntarme sobre las eras, el Eras Tour o canciones famosas.';}
-function addMessage(text,role){var win=document.getElementById('chatWindow'),div=document.createElement('div');div.className='chat-msg '+role;div.innerHTML='<div class="chat-bubble '+role+'-bubble">'+text+'</div>';win.appendChild(div);win.scrollTop=win.scrollHeight;}
-function sendChat(){var inp=document.getElementById('chatInput'),q=inp.value.trim();if(!q)return;addMessage(q,'user');inp.value='';var win=document.getElementById('chatWindow'),typing=document.createElement('div');typing.className='chat-msg ai';typing.id='typing';typing.innerHTML='<div class="typing-bubble">Escribiendo...</div>';win.appendChild(typing);win.scrollTop=win.scrollHeight;setTimeout(function(){var t=document.getElementById('typing');if(t)t.remove();addMessage(getAIResponse(q),'ai');},900+Math.random()*600);}
-function quickQ(btn){document.getElementById('chatInput').value=btn.textContent;sendChat();}
-</script>
-
-</body>
-</html>
+// sendChat y quickQ son definidos por el módulo Firebase más abajo
+function sendChat(){console.warn('Firebase module aún no cargado');}
+function quickQ(btn){var inp=document.getElementById('chatInput');inp.value=btn.textContent;sendChat();}
